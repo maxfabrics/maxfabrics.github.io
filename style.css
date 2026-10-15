@@ -1,21 +1,28 @@
-/* Feuille de style commune du site MaxFabrics */
+/* Feuille de style commune du site MaxFabrics : identité v8 « jeu mobile » (voir art-direction/README.md).
+   Polices auto-hébergées (OFL), aucune ressource tierce : rien n'est envoyé à un autre serveur. */
+@font-face { font-family: "Lilita One"; src: url("assets/fonts/lilita-one-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Fredoka"; src: url("assets/fonts/fredoka-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Fredoka"; src: url("assets/fonts/fredoka-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
 :root {
-  --bg: #fbf8f3;
+  --bg: #fff4e4;        /* crème */
   --surface: #ffffff;
-  --text: #1f1d1a;
-  --muted: #6b655c;
-  --accent: #e8590c;
-  --border: #e7e1d7;
+  --text: #3b1612;      /* chocolat */
+  --muted: #7a4a3f;
+  --link: #c2281f;      /* tomate foncé : lisible sur crème */
+  --line: #3b1612;      /* contours cartoon */
+  --hero: #13a99c;      /* turquoise de l'animation */
+  --hero-glow: #4fe0d2;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #161412;
-    --surface: #201d1a;
-    --text: #f3efe8;
-    --muted: #a59d92;
-    --accent: #ff8a3d;
-    --border: #322d28;
+    --bg: #2b1410;      /* chocolat nuit */
+    --surface: #3b1612;
+    --text: #fff4e4;
+    --muted: #e3c4b4;
+    --link: #ffc93c;    /* jaune soleil */
+    --line: #170805;
   }
 }
 
@@ -25,7 +32,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 500 17px/1.6 "Fredoka", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 header, main, footer {
@@ -38,49 +45,80 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.logo {
-  font-weight: 800;
-  font-size: 1.3rem;
-  color: var(--text);
-  text-decoration: none;
-  letter-spacing: -0.02em;
-}
-
-.logo span { color: var(--accent); }
+.logo { display: inline-flex; line-height: 0; }
+.logo img { height: 48px; width: auto; }
 
 nav a {
   color: var(--muted);
   text-decoration: none;
   margin-left: 16px;
+  font-weight: 600;
   font-size: 0.95rem;
 }
 
-nav a:hover { color: var(--accent); }
+nav a:hover { color: var(--link); }
 
-h1 { font-size: 2.2rem; line-height: 1.2; letter-spacing: -0.02em; margin: 32px 0 12px; }
-h2 { font-size: 1.25rem; margin-top: 36px; }
+h1, h2 {
+  font-family: "Lilita One", "Fredoka", system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
 
-a { color: var(--accent); }
+h1 { font-size: 2.4rem; line-height: 1.15; margin: 28px 0 12px; }
+h2 { font-size: 1.45rem; margin-top: 36px; }
+
+a { color: var(--link); font-weight: 600; }
 
 .lead { font-size: 1.2rem; color: var(--muted); }
 
+/* Bandeau d'accueil : turquoise à rayons de soleil, comme l'animation de lancement. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin: 8px 0 32px;
+  padding: 40px 24px 36px;
+  border: 3px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 7px 0 var(--line);
+  background:
+    radial-gradient(circle at 50% 45%, var(--hero-glow) 0%, transparent 60%),
+    repeating-conic-gradient(from 0deg at 50% 45%, rgba(255, 255, 255, 0.1) 0deg 11.25deg, transparent 11.25deg 22.5deg),
+    var(--hero);
+  color: #fff4e4;
+  text-align: center;
+}
+
+.hero img { width: 160px; height: auto; filter: drop-shadow(0 6px 0 rgba(59, 22, 18, 0.35)); }
+
+.hero h1 {
+  color: #ffc93c;
+  margin: 18px 0 8px;
+  text-shadow: 0 3px 0 #3b1612, 2px 0 0 #3b1612, -2px 0 0 #3b1612, 0 -2px 0 #3b1612, 0 5px 0 #3b1612;
+}
+
+.hero .lead { color: #3b1612; font-weight: 600; margin: 0 auto; max-width: 34em; } /* contraste ≥ 4,5:1 sur le turquoise */
+
+/* Cartes « gonflées » : contour chocolat et épaisseur 3D. */
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
+  border: 3px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 6px 0 var(--line);
   padding: 20px 24px;
-  margin: 24px 0;
+  margin: 28px 0;
 }
+
+.card h2 { margin-top: 0; }
 
 footer {
   margin-top: 64px;
   padding-top: 24px;
   padding-bottom: 32px;
-  border-top: 1px solid var(--border);
+  border-top: 3px dashed color-mix(in srgb, var(--line) 35%, transparent);
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -90,5 +128,6 @@ footer a { color: var(--muted); margin-right: 16px; }
 @media (max-width: 520px) {
   header { flex-direction: column; align-items: flex-start; gap: 8px; }
   nav a { margin: 0 16px 0 0; }
-  h1 { font-size: 1.8rem; }
+  h1 { font-size: 1.9rem; }
+  .hero { padding: 28px 16px; }
 }
