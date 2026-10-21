@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "games": [
+    {
+      "id": "critter_bus",
+      "package": "com.maxfabrics.critterbus",
+      "name": "Critter Bus",
+      "icon": "jeux/critter_bus.png",
+      "live": false
+    },
+    {
+      "id": "boom_crates",
+      "package": "com.maxfabrics.boomcrates",
+      "name": "Boom Crates",
+      "icon": "jeux/boom_crates.png",
+      "live": false
+    }
+  ]
+}
