@@ -147,3 +147,8 @@ a.button {
 }
 
 a.button:hover, a.button:focus-visible { background: #e63d31; }
+/* Liste des jeux de l'accueil : icône en tuile à contour chocolat, nom vers Google Play, accroche et kit presse. */
+.games { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 14px; }
+.games li { display: flex; align-items: center; gap: 14px; }
+.games img { width: 56px; height: 56px; border-radius: 14px; border: 3px solid var(--line); display: block; }
+.games .pitch { color: var(--muted); font-size: 0.95rem; font-weight: 500; }

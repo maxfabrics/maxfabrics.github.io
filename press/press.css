@@ -1,0 +1,37 @@
+/* Pages presse des jeux : fiche technique, bande-annonce, galeries de captures et de clips (en plus de style.css). */
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 20px; margin: 0; }
+.facts dt { font-weight: 600; color: var(--muted); }
+.facts dd { margin: 0; }
+
+.trailer {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 12px;
+  border: 3px solid var(--line);
+  border-radius: 18px;
+  background: #000;
+}
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; }
+.gallery a, .gallery video {
+  display: block;
+  border: 3px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  line-height: 0;
+  background: #000;
+}
+.gallery img, .gallery video { width: 100%; height: auto; }
+.gallery figure { margin: 0; }
+.gallery figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+
+.downloads { padding-left: 1.2em; }
+.downloads li { margin: 4px 0; }
+
+.hero .tile { width: 160px; height: auto; border-radius: 36px; border: 4px solid #3b1612; }
+
+@media (max-width: 520px) {
+  .facts { grid-template-columns: 1fr; gap: 2px; }
+  .facts dd { margin-bottom: 8px; }
+}

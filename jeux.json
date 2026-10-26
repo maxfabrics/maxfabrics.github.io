@@ -6,13 +6,20 @@
       "package": "com.maxfabrics.critterbus",
       "name": "Critter Bus",
       "icon": "jeux/critter_bus.png",
-      "live": false
+      "live": true
     },
     {
       "id": "boom_crates",
       "package": "com.maxfabrics.boomcrates",
       "name": "Boom Crates",
       "icon": "jeux/boom_crates.png",
+      "live": false
+    },
+    {
+      "id": "mahjong_sundae",
+      "package": "com.maxfabrics.mahjongsundae",
+      "name": "Mahjong Sundae",
+      "icon": "jeux/mahjong_sundae.png",
       "live": false
     }
   ]
