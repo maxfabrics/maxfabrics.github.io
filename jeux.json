@@ -20,7 +20,7 @@
       "package": "com.maxfabrics.mahjongsundae",
       "name": "Mahjong Sundae",
       "icon": "jeux/mahjong_sundae.png",
-      "live": false
+      "live": true
     },
     {
       "id": "puffzle",
