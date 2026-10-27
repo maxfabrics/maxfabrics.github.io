@@ -13,13 +13,20 @@
       "package": "com.maxfabrics.boomcrates",
       "name": "Boom Crates",
       "icon": "jeux/boom_crates.png",
-      "live": false
+      "live": true
     },
     {
       "id": "mahjong_sundae",
       "package": "com.maxfabrics.mahjongsundae",
       "name": "Mahjong Sundae",
       "icon": "jeux/mahjong_sundae.png",
+      "live": false
+    },
+    {
+      "id": "puffzle",
+      "package": "com.maxfabrics.puffzle",
+      "name": "Puffzle",
+      "icon": "jeux/puffzle.png",
       "live": false
     }
   ]
