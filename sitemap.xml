@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://maxfabrics.com/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-29</lastmod>
   </url>
   <url>
     <loc>https://maxfabrics.com/cgv.html</loc>
@@ -31,5 +31,9 @@
   <url>
     <loc>https://maxfabrics.com/press/mahjong-sundae.html</loc>
     <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://maxfabrics.com/press/snugzle.html</loc>
+    <lastmod>2026-10-29</lastmod>
   </url>
 </urlset>

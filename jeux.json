@@ -28,6 +28,13 @@
       "name": "Puffzle",
       "icon": "jeux/puffzle.png",
       "live": false
+    },
+    {
+      "id": "snugzle",
+      "package": "com.maxfabrics.snugzle",
+      "name": "Snugzle",
+      "icon": "jeux/snugzle.png",
+      "live": true
     }
   ]
 }
