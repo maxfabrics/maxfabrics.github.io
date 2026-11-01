@@ -27,7 +27,7 @@
       "package": "com.maxfabrics.puffzle",
       "name": "Puffzle",
       "icon": "jeux/puffzle.png",
-      "live": false
+      "live": true
     },
     {
       "id": "snugzle",
