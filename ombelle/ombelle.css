@@ -1,0 +1,62 @@
+/* Pages d'Ombelle, la marque d'applis de MaxFabrics (DA v0 : apps/art-direction/README.md).
+   Aucun élément graphique MaxFabrics ici : sobre, adulte, chaleureux. Polices système, rien de chargé ailleurs. */
+:root {
+  --sauge: #3F5E50;
+  --creme: #F7F3EA;
+  --rose: #E7A9A4;
+  --miel: #E1A94B;
+  --encre: #20262A;
+  --fond: var(--creme);
+  --texte: var(--encre);
+  --titre: var(--sauge);
+  --discret: #4E5A55;
+  --carte: #FFFDF8;
+  --bord: #E4DDCF;
+  --lien: #2F4A3E;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: var(--encre);
+    --texte: var(--creme);
+    --titre: #A9C7B8;
+    --discret: #C4C9C2;
+    --carte: #2A3135;
+    --bord: #3A4247;
+    --lien: #BBD6C8;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font: 17px/1.6 Figtree, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+header, main, footer { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+header { display: flex; align-items: center; gap: 12px; padding-top: 24px; padding-bottom: 8px; }
+header a { display: flex; align-items: center; gap: 10px; color: var(--titre); text-decoration: none; }
+header img { width: 40px; height: 40px; }
+header span { font: 24px/1 "Young Serif", Georgia, "Times New Roman", serif; }
+h1, h2, h3 { font-family: "Young Serif", Georgia, "Times New Roman", serif; font-weight: 400; color: var(--titre); line-height: 1.25; }
+h1 { font-size: 32px; margin: 24px 0 8px; }
+h2 { font-size: 23px; margin: 32px 0 8px; }
+h3 { font-size: 19px; margin: 20px 0 6px; }
+p, li { max-width: 68ch; }
+a { color: var(--lien); text-underline-offset: 3px; }
+.lead { color: var(--discret); margin-top: 0; }
+.carte {
+  background: var(--carte);
+  border: 1px solid var(--bord);
+  border-radius: 14px;
+  padding: 4px 20px 12px;
+  margin: 20px 0;
+}
+ol li, ul li { margin: 4px 0; }
+footer { color: var(--discret); font-size: 15px; padding-top: 24px; padding-bottom: 40px; border-top: 1px solid var(--bord); margin-top: 40px; }
+footer a { color: inherit; }
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  h1 { font-size: 27px; }
+  h2 { font-size: 21px; }
+}
