@@ -37,22 +37,28 @@
 
     <h2>Où sont tes données</h2>
     <p>Elles sont enregistrées dans l'espace en ligne sécurisé de ton duo, chez Google Firebase (serveurs à Paris),
-      pour être retrouvées sur tous les téléphones du duo. Seules les personnes du duo peuvent y accéder. Pour bloquer
-      les accès frauduleux, Google (App Check et Play Integrity) vérifie que les demandes viennent bien de
-      l'application PlateHunter.</p>
+      pour être retrouvées sur tous les téléphones du duo. Seules les personnes du duo peuvent y accéder. Les photos de
+      plats et de souvenirs passent par le relais de PlateHunter (Cloudflare), qui vérifie que tu fais partie du duo,
+      et sont rangées chez des hébergeurs de stockage en Europe : Cloudflare R2, Tigris (Francfort), Oracle Cloud
+      (Paris) ou Backblaze B2 (Amsterdam). Pour bloquer les accès frauduleux, Google (App Check et Play Integrity)
+      vérifie que les demandes viennent bien de l'application PlateHunter.</p>
 
     <h2>Lecture de la carte par un assistant</h2>
     <p>Seulement si tu l'acceptes (question posée au premier scan, réglage dans Paramètres › Confidentialité) : quand
-      tu scannes la carte d'un restaurant, les photos de la carte, sans leur position, sont envoyées à Gemini,
-      l'assistant d'intelligence artificielle de Google, qui en lit les plats et les prix. Avec la formule gratuite
-      utilisée aujourd'hui, Google peut s'en servir pour améliorer ses services. Sinon, sans connexion, ou si
+      tu scannes la carte d'un restaurant, les photos de la carte, sans leur position, sont envoyées par le relais de
+      PlateHunter à un assistant d'intelligence artificielle qui en lit les plats et les prix : des modèles ouverts
+      hébergés par Cloudflare (Workers AI), ou en secours ceux d'OpenRouter. Cloudflare ne garde pas ces photos après
+      la réponse et ne s'en sert pas pour entraîner ses modèles ; OpenRouter est réglé pour écarter les fournisseurs
+      qui le feraient. Le relais limite le nombre de lectures par duo et par jour. Sinon, sans connexion, ou si
       l'assistant ne répond pas, la lecture se fait sur ton téléphone.</p>
 
     <h2>Où manger ?</h2>
     <p>Pour te proposer des restaurants autour de toi, une position arrondie (à environ 500 m près) est envoyée au
-      service Overpass d'OpenStreetMap. Les restaurants trouvés, leurs distances et un résumé de vos goûts (cuisines,
-      notes, budget, coups de cœur) sont ensuite envoyés à Gemini pour les classer, si l'assistant en ligne est
-      activé ; sinon, le tri se fait sur ton téléphone.</p>
+      relais de PlateHunter, qui la transmet, arrondie au kilomètre, à Geoapify (données OpenStreetMap) ; en secours,
+      ton téléphone interroge directement le service Overpass d'OpenStreetMap. Les restaurants trouvés, leurs distances
+      et un résumé de vos goûts (cuisines, notes, budget, coups de cœur) sont ensuite envoyés à l'assistant, par le
+      même chemin que la lecture des cartes, pour les classer, si l'assistant en ligne est activé ; sinon, le tri se
+      fait sur ton téléphone.</p>
 
     <h2>Carte et adresses</h2>
     <p>Les fonds de carte viennent d'OpenStreetMap : ton téléphone télécharge les images de la zone affichée depuis
