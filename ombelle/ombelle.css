@@ -60,3 +60,8 @@ footer a { color: inherit; }
   h1 { font-size: 27px; }
   h2 { font-size: 21px; }
 }
+
+/* Choix de la langue des pages de PlateHunter (générées par apps/restaurants/tools/pages_ombelle). */
+.langues { margin-left: auto; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 15px; }
+header .langues a { color: var(--discret); text-decoration: underline; text-underline-offset: 3px; }
+header .langues a[aria-current="page"] { color: var(--titre); font-weight: 600; text-decoration: none; }
