@@ -1,5 +1,9 @@
 /* Pages d'Ombelle, la marque d'applis de MaxFabrics (DA v0 : apps/art-direction/README.md).
-   Aucun élément graphique MaxFabrics ici : sobre, adulte, chaleureux. Polices système, rien de chargé ailleurs. */
+   Aucun élément graphique MaxFabrics ici : sobre, adulte, chaleureux.
+   Polices de la DA auto-hébergées (OFL), réduites au latin : rien n'est chargé depuis un autre serveur. */
+@font-face { font-family: "Young Serif"; src: url("assets/fonts/young-serif-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("assets/fonts/figtree-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("assets/fonts/figtree-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
 :root {
   --sauge: #3F5E50;
   --creme: #F7F3EA;
@@ -26,7 +30,7 @@
   }
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 body {
   margin: 0;
   background: var(--fond);
@@ -34,16 +38,31 @@ body {
   font: 17px/1.6 Figtree, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 header, main, footer { max-width: 720px; margin: 0 auto; padding: 0 20px; }
-header { display: flex; align-items: center; gap: 12px; padding-top: 24px; padding-bottom: 8px; }
-header a { display: flex; align-items: center; gap: 10px; color: var(--titre); text-decoration: none; }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 0 12px; padding-top: 24px; padding-bottom: 8px; }
+header a { display: flex; align-items: center; gap: 10px; min-height: 44px; color: var(--titre); text-decoration: none; }
 header img { width: 40px; height: 40px; }
 header span { font: 24px/1 "Young Serif", Georgia, "Times New Roman", serif; }
-h1, h2, h3 { font-family: "Young Serif", Georgia, "Times New Roman", serif; font-weight: 400; color: var(--titre); line-height: 1.25; }
+h1, h2, h3 { font-family: "Young Serif", Georgia, "Times New Roman", serif; font-weight: 400; color: var(--titre); line-height: 1.25; overflow-wrap: break-word; }
 h1 { font-size: 32px; margin: 24px 0 8px; }
 h2 { font-size: 23px; margin: 32px 0 8px; }
 h3 { font-size: 19px; margin: 20px 0 6px; }
 p, li { max-width: 68ch; }
 a { color: var(--lien); text-underline-offset: 3px; }
+main a { overflow-wrap: anywhere; } /* une longue adresse ne déborde pas à 360 px */
+a:active { opacity: 0.65; }
+:focus-visible { outline: 2px solid var(--lien); outline-offset: 2px; }
+.liens { display: flex; flex-wrap: wrap; column-gap: 20px; }
+.liens a { display: inline-flex; align-items: center; min-height: 44px; }
+.statut {
+  display: inline-block;
+  margin: 0;
+  padding: 2px 12px;
+  border: 1px solid var(--bord);
+  border-radius: 999px;
+  color: var(--titre);
+  font-size: 15px;
+  font-weight: 600;
+}
 .lead { color: var(--discret); margin-top: 0; }
 .carte {
   background: var(--carte);
@@ -54,14 +73,15 @@ a { color: var(--lien); text-underline-offset: 3px; }
 }
 ol li, ul li { margin: 4px 0; }
 footer { color: var(--discret); font-size: 15px; padding-top: 24px; padding-bottom: 40px; border-top: 1px solid var(--bord); margin-top: 40px; }
-footer a { color: inherit; }
+footer a { display: inline-flex; align-items: center; min-height: 44px; color: inherit; }
 @media (max-width: 480px) {
   body { font-size: 16px; }
   h1 { font-size: 27px; }
   h2 { font-size: 21px; }
+  .langues { margin-left: 0; }
 }
 
 /* Choix de la langue des pages de PlateHunter (générées par apps/restaurants/tools/pages_ombelle). */
-.langues { margin-left: auto; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 15px; }
+.langues { margin-left: auto; display: flex; flex-wrap: wrap; gap: 0 12px; font-size: 15px; }
 header .langues a { color: var(--discret); text-decoration: underline; text-underline-offset: 3px; }
 header .langues a[aria-current="page"] { color: var(--titre); font-weight: 600; text-decoration: none; }

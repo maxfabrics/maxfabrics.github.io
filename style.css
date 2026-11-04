@@ -28,6 +28,14 @@
 
 * { box-sizing: border-box; }
 
+/* Toucher : ni délai ni flash gris du navigateur, le retour d'appui est celui de a:active plus bas.
+   Défilement doux vers les ancres seulement si le mouvement n'est pas réduit. */
+html { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -45,6 +53,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -52,15 +61,25 @@ header {
 .logo { display: inline-flex; line-height: 0; }
 .logo img { height: 48px; width: auto; }
 
+nav { display: flex; flex-wrap: wrap; justify-content: flex-end; column-gap: 16px; }
+
+/* Zone de toucher de 44 px autour du texte, sans agrandir le texte. */
 nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--muted);
   text-decoration: none;
-  margin-left: 16px;
   font-weight: 600;
   font-size: 0.95rem;
 }
 
-nav a:hover { color: var(--link); }
+nav a[aria-current="page"] { color: var(--link); text-decoration: underline; text-underline-offset: 4px; }
+
+/* Survol réservé à la souris : au doigt, la couleur resterait figée après le tap. */
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover { color: var(--link); }
+}
 
 h1, h2 {
   font-family: "Lilita One", "Fredoka", system-ui, sans-serif;
@@ -72,6 +91,9 @@ h1 { font-size: 2.4rem; line-height: 1.15; margin: 28px 0 12px; }
 h2 { font-size: 1.45rem; margin-top: 36px; }
 
 a { color: var(--link); font-weight: 600; }
+a:active { opacity: 0.65; }
+
+:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
 
 .lead { font-size: 1.2rem; color: var(--muted); }
 
@@ -94,13 +116,23 @@ a { color: var(--link); font-weight: 600; }
 
 .hero img { width: 160px; height: auto; filter: drop-shadow(0 6px 0 rgba(59, 22, 18, 0.35)); }
 
+/* Le contour chocolat de 3 px porte le contraste du titre : jaune sur chocolat 10,4:1, chocolat sur turquoise 5,5:1,
+   alors que le jaune seul sur turquoise ne fait que 1,9:1. L'interlettre évite que les contours ne se touchent. */
 .hero h1 {
   color: #ffc93c;
   margin: 18px 0 8px;
-  text-shadow: 0 3px 0 #3b1612, 2px 0 0 #3b1612, -2px 0 0 #3b1612, 0 -2px 0 #3b1612, 0 5px 0 #3b1612;
+  letter-spacing: 0.03em;
+  text-wrap: balance;
+  text-shadow:
+    3px 0 0 #3b1612, -3px 0 0 #3b1612, 0 3px 0 #3b1612, 0 -3px 0 #3b1612,
+    2px 2px 0 #3b1612, -2px 2px 0 #3b1612, 2px -2px 0 #3b1612, -2px -2px 0 #3b1612,
+    0 6px 0 #3b1612, 2px 5px 0 #3b1612, -2px 5px 0 #3b1612;
 }
 
 .hero .lead { color: #3b1612; font-weight: 600; margin: 0 auto; max-width: 34em; } /* contraste ≥ 4,5:1 sur le turquoise */
+
+.hero :focus-visible { outline-color: #3b1612; }
+.hero a.button { margin-top: 20px; }
 
 /* Cartes « gonflées » : contour chocolat et épaisseur 3D. */
 .card {
@@ -113,6 +145,7 @@ a { color: var(--link); font-weight: 600; }
 }
 
 .card h2 { margin-top: 0; }
+.card[id] { scroll-margin-top: 16px; }
 
 footer {
   margin-top: 64px;
@@ -123,16 +156,19 @@ footer {
   font-size: 0.9rem;
 }
 
-footer a { color: var(--muted); margin-right: 16px; }
+footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); margin-right: 16px; }
 
 @media (max-width: 520px) {
-  header { flex-direction: column; align-items: flex-start; gap: 8px; }
-  nav a { margin: 0 16px 0 0; }
+  header { flex-direction: column; align-items: flex-start; gap: 0; }
+  nav { justify-content: flex-start; }
   h1 { font-size: 1.9rem; }
   .hero { padding: 28px 16px; }
+  .hero img { width: 112px; } /* le bouton d'action reste visible sans défiler sur un écran de 640 px de haut */
+  .hero .lead { font-size: 1.05rem; }
 }
 
-/* Bouton d'action (page « Renoncer au contrat ») : tuile tomate à contour chocolat, comme les boutons des jeux. */
+/* Bouton d'action : tuile tomate à contour chocolat, comme les boutons des jeux.
+   Blanc sur tomate (3,3:1) seulement à 24 px et plus, le seuil du grand texte. */
 a.button {
   display: inline-block;
   padding: 12px 22px;
@@ -141,14 +177,30 @@ a.button {
   background: #ff4b3e;
   color: #ffffff;
   font-family: "Lilita One", "Fredoka", system-ui, sans-serif;
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
   text-decoration: none;
   box-shadow: 0 4px 0 var(--line);
+  transition: transform 100ms ease-out, box-shadow 100ms ease-out, background-color 120ms ease-out;
 }
 
-a.button:hover, a.button:focus-visible { background: #e63d31; }
+a.button:focus-visible { background: #e63d31; }
+
+@media (hover: hover) and (pointer: fine) {
+  a.button:hover { background: #e63d31; }
+}
+
+/* À l'appui, la tuile s'enfonce dans son épaisseur, sans rebond ; en mouvement réduit, seule sa couleur change. */
+a.button:active { opacity: 1; transform: translateY(3px); box-shadow: 0 1px 0 var(--line); }
+
+@media (prefers-reduced-motion: reduce) {
+  a.button { transition: background-color 120ms ease-out; }
+  a.button:active { transform: none; box-shadow: 0 4px 0 var(--line); background: #e63d31; }
+}
 /* Liste des jeux de l'accueil : icône en tuile à contour chocolat, nom vers Google Play, accroche et kit presse. */
-.games { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 14px; }
+.games { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 4px; }
 .games li { display: flex; align-items: center; gap: 14px; }
 .games img { width: 56px; height: 56px; border-radius: 14px; border: 3px solid var(--line); display: block; }
 .games .pitch { color: var(--muted); font-size: 0.95rem; font-weight: 500; }
+.games span > a { display: inline-flex; align-items: center; min-height: 44px; }

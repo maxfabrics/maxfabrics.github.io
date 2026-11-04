@@ -1,17 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Esquisse v0 du symbole Ombelle (01/11/2026) : à remplacer par la sortie du générateur une fois le logo validé. -->
-  <rect width="100" height="100" rx="22" fill="#3F5E50"/>
-  <g stroke="#F7F3EA" stroke-width="3" stroke-linecap="round" fill="none">
-    <path d="M50 88 L50 54"/>
-    <path d="M50 54 L24 36"/>
-    <path d="M50 54 L33 24"/>
-    <path d="M50 54 L50 18"/>
-    <path d="M50 54 L67 24"/>
-    <path d="M50 54 L76 36"/>
-  </g>
-  <circle cx="24" cy="36" r="6" fill="#E7A9A4"/>
-  <circle cx="33" cy="24" r="6" fill="#F7F3EA"/>
-  <circle cx="50" cy="18" r="6" fill="#E1A94B"/>
-  <circle cx="67" cy="24" r="6" fill="#F7F3EA"/>
-  <circle cx="76" cy="36" r="6" fill="#E7A9A4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>Ombelle</title>
+<rect width="100" height="100" rx="22" fill="#3F5E50"/>
+<path d="M46 60L46 88A4 4 0 0 0 54 88L54 60A4 4 0 0 0 46 60ZM52.83 57.17L25.96 30.3A4 4 0 0 0 20.3 35.96L47.17 62.83A4 4 0 0 0 52.83 57.17ZM54 60L54 22A4 4 0 0 0 46 22L46 60A4 4 0 0 0 54 60ZM52.83 62.83L79.7 35.96A4 4 0 0 0 74.04 30.3L47.17 57.17A4 4 0 0 0 52.83 62.83Z" fill="#F7F3EA"/>
+<circle cx="23.13" cy="33.13" r="10" fill="#F7F3EA"/><circle cx="50" cy="22" r="10" fill="#F7F3EA"/><circle cx="76.87" cy="33.13" r="10" fill="#F7F3EA"/>
 </svg>
