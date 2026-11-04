@@ -1,45 +1,83 @@
-/* Pages presse des jeux : fiche technique, bande-annonce, galeries de captures et de clips (en plus de style.css). */
-.facts { display: grid; grid-template-columns: max-content 1fr; align-items: baseline; gap: 6px 20px; margin: 0; }
+/* Kits presse : bandeau avec action d'installation, fiche technique, bande-annonce, galeries (en plus de style.css). */
+
+.hero-kit .hero-texte { position: relative; z-index: 1; padding-bottom: 1.5rem; }
+.hero-kit .tile { display: block; width: 5.5rem; height: auto; margin-bottom: 0.75rem; border: 3px solid var(--choco); border-radius: 24%; box-shadow: 0 4px 0 var(--choco); }
+.hero-kit .surtitre { margin-bottom: 0.25rem; }
+.hero-kit .mention { margin: 0.875rem 0 0; font-weight: 600; font-size: 0.9375rem; line-height: 1.4; }
+
+.hero-kit .eventail { --largeur: 8.5rem; --ecart: 5.25rem; height: 11rem; }
+
+.kit-corps { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; max-width: 72rem; margin: 0 auto; padding: 2.25rem 1rem 0; }
+.kit-duo { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+
+.facts { display: grid; grid-template-columns: 1fr; gap: 2px; margin: 0; }
 .facts dt { font-weight: 600; color: var(--muted); }
-.facts dd { margin: 0; }
+.facts dd { margin: 0 0 0.5rem; }
 
 .trailer {
   display: block;
   width: 100%;
   height: auto;
-  max-width: 360px;
-  margin: 0 auto 12px;
+  max-width: 17rem;
+  margin: 0 auto 0.75rem;
   border: 3px solid var(--line);
-  border-radius: 18px;
-  background: #000;
+  border-radius: 1.125rem;
+  background: var(--choco);
 }
 
-.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 14px; }
-@media (min-width: 521px) {
-  .clips { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
-}
+/* Galeries sur des rangées pleines : deux colonnes au doigt, cinq (quatre pour les clips) sur grand écran, jamais d'orphelin à gauche. */
+.gallery { --colonnes: 2; --ecart: 0.75rem; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--ecart); }
+.gallery > * { flex: 0 0 calc((100% - (var(--colonnes) - 1) * var(--ecart)) / var(--colonnes)); }
 .gallery > a, .gallery video {
   display: block;
   border: 3px solid var(--line);
-  border-radius: 14px;
+  border-radius: 0.875rem;
   overflow: hidden;
   line-height: 0;
-  background: #000;
+  background: var(--choco);
+  transition: transform var(--duree-ressort) var(--ressort);
 }
+.gallery > a:active { opacity: 1; transform: scale(0.97); transition-duration: var(--duree-appui); transition-timing-function: ease-out; }
 .gallery img, .gallery video { width: 100%; height: auto; }
 .gallery figure { margin: 0; }
-.gallery figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
-.gallery figcaption a { display: inline-flex; align-items: center; min-height: 44px; line-height: 1.25; }
+.gallery figcaption { font-size: 0.875rem; color: var(--muted); margin-top: 0.25rem; }
+.gallery figcaption a { display: inline-flex; align-items: center; min-height: 2.75rem; line-height: 1.25; }
 
 .downloads { padding-left: 1.2em; }
-.downloads li { margin: 4px 0; }
+.downloads li { margin: 0.25rem 0; }
 
 /* Liens isolés (fiche technique, téléchargements) : zone de toucher de 44 px. */
-.downloads a, .facts a { display: inline-flex; align-items: center; min-height: 44px; }
+.downloads a, .facts a { display: inline-flex; align-items: center; min-height: 2.75rem; overflow-wrap: anywhere; }
 
-.hero .tile { width: 160px; height: auto; border-radius: 36px; border: 4px solid #3b1612; }
+/* Dernière action avant de partir : installer, ou voir les autres kits. */
+.appel { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+.appel h2 { margin: 0; }
+.autres-kits { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+.autres-kits .pastille { box-shadow: 0 3px 0 var(--line); border-color: var(--line); }
 
-@media (max-width: 520px) {
-  .facts { grid-template-columns: 1fr; gap: 2px; }
-  .facts dd { margin-bottom: 8px; }
+@media (hover: hover) and (pointer: fine) {
+  .gallery > a:hover { transform: translateY(-3px); }
+}
+
+@media (min-width: 40rem) {
+  .gallery { --colonnes: 3; }
+  .facts { grid-template-columns: max-content 1fr; align-items: baseline; gap: 0.375rem 1.25rem; }
+  .facts dd { margin: 0; }
+  .hero-kit .eventail { --largeur: 12rem; --ecart: 8rem; height: 15rem; }
+}
+
+@media (min-width: 60rem) {
+  .gallery { --colonnes: 5; }
+  .gallery.clips { --colonnes: 4; }
+  .kit-duo { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); align-items: stretch; }
+  .kit-duo.egal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-kit { display: grid; grid-template-columns: 1.1fr 1fr; column-gap: 2rem; align-items: center; min-height: 26rem; }
+  .hero-kit .hero-texte { padding: 1.5rem 0 3rem; }
+  .hero-kit .eventail { --largeur: 14rem; --ecart: 9rem; height: 100%; min-height: 24rem; }
+  .hero-kit .eventail img { top: 3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery > a { transition: none; }
+  .gallery > a:hover, .gallery > a:active { transform: none; }
 }

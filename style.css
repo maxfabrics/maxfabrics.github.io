@@ -1,35 +1,60 @@
-/* Feuille de style commune du site MaxFabrics : identité v8 « jeu mobile » (voir art-direction/README.md).
-   Polices auto-hébergées (OFL), aucune ressource tierce : rien n'est envoyé à un autre serveur. */
+/* Feuille commune du site MaxFabrics : identité v8 « jeu mobile » (art-direction/README.md).
+   Polices auto-hébergées (OFL), aucune ressource tierce : rien n'est envoyé à un autre serveur.
+   accueil.css ajoute la vitrine des jeux, press/press.css les kits presse. Couleurs de marque en variables, jamais dans
+   les composants. Tailles en rem : le texte suit le réglage de taille du téléphone. */
 @font-face { font-family: "Lilita One"; src: url("assets/fonts/lilita-one-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "Fredoka"; src: url("assets/fonts/fredoka-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
 @font-face { font-family: "Fredoka"; src: url("assets/fonts/fredoka-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
 
 :root {
-  --bg: #fff4e4;        /* crème */
+  /* Marque : ne changent pas avec le thème. */
+  --choco: #3b1612;
+  --creme: #fff4e4;
+  --tomate: #ff4b3e;
+  --tomate-appui: #e63d31;
+  --jaune: #ffc93c;
+  --ciel: #13a99c;       /* turquoise de l'animation */
+  --ciel-lueur: #4fe0d2;
+  --nuit: #2b1410;
+
+  /* Rôles : changent avec le thème. */
+  --bg: var(--creme);
   --surface: #ffffff;
-  --text: #3b1612;      /* chocolat */
+  --text: var(--choco);
   --muted: #7a4a3f;
-  --link: #c2281f;      /* tomate foncé : lisible sur crème */
-  --line: #3b1612;      /* contours cartoon */
-  --hero: #13a99c;      /* turquoise de l'animation */
-  --hero-glow: #4fe0d2;
+  --link: #c2281f;       /* tomate foncé : lisible sur crème */
+  --line: var(--choco);  /* contours cartoon */
+  --pied: var(--nuit);
+
+  --gouttiere: max(1rem, calc((100% - 70rem) / 2));
+  --rayon-carte: 1.5rem;
+
+  /* Mouvement. Ressort calculé pour un amortissement de 0,6 et une réponse de 0,4 s : le léger rebond de la marque, qui
+     repart de la valeur à l'écran si le doigt revient (une transition CSS se réoriente, elle ne recommence pas). */
+  --ressort: linear(0, 0.087, 0.282, 0.508, 0.717, 0.882, 0.996, 1.063, 1.091, 1.093, 1.079, 1.059, 1.038, 1.02, 1.006, 0.997, 0.993, 0.991, 0.992, 0.993, 0.995, 0.997, 0.999, 1, 1);
+  --duree-ressort: 700ms;
+  --duree-appui: 80ms;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #2b1410;      /* chocolat nuit */
-    --surface: #3b1612;
-    --text: #fff4e4;
+    --bg: var(--nuit);
+    --surface: var(--choco);
+    --text: var(--creme);
     --muted: #e3c4b4;
-    --link: #ffc93c;    /* jaune soleil */
+    --link: var(--jaune);
     --line: #170805;
+    --pied: #170805;
   }
+}
+
+@media (prefers-contrast: more) {
+  :root { --muted: var(--text); }
 }
 
 * { box-sizing: border-box; }
 
-/* Toucher : ni délai ni flash gris du navigateur, le retour d'appui est celui de a:active plus bas.
-   Défilement doux vers les ancres seulement si le mouvement n'est pas réduit. */
+/* Toucher : ni délai ni flash gris, le retour d'appui est celui de chaque composant. */
 html { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -40,167 +65,262 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 500 17px/1.6 "Fredoka", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 500 1.0625rem/1.6 "Fredoka", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
-header, main, footer {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
+img, video { max-width: 100%; }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.logo { display: inline-flex; line-height: 0; }
-.logo img { height: 48px; width: auto; }
-
-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; column-gap: 16px; }
-
-/* Zone de toucher de 44 px autour du texte, sans agrandir le texte. */
-nav a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-nav a[aria-current="page"] { color: var(--link); text-decoration: underline; text-underline-offset: 4px; }
-
-/* Survol réservé à la souris : au doigt, la couleur resterait figée après le tap. */
-@media (hover: hover) and (pointer: fine) {
-  nav a:hover { color: var(--link); }
-}
-
-h1, h2 {
+h1, h2, h3 {
   font-family: "Lilita One", "Fredoka", system-ui, sans-serif;
   font-weight: 400;
-  letter-spacing: 0.01em;
+  text-wrap: balance;
 }
 
-h1 { font-size: 2.4rem; line-height: 1.15; margin: 28px 0 12px; }
-h2 { font-size: 1.45rem; margin-top: 36px; }
+h1 { font-size: clamp(2.125rem, 7vw, 3.75rem); line-height: 1.08; margin: 0 0 0.75rem; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); line-height: 1.15; margin: 2.25rem 0 0.75rem; letter-spacing: 0.005em; }
+h3 { font-size: 1.25rem; line-height: 1.2; margin: 1.5rem 0 0.5rem; }
 
-a { color: var(--link); font-weight: 600; }
+a { color: var(--link); font-weight: 600; text-underline-offset: 0.15em; }
 a:active { opacity: 0.65; }
 
 :focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
 
-.lead { font-size: 1.2rem; color: var(--muted); }
+.lead { font-size: 1.1875rem; color: var(--muted); }
+
+/* Lien d'évitement : visible seulement au clavier. */
+.evitement {
+  position: absolute;
+  z-index: 40;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--creme);
+  color: var(--choco);
+  transform: translateY(-200%);
+}
+.evitement:focus { transform: none; }
+
+/* En-tête : posé sur le ciel turquoise, le même à la même place sur toutes les pages. */
+.entete {
+  position: absolute;
+  z-index: 20;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.75rem var(--gouttiere);
+}
+
+/* L'en-tête tient sur une ligne : si le texte grandit, le logo cède de la place plutôt que de recouvrir le titre. */
+.logo { display: inline-flex; flex: 0 1 auto; min-width: 0; line-height: 0; }
+.logo img { width: 154px; max-width: 100%; height: auto; }
+
+.entete :focus-visible { outline-color: var(--choco); }
+
+/* Pastille gonflée : navigation, même épaisseur que les boutons des jeux en plus petit. */
+.pastille {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  line-height: 1.2;
+  border: 3px solid var(--choco);
+  border-radius: 999px;
+  background: var(--creme);
+  box-shadow: 0 3px 0 var(--choco);
+  color: var(--choco);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform var(--duree-ressort) var(--ressort), box-shadow var(--duree-ressort) var(--ressort);
+}
+.pastille[aria-current="page"] { background: var(--jaune); }
+.entete nav { display: flex; flex: none; align-items: center; gap: 0.5rem; }
+.pastille-langue { justify-content: center; min-width: 44px; padding: 0 0.5rem; }
 
 /* Bandeau d'accueil : turquoise à rayons de soleil, comme l'animation de lancement. */
+.ciel {
+  background:
+    radial-gradient(circle at 50% 45%, var(--ciel-lueur) 0%, transparent 60%),
+    repeating-conic-gradient(from 0deg at 50% 45%, rgba(255, 255, 255, 0.1) 0deg 11.25deg, transparent 11.25deg 22.5deg),
+    var(--ciel);
+}
+
 .hero {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  margin: 8px 0 32px;
-  padding: 40px 24px 36px;
-  border: 3px solid var(--line);
-  border-radius: 28px;
-  box-shadow: 0 7px 0 var(--line);
-  background:
-    radial-gradient(circle at 50% 45%, var(--hero-glow) 0%, transparent 60%),
-    repeating-conic-gradient(from 0deg at 50% 45%, rgba(255, 255, 255, 0.1) 0deg 11.25deg, transparent 11.25deg 22.5deg),
-    var(--hero);
-  color: #fff4e4;
-  text-align: center;
+  padding: 5rem var(--gouttiere) 0;
+  border-bottom: 4px solid var(--choco);
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 8px 0 var(--line);
+  color: var(--choco);
 }
 
-.hero img { width: 160px; height: auto; filter: drop-shadow(0 6px 0 rgba(59, 22, 18, 0.35)); }
+.hero :focus-visible { outline-color: var(--choco); }
 
-/* Le contour chocolat de 3 px porte le contraste du titre : jaune sur chocolat 10,4:1, chocolat sur turquoise 5,5:1,
-   alors que le jaune seul sur turquoise ne fait que 1,9:1. L'interlettre évite que les contours ne se touchent. */
+/* Titre jaune contouré de chocolat : jaune sur chocolat 10,4:1, chocolat sur turquoise 5,5:1 (le jaune seul sur turquoise
+   ne fait que 1,9:1). L'interlettre positif empêche les contours de se toucher : écart assumé au resserrement habituel. */
 .hero h1 {
-  color: #ffc93c;
-  margin: 18px 0 8px;
-  letter-spacing: 0.03em;
-  text-wrap: balance;
+  color: var(--jaune);
+  letter-spacing: 0.025em;
   text-shadow:
-    3px 0 0 #3b1612, -3px 0 0 #3b1612, 0 3px 0 #3b1612, 0 -3px 0 #3b1612,
-    2px 2px 0 #3b1612, -2px 2px 0 #3b1612, 2px -2px 0 #3b1612, -2px -2px 0 #3b1612,
-    0 6px 0 #3b1612, 2px 5px 0 #3b1612, -2px 5px 0 #3b1612;
+    3px 0 0 var(--choco), -3px 0 0 var(--choco), 0 3px 0 var(--choco), 0 -3px 0 var(--choco),
+    2px 2px 0 var(--choco), -2px 2px 0 var(--choco), 2px -2px 0 var(--choco), -2px -2px 0 var(--choco),
+    0 6px 0 var(--choco), 2px 5px 0 var(--choco), -2px 5px 0 var(--choco);
 }
 
-.hero .lead { color: #3b1612; font-weight: 600; margin: 0 auto; max-width: 34em; } /* contraste ≥ 4,5:1 sur le turquoise */
-
-.hero :focus-visible { outline-color: #3b1612; }
-.hero a.button { margin-top: 20px; }
-
-/* Cartes « gonflées » : contour chocolat et épaisseur 3D. */
-.card {
-  background: var(--surface);
-  border: 3px solid var(--line);
-  border-radius: 22px;
-  box-shadow: 0 6px 0 var(--line);
-  padding: 20px 24px;
-  margin: 28px 0;
+@supports (paint-order: stroke) and (-webkit-text-stroke: 1px black) {
+  .hero h1 {
+    -webkit-text-stroke: 0.15em var(--choco);
+    paint-order: stroke fill;
+    text-shadow: 0 0.1em 0 var(--choco);
+  }
 }
 
-.card h2 { margin-top: 0; }
-.card[id] { scroll-margin-top: 16px; }
+.hero .lead { color: var(--choco); font-weight: 600; line-height: 1.4; margin: 0 0 1rem; max-width: 34em; }
+.surtitre { margin: 0 0 0.25rem; font-weight: 600; font-size: 1.0625rem; }
 
-footer {
-  margin-top: 64px;
-  padding-top: 24px;
-  padding-bottom: 32px;
-  border-top: 3px dashed color-mix(in srgb, var(--line) 35%, transparent);
-  color: var(--muted);
-  font-size: 0.9rem;
+/* Vraies captures en éventail, coupées par le bas du bandeau. Chaque page règle --largeur et --ecart. */
+.eventail { position: relative; }
+.eventail img {
+  --x: 0rem;
+  --y: 0rem;
+  --r: 0deg;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: var(--largeur);
+  height: auto;
+  margin-left: calc(var(--largeur) / -2);
+  border: 3px solid var(--choco);
+  border-radius: 1.125rem;
+  box-shadow: 0 5px 0 var(--choco);
+  transform: translate(var(--x), var(--y)) rotate(var(--r));
 }
+.eventail img:nth-child(1) { --x: calc(var(--ecart) * -1); --y: 1.25rem; --r: -9deg; z-index: 1; }
+.eventail img:nth-child(2) { z-index: 2; }
+.eventail img:nth-child(3) { --x: var(--ecart); --y: 1.25rem; --r: 9deg; z-index: 1; }
 
-footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); margin-right: 16px; }
-
-@media (max-width: 520px) {
-  header { flex-direction: column; align-items: flex-start; gap: 0; }
-  nav { justify-content: flex-start; }
-  h1 { font-size: 1.9rem; }
-  .hero { padding: 28px 16px; }
-  .hero img { width: 112px; } /* le bouton d'action reste visible sans défiler sur un écran de 640 px de haut */
-  .hero .lead { font-size: 1.05rem; }
+/* Un seul déploiement au chargement, jamais en boucle : rien n'attend sa fin pour répondre. */
+@media (prefers-reduced-motion: no-preference) {
+  .eventail img { animation: deploiement var(--duree-ressort) var(--ressort) both; }
+  .eventail img:nth-child(2) { animation-delay: 40ms; }
+  .eventail img:nth-child(3) { animation-delay: 80ms; }
 }
+@keyframes deploiement { from { transform: translate(0, 4rem) rotate(0deg); } }
 
-/* Bouton d'action : tuile tomate à contour chocolat, comme les boutons des jeux.
-   Blanc sur tomate (3,3:1) seulement à 24 px et plus, le seuil du grand texte. */
+/* Bouton d'action : tuile tomate à contour chocolat, comme le bouton JOUER des jeux.
+   Blanc sur tomate (3,3:1) seulement à 24 px et plus, le seuil du grand texte ; le liseré chocolat sous les lettres aide encore. */
 a.button {
   display: inline-block;
-  padding: 12px 22px;
+  padding: 0.75rem 1.5rem;
   border: 3px solid var(--line);
-  border-radius: 16px;
-  background: #ff4b3e;
+  border-radius: 1.125rem;
+  background: var(--tomate);
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.3), 0 5px 0 var(--line);
   color: #ffffff;
   font-family: "Lilita One", "Fredoka", system-ui, sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 400;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
-  box-shadow: 0 4px 0 var(--line);
-  transition: transform 100ms ease-out, box-shadow 100ms ease-out, background-color 120ms ease-out;
+  text-shadow: 0 2px 0 rgba(59, 22, 18, 0.45);
+  transition: transform var(--duree-ressort) var(--ressort), box-shadow var(--duree-ressort) var(--ressort), background-color 120ms ease-out;
 }
 
-a.button:focus-visible { background: #e63d31; }
+a.button:focus-visible { background: var(--tomate-appui); }
 
+/* Survol réservé à la souris : au doigt, l'état resterait figé après le tap. */
 @media (hover: hover) and (pointer: fine) {
-  a.button:hover { background: #e63d31; }
+  a.button:hover { background: var(--tomate-appui); transform: translateY(-1px); box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.3), 0 6px 0 var(--line); }
+  .pastille:hover { transform: translateY(-1px); box-shadow: 0 4px 0 var(--choco); }
 }
 
-/* À l'appui, la tuile s'enfonce dans son épaisseur, sans rebond ; en mouvement réduit, seule sa couleur change. */
-a.button:active { opacity: 1; transform: translateY(3px); box-shadow: 0 1px 0 var(--line); }
+/* Retour instantané dès le contact : la tuile s'enfonce dans son épaisseur, puis remonte sur le ressort au relâchement. */
+a.button:active {
+  opacity: 1;
+  transform: translateY(4px);
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.3), 0 1px 0 var(--line);
+  transition-duration: var(--duree-appui);
+  transition-timing-function: ease-out;
+}
+.pastille:active {
+  opacity: 1;
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--choco);
+  transition-duration: var(--duree-appui);
+  transition-timing-function: ease-out;
+}
 
+/* Carte « gonflée » : contour chocolat et épaisseur 3D. */
+.card {
+  background: var(--surface);
+  border: 3px solid var(--line);
+  border-radius: var(--rayon-carte);
+  box-shadow: 0 6px 0 var(--line);
+  padding: 1.25rem 1.5rem;
+}
+
+.card h2 { margin-top: 0; }
+
+/* Pages à lire (juridique) : une feuille posée sur le ciel, 70 signes par ligne au plus. */
+.lecture { position: relative; padding: 5.25rem 1rem 0; }
+.lecture::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 10rem;
+  border-bottom: 4px solid var(--choco);
+  border-radius: 0 0 2rem 2rem;
+  background:
+    repeating-conic-gradient(from 0deg at 50% 100%, rgba(255, 255, 255, 0.1) 0deg 11.25deg, transparent 11.25deg 22.5deg),
+    var(--ciel);
+}
+.feuille {
+  position: relative;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 0.75rem;
+  background: var(--surface);
+  border: 3px solid var(--line);
+  border-radius: var(--rayon-carte);
+  box-shadow: 0 6px 0 var(--line);
+}
+.feuille a.button { padding-inline: 1rem; } /* « Renoncer au contrat ici » tient sur une ligne à 360 px */
+.feuille h1 { font-size: clamp(1.875rem, 6vw, 2.75rem); margin-bottom: 0.5rem; }
+.feuille h2 { font-size: clamp(1.3125rem, 3.5vw, 1.625rem); }
+.feuille ul { padding-left: 1.25rem; }
+.feuille li { margin: 0.375rem 0; }
+
+/* Pied de page : bande chocolat nuit, liens jointifs de 44 px sur le doigt. */
+.pied {
+  margin-top: 4rem;
+  padding: 1.5rem var(--gouttiere) 2rem;
+  background: var(--pied);
+  color: #e3c4b4;
+  font-size: 0.9375rem;
+}
+.pied ul { display: flex; flex-wrap: wrap; gap: 0 1.25rem; margin: 0 0 0.5rem; padding: 0; list-style: none; }
+.pied a { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--creme); }
+.pied a[aria-current="page"] { color: var(--jaune); }
+.pied :focus-visible { outline-color: var(--jaune); }
+.pied p { margin: 0; }
+
+@media (min-width: 40rem) {
+  .feuille { padding: 2.25rem 2.5rem 1.5rem; }
+  .lecture::before { height: 11rem; }
+}
+
+/* Mouvement réduit : plus de déplacement, seule la couleur répond à l'appui. */
 @media (prefers-reduced-motion: reduce) {
-  a.button { transition: background-color 120ms ease-out; }
-  a.button:active { transform: none; box-shadow: 0 4px 0 var(--line); background: #e63d31; }
+  a.button, .pastille { transition: background-color 120ms ease-out; }
+  a.button:hover, a.button:active, .pastille:hover, .pastille:active { transform: none; }
+  a.button:active { background: var(--tomate-appui); box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.3), 0 5px 0 var(--line); }
+  .pastille:active { background: var(--jaune); box-shadow: 0 3px 0 var(--choco); }
 }
-/* Liste des jeux de l'accueil : icône en tuile à contour chocolat, nom vers Google Play, accroche et kit presse. */
-.games { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 4px; }
-.games li { display: flex; align-items: center; gap: 14px; }
-.games img { width: 56px; height: 56px; border-radius: 14px; border: 3px solid var(--line); display: block; }
-.games .pitch { color: var(--muted); font-size: 0.95rem; font-weight: 500; }
-.games span > a { display: inline-flex; align-items: center; min-height: 44px; }

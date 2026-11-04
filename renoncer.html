@@ -26,15 +26,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+  <header class="entete">
     <a class="logo" href="./"><img src="assets/logo-complet.svg" alt="MaxFabrics" width="168" height="48"></a>
-    <nav>
-      <a href="confidentialite.html">Confidentialité</a>
-      <a href="mentions-legales.html">Mentions légales</a>
+    <nav aria-label="Navigation principale">
+      <a class="pastille" href="./#nos-jeux">Nos jeux</a>
     </nav>
   </header>
 
-  <main>
+  <main id="contenu" class="lecture">
+    <div class="feuille">
     <h1>Renoncer au contrat</h1>
     <p class="lead">Un achat intégré dans l'un de nos jeux ne vous convient pas ? Voici comment renoncer au contrat ou
       demander un remboursement.</p>
@@ -60,13 +61,16 @@
     <p>Vous pouvez aussi demander un remboursement directement à Google Play :
       <a href="https://support.google.com/googleplay/answer/2479637">demander un remboursement sur Google Play</a>.</p>
     <p>Voir aussi nos <a href="cgv.html">conditions de vente</a>.</p>
+    </div>
   </main>
 
-  <footer>
-    <a href="confidentialite.html">Politique de confidentialité</a>
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="cgv.html">Conditions de vente</a>
-    <a href="renoncer.html">Renoncer au contrat</a>
+  <footer class="pied">
+    <ul>
+      <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+      <li><a href="cgv.html">Conditions de vente</a></li>
+      <li><a href="renoncer.html" aria-current="page">Renoncer au contrat</a></li>
+    </ul>
     <p>© 2026 MaxFabrics</p>
   </footer>
 </body>

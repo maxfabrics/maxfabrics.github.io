@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MaxFabrics : mini-jeux mobiles pour Android</title>
   <link rel="canonical" href="https://maxfabrics.com/">
-  <meta name="description" content="MaxFabrics, studio indépendant de mini-jeux mobiles pour Android.">
+  <link rel="alternate" hreflang="fr" href="https://maxfabrics.com/">
+  <link rel="alternate" hreflang="en" href="https://maxfabrics.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://maxfabrics.com/en/">
+  <meta name="description" content="Casse-têtes et jeux de logique pour Android, gratuits à installer et jouables sans wifi : Critter Bus, Boom Crates, Mahjong Sundae, Snugzle et Puffzle.">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -16,58 +19,180 @@
   <meta property="og:site_name" content="MaxFabrics">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="MaxFabrics : mini-jeux mobiles pour Android">
-  <meta property="og:description" content="MaxFabrics, studio indépendant de mini-jeux mobiles pour Android.">
+  <meta property="og:description" content="Casse-têtes et jeux de logique pour Android, gratuits à installer et jouables sans wifi : Critter Bus, Boom Crates, Mahjong Sundae, Snugzle et Puffzle.">
   <meta property="og:url" content="https://maxfabrics.com/">
   <meta property="og:image" content="https://maxfabrics.com/assets/partage-1200x630.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Logo MaxFabrics : des petits jeux, fabriqués avec soin.">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="assets/fonts/lilita-one-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="accueil.css">
+  <script src="accueil.js" defer></script>
 </head>
 <body>
-  <header>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+  <header class="entete">
     <a class="logo" href="./"><img src="assets/logo-complet.svg" alt="MaxFabrics" width="168" height="48"></a>
-    <nav>
-      <a href="confidentialite.html">Confidentialité</a>
-      <a href="mentions-legales.html">Mentions légales</a>
+    <nav aria-label="Navigation principale">
+      <a class="pastille" href="#nos-jeux">Nos jeux</a>
+      <a class="pastille pastille-langue" href="en/" hreflang="en" lang="en" aria-label="English version">EN</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <img src="assets/symbole.svg" alt="" width="160" height="168">
-      <h1>Des petits jeux, fabriqués avec soin.</h1>
-      <p class="lead">MaxFabrics est un studio indépendant français qui crée des mini-jeux mobiles
-        simples, rapides à prendre en main et agréables à rejouer.</p>
-      <a class="button" href="#nos-jeux">Voir nos jeux</a>
+  <main id="contenu">
+    <section class="hero hero-accueil ciel">
+      <div class="hero-texte">
+        <p class="surtitre">Des petits jeux, fabriqués avec soin.</p>
+        <h1>Encore une partie&nbsp;?</h1>
+        <p class="lead">Casse-têtes et jeux de logique pour Android, gratuits à installer et jouables partout, même sans wifi.</p>
+        <a class="button" href="#nos-jeux">Voir nos jeux</a>
+      </div>
+      <div class="eventail" aria-hidden="true">
+        <img src="jeux/vitrine/mahjong_sundae-2.webp" alt="" width="480" height="854">
+        <img src="jeux/vitrine/critter_bus-1.webp" alt="" width="480" height="854" fetchpriority="high">
+        <img src="jeux/vitrine/boom_crates-2.webp" alt="" width="480" height="854">
+        <img src="jeux/vitrine/snugzle-2.webp" alt="" width="480" height="854" loading="lazy">
+        <img src="jeux/vitrine/puffzle-2.webp" alt="" width="480" height="854" loading="lazy">
+      </div>
     </section>
 
-    <div class="card" id="nos-jeux">
+    <nav class="dock" aria-label="Aller directement à un jeu">
+      <!-- Le jour J ajoute la tuile du jeu ici (tools/jour_j/jour_j.js). -->
+        <a href="#critter-bus"><img src="jeux/vitrine/critter_bus-icone.webp" alt="" width="88" height="88"><span>Critter Bus</span></a>
+        <a href="#boom-crates"><img src="jeux/vitrine/boom_crates-icone.webp" alt="" width="88" height="88"><span>Boom Crates</span></a>
+        <a href="#mahjong-sundae"><img src="jeux/vitrine/mahjong_sundae-icone.webp" alt="" width="88" height="88"><span>Mahjong Sundae</span></a>
+        <a href="#snugzle"><img src="jeux/vitrine/snugzle-icone.webp" alt="" width="88" height="88"><span>Snugzle</span></a>
+        <a href="#puffzle"><img src="jeux/vitrine/puffzle-icone.webp" alt="" width="88" height="88"><span>Puffzle</span></a>
+        <!-- dock:fin -->
+    </nav>
+
+    <section class="jeux" id="nos-jeux">
       <h2>Nos jeux</h2>
       <p>Nos jeux sont disponibles gratuitement sur Google Play. De nouveaux titres arrivent régulièrement.</p>
       <ul class="games">
-        <li><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.critterbus" aria-hidden="true" tabindex="-1"><img src="jeux/critter_bus.png" alt="" width="56" height="56"></a><span><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.critterbus">Critter Bus</a><br><span class="pitch">Casse-tête bus jam : fais monter chaque animal dans le bus de sa couleur.</span> <a class="pitch" href="press/critter-bus.html">Kit presse</a></span></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.boomcrates" aria-hidden="true" tabindex="-1"><img src="jeux/boom_crates.png" alt="" width="56" height="56"></a><span><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.boomcrates">Boom Crates</a><br><span class="pitch">Tir au canon : coupe les chaînes et fais tomber les caisses.</span> <a class="pitch" href="press/boom-crates.html">Kit presse</a></span></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.mahjongsundae" aria-hidden="true" tabindex="-1"><img src="jeux/mahjong_sundae.png" alt="" width="56" height="56"></a><span><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.mahjongsundae">Mahjong Sundae</a><br><span class="pitch">Mahjong solitaire gourmand : associe les friandises par paires et vide le plateau.</span> <a class="pitch" href="press/mahjong-sundae.html">Kit presse</a></span></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.snugzle" aria-hidden="true" tabindex="-1"><img src="jeux/snugzle.png" alt="" width="56" height="56"></a><span><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.snugzle">Snugzle</a><br><span class="pitch">Logique de la maison : trouve à chaque animal la place qu’il veut, d’après ses icônes.</span> <a class="pitch" href="press/snugzle.html">Kit presse</a></span></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.puffzle" aria-hidden="true" tabindex="-1"><img src="jeux/puffzle.png" alt="" width="56" height="56"></a><span><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.puffzle">Puffzle</a><br><span class="pitch">Star Battle du lagon : un poisson-globe par ligne, colonne et zone, sans qu’aucun ne se touche.</span> <a class="pitch" href="press/puffzle.html">Kit presse</a></span></li>
+        <li>
+          <article class="jeu" id="critter-bus" style="--jeu: #8c70fb">
+            <div class="jeu-fiche">
+              <div class="jeu-tete">
+                <a href="https://play.google.com/store/apps/details?id=com.maxfabrics.critterbus&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-hidden="true" tabindex="-1"><img class="tuile" src="jeux/vitrine/critter_bus-icone.webp" alt="" width="88" height="88" loading="lazy" decoding="async"></a>
+                <h3><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.critterbus&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil">Critter Bus</a></h3>
+              </div>
+              <p class="pitch">Casse-tête bus jam : fais monter chaque animal dans le bus de sa couleur, avant que le banc déborde.</p>
+              <a class="button" href="https://play.google.com/store/apps/details?id=com.maxfabrics.critterbus&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-label="Installer Critter Bus sur Google Play">Installer</a>
+              <p class="mention"><span>Gratuit sur Google Play, avec pubs et achats intégrés.</span> <a href="press/critter-bus.html">Kit presse</a></p>
+            </div>
+            <div class="vitrine" role="group" aria-label="Aperçu de Critter Bus" tabindex="0">
+              <img src="jeux/vitrine/critter_bus-1.webp" alt="Chaque animal dans son bus !" width="480" height="854" loading="lazy" decoding="async">
+              <div class="extrait"><video src="press/critter-bus/clip-1.mp4" poster="press/critter-bus/vignettes/clip-1.webp" controls playsinline preload="none" aria-label="extrait de jeu de Critter Bus, sans son" width="1080" height="1920"></video></div>
+              <img src="jeux/vitrine/critter_bus-2.webp" alt="Le bon bus vide le banc !" width="480" height="854" loading="lazy" decoding="async">
+              <img src="jeux/vitrine/critter_bus-3.webp" alt="Des niveaux toujours plus retors" width="480" height="854" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="jeu" id="boom-crates" style="--jeu: #ffba48">
+            <div class="jeu-fiche">
+              <div class="jeu-tete">
+                <a href="https://play.google.com/store/apps/details?id=com.maxfabrics.boomcrates&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-hidden="true" tabindex="-1"><img class="tuile" src="jeux/vitrine/boom_crates-icone.webp" alt="" width="88" height="88" loading="lazy" decoding="async"></a>
+                <h3><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.boomcrates&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil">Boom Crates</a></h3>
+              </div>
+              <p class="pitch">Tir au canon : coupe les chaînes, fais tout tomber et déclenche des réactions en chaîne.</p>
+              <a class="button" href="https://play.google.com/store/apps/details?id=com.maxfabrics.boomcrates&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-label="Installer Boom Crates sur Google Play">Installer</a>
+              <p class="mention"><span>Gratuit sur Google Play, avec pubs et achats intégrés.</span> <a href="press/boom-crates.html">Kit presse</a></p>
+            </div>
+            <div class="vitrine" role="group" aria-label="Aperçu de Boom Crates" tabindex="0">
+              <img src="jeux/vitrine/boom_crates-1.webp" alt="Coupe les chaînes au canon !" width="480" height="854" loading="lazy" decoding="async">
+              <div class="extrait"><video src="press/boom-crates/clip-1.mp4" poster="press/boom-crates/vignettes/clip-1.webp" controls playsinline preload="none" aria-label="extrait de jeu de Boom Crates, sans son" width="1080" height="1920"></video></div>
+              <img src="jeux/vitrine/boom_crates-2.webp" alt="Explosions en chaîne !" width="480" height="854" loading="lazy" decoding="async">
+              <img src="jeux/vitrine/boom_crates-3.webp" alt="Un niveau Patron tous les 10" width="480" height="854" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="jeu" id="mahjong-sundae" style="--jeu: #57b2f6">
+            <div class="jeu-fiche">
+              <div class="jeu-tete">
+                <a href="https://play.google.com/store/apps/details?id=com.maxfabrics.mahjongsundae&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-hidden="true" tabindex="-1"><img class="tuile" src="jeux/vitrine/mahjong_sundae-icone.webp" alt="" width="88" height="88" loading="lazy" decoding="async"></a>
+                <h3><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.mahjongsundae&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil">Mahjong Sundae</a></h3>
+              </div>
+              <p class="pitch">Mahjong solitaire gourmand, sans chrono : associe les friandises par paires et vide le plateau.</p>
+              <a class="button" href="https://play.google.com/store/apps/details?id=com.maxfabrics.mahjongsundae&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-label="Installer Mahjong Sundae sur Google Play">Installer</a>
+              <p class="mention"><span>Gratuit sur Google Play, avec pubs et achats intégrés.</span> <a href="press/mahjong-sundae.html">Kit presse</a></p>
+            </div>
+            <div class="vitrine" role="group" aria-label="Aperçu de Mahjong Sundae" tabindex="0">
+              <img src="jeux/vitrine/mahjong_sundae-1.webp" alt="Le mahjong des gourmands" width="480" height="854" loading="lazy" decoding="async">
+              <div class="extrait"><video src="press/mahjong-sundae/clip-1.mp4" poster="press/mahjong-sundae/vignettes/clip-1.webp" controls playsinline preload="none" aria-label="extrait de jeu de Mahjong Sundae, sans son" width="1080" height="1920"></video></div>
+              <img src="jeux/vitrine/mahjong_sundae-2.webp" alt="Enchaîne les paires en combo" width="480" height="854" loading="lazy" decoding="async">
+              <img src="jeux/vitrine/mahjong_sundae-3.webp" alt="Vide le plateau !" width="480" height="854" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="jeu" id="snugzle" style="--jeu: #ff8eba">
+            <div class="jeu-fiche">
+              <div class="jeu-tete">
+                <a href="https://play.google.com/store/apps/details?id=com.maxfabrics.snugzle&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-hidden="true" tabindex="-1"><img class="tuile" src="jeux/vitrine/snugzle-icone.webp" alt="" width="88" height="88" loading="lazy" decoding="async"></a>
+                <h3><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.snugzle&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil">Snugzle</a></h3>
+              </div>
+              <p class="pitch">Logique douillette : le chat veut le soleil, le chien ne supporte pas le chat. Trouve à chacun sa place.</p>
+              <a class="button" href="https://play.google.com/store/apps/details?id=com.maxfabrics.snugzle&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-label="Installer Snugzle sur Google Play">Installer</a>
+              <p class="mention"><span>Gratuit sur Google Play, avec pubs et achats intégrés.</span> <a href="press/snugzle.html">Kit presse</a></p>
+            </div>
+            <div class="vitrine" role="group" aria-label="Aperçu de Snugzle" tabindex="0">
+              <img src="jeux/vitrine/snugzle-1.webp" alt="Chaque animal a ses envies" width="480" height="854" loading="lazy" decoding="async">
+              <div class="extrait"><video src="press/snugzle/clip-1.mp4" poster="press/snugzle/vignettes/clip-1.webp" controls playsinline preload="none" aria-label="extrait de jeu de Snugzle, sans son" width="1080" height="1920"></video></div>
+              <img src="jeux/vitrine/snugzle-2.webp" alt="Trouve-lui la bonne place" width="480" height="854" loading="lazy" decoding="async">
+              <img src="jeux/vitrine/snugzle-3.webp" alt="Toute la maison fait la sieste" width="480" height="854" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="jeu" id="puffzle" style="--jeu: #7fc960">
+            <div class="jeu-fiche">
+              <div class="jeu-tete">
+                <a href="https://play.google.com/store/apps/details?id=com.maxfabrics.puffzle&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-hidden="true" tabindex="-1"><img class="tuile" src="jeux/vitrine/puffzle-icone.webp" alt="" width="88" height="88" loading="lazy" decoding="async"></a>
+                <h3><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.puffzle&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil">Puffzle</a></h3>
+              </div>
+              <p class="pitch">Logique Star Battle dans le lagon : un poisson-globe par ligne, par colonne et par zone, sans qu’aucun ne se touche.</p>
+              <a class="button" href="https://play.google.com/store/apps/details?id=com.maxfabrics.puffzle&amp;referrer=utm_source%3Dsite%26utm_medium%3Daccueil" aria-label="Installer Puffzle sur Google Play">Installer</a>
+              <p class="mention"><span>Gratuit sur Google Play, avec pubs et achats intégrés.</span> <a href="press/puffzle.html">Kit presse</a></p>
+            </div>
+            <div class="vitrine" role="group" aria-label="Aperçu de Puffzle" tabindex="0">
+              <img src="jeux/vitrine/puffzle-1.webp" alt="Le casse-tête logique du lagon" width="480" height="854" loading="lazy" decoding="async">
+              <div class="extrait"><video src="press/puffzle/clip-1.mp4" poster="press/puffzle/vignettes/clip-1.webp" controls playsinline preload="none" aria-label="extrait de jeu de Puffzle, sans son" width="1080" height="1920"></video></div>
+              <img src="jeux/vitrine/puffzle-2.webp" alt="Jamais deux côte à côte" width="480" height="854" loading="lazy" decoding="async">
+              <img src="jeux/vitrine/puffzle-3.webp" alt="Une solution, sans deviner" width="480" height="854" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </li>
         <!-- jeux:fin -->
       </ul>
-    </div>
+    </section>
 
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Une question, un bug, une idée ? Écrivez-nous à
-        <a href="mailto:contact@maxfabrics.com">contact@maxfabrics.com</a>.</p>
-    </div>
+    <ul class="promesses">
+      <li><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="26" width="44" height="31" rx="6" fill="#ff4b3e" stroke="#3b1612" stroke-width="4"/><rect x="6" y="17" width="52" height="14" rx="6" fill="#ff7b5e" stroke="#3b1612" stroke-width="4"/><rect x="26" y="17" width="12" height="40" fill="#ffc93c" stroke="#3b1612" stroke-width="4"/><path d="M32 17c-5-12-18-12-16-4 1 4 10 4 16 4zm0 0c5-12 18-12 16-4-1 4-10 4-16 4z" fill="#ffc93c" stroke="#3b1612" stroke-width="4" stroke-linejoin="round"/></svg><div><h2>Gratuits</h2><p>Ils s’installent sans payer. Des pubs les financent ; un achat unique retire les bannières et les pubs entre les parties.</p></div></li>
+      <li><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#1fc8b9" stroke="#3b1612" stroke-width="4"/><path d="M14 27a26 26 0 0 1 36 0M21 35a16 16 0 0 1 22 0" fill="none" stroke="#fff4e4" stroke-width="6" stroke-linecap="round"/><circle cx="32" cy="44" r="4.5" fill="#fff4e4"/><path d="M14 14l36 36" stroke="#3b1612" stroke-width="10" stroke-linecap="round"/><path d="M14 14l36 36" stroke="#ff4b3e" stroke-width="5" stroke-linecap="round"/></svg><div><h2>Même sans wifi</h2><p>Dans le train, en avion ou à la maison : tous se jouent hors ligne.</p></div></li>
+      <li><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 6h40a7 7 0 0 1 7 7v28a7 7 0 0 1-7 7H30L17 59V48h-5a7 7 0 0 1-7-7V13a7 7 0 0 1 7-7z" fill="#ffc93c" stroke="#3b1612" stroke-width="4" stroke-linejoin="round"/><text x="32" y="36" text-anchor="middle" font-family="Lilita One, Fredoka, sans-serif" font-size="26" fill="#3b1612">Aa</text></svg><div><h2>En six langues</h2><p>Français, anglais, allemand, espagnol, portugais et italien.</p></div></li>
+    </ul>
+
+    <section class="contact">
+      <div class="card contact-cadre" id="contact">
+        <h2>Contact</h2>
+        <p>MaxFabrics est un studio indépendant français. Une question, un bug, une idée ? Écris-nous à
+          <a href="mailto:contact@maxfabrics.com">contact@maxfabrics.com</a>.</p>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <a href="confidentialite.html">Politique de confidentialité</a>
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="cgv.html">Conditions de vente</a>
-    <a href="renoncer.html">Renoncer au contrat</a>
+  <footer class="pied">
+    <ul>
+      <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+      <li><a href="cgv.html">Conditions de vente</a></li>
+      <li><a href="renoncer.html">Renoncer au contrat</a></li>
+    </ul>
     <p>© 2026 MaxFabrics</p>
   </footer>
 </body>
