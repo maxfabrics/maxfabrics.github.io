@@ -41,7 +41,7 @@
       "package": "com.maxfabrics.splatzle",
       "name": "Splatzle",
       "icon": "jeux/splatzle.png",
-      "live": false
+      "live": true
     }
   ]
 }
