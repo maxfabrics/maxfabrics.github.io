@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.maxfabrics.platehunter",
+      "sha256_cert_fingerprints": [
+        "6E:CF:D3:38:B7:C2:73:04:68:89:9D:99:85:0B:C5:C3:39:3A:AC:98:B2:DC:83:4D:D1:AF:96:03:69:1B:8A:3E",
+        "AE:02:B3:3B:07:AB:3A:90:06:93:61:CC:FE:C1:C3:18:5A:77:D1:7B:39:F5:98:CC:C7:41:98:05:E8:35:54:82"
+      ]
+    }
+  }
+]
