@@ -85,3 +85,18 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; color: i
 .langues { margin-left: auto; display: flex; flex-wrap: wrap; gap: 0 12px; font-size: 15px; }
 header .langues a { color: var(--discret); text-decoration: underline; text-underline-offset: 3px; }
 header .langues a[aria-current="page"] { color: var(--titre); font-weight: 600; text-decoration: none; }
+
+/* Boutons des pages PlateHunter (renoncer, lien Hunter) : 48 px de haut, contraste AA dans les deux thèmes. */
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.bouton {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px;
+  border-radius: 999px; border: 2px solid var(--sauge); background: var(--sauge); color: #FFFDF8;
+  font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
+}
+.bouton.second { background: transparent; color: var(--lien); border-color: var(--lien); }
+.bouton:focus-visible { outline: 3px solid var(--miel); outline-offset: 2px; }
+.statut:empty { display: none; }
+@media (prefers-color-scheme: dark) {
+  .bouton { background: #A9C7B8; border-color: #A9C7B8; color: var(--encre); }
+  .bouton.second { background: transparent; color: var(--lien); border-color: var(--lien); }
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>PlateHunter</title>
+  <link rel="icon" href="../ombelle.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#3F5E50">
+  <link rel="stylesheet" href="../ombelle.css">
+</head>
+<body>
+  <!-- Page générée par apps/restaurants/tools/pages_ombelle/generer.mjs : ne pas modifier à la main. -->
+  <header>
+    <a href="../"><img src="../ombelle.svg" alt="" width="40" height="40"><span>Ombelle</span></a>
+  </header>
+  <main>
+    <h1 id="titre"></h1>
+    <p class="lead" id="texte"></p>
+    <div class="carte">
+      <p id="etapes"></p>
+      <p class="boutons">
+        <a class="bouton" id="installer" href="https://play.google.com/store/apps/details?id=com.maxfabrics.platehunter"></a>
+        <button class="bouton second" id="copier" type="button"></button>
+      </p>
+      <p id="statut" class="statut" role="status" aria-live="polite"></p>
+    </div>
+    <p id="validite"></p>
+  </main>
+  <script>
+    const textes = {"fr":{"titre":"Une invitation PlateHunter","texte":"Un proche t’invite à rejoindre ses Hunters : vous notez vos restos ensemble.","etapes":"Installe PlateHunter, puis touche à nouveau le lien reçu : l’appli s’ouvre sur l’invitation.","installer":"Installer PlateHunter","copier":"Copier le lien","copie":"Lien copié","validite":"Le lien vaut 24 h, pour une seule personne. Il ne passe jamais par nos serveurs depuis cette page."},"en":{"titre":"A PlateHunter invitation","texte":"Someone close invites you to join their Hunters: you rate your restaurants together.","etapes":"Install PlateHunter, then tap the link you received again: the app opens on the invitation.","installer":"Install PlateHunter","copier":"Copy the link","copie":"Link copied","validite":"The link is valid for 24 hours, for one person only. From this page, it never goes through our servers."},"de":{"titre":"Eine PlateHunter-Einladung","texte":"Jemand, der dir nahesteht, lädt dich zu seinen Huntern ein: Ihr bewertet eure Restaurants gemeinsam.","etapes":"Installiere PlateHunter und tippe dann noch einmal auf den erhaltenen Link: Die App öffnet sich mit der Einladung.","installer":"PlateHunter installieren","copier":"Link kopieren","copie":"Link kopiert","validite":"Der Link gilt 24 Stunden, für eine einzige Person. Von dieser Seite aus läuft er nie über unsere Server."},"es":{"titre":"Una invitación de PlateHunter","texte":"Alguien cercano te invita a unirte a sus Hunters: valoráis vuestros restaurantes juntos.","etapes":"Instala PlateHunter y vuelve a tocar el enlace recibido: la app se abre en la invitación.","installer":"Instalar PlateHunter","copier":"Copiar el enlace","copie":"Enlace copiado","validite":"El enlace vale 24 horas, para una sola persona. Desde esta página, nunca pasa por nuestros servidores."},"it":{"titre":"Un invito PlateHunter","texte":"Una persona cara ti invita tra i suoi Hunter: valutate insieme i vostri ristoranti.","etapes":"Installa PlateHunter, poi tocca di nuovo il link ricevuto: l’app si apre sull’invito.","installer":"Installa PlateHunter","copier":"Copia il link","copie":"Link copiato","validite":"Il link vale 24 ore, per una sola persona. Da questa pagina, non passa mai dai nostri server."},"pt":{"titre":"Um convite PlateHunter","texte":"Alguém próximo convida-te a juntar-te aos seus Hunters: avaliam juntos os vossos restaurantes.","etapes":"Instala a PlateHunter e toca outra vez na ligação recebida: a app abre-se no convite.","installer":"Instalar a PlateHunter","copier":"Copiar a ligação","copie":"Ligação copiada","validite":"A ligação é válida durante 24 horas, para uma única pessoa. A partir desta página, nunca passa pelos nossos servidores."}};
+    const voulues = (navigator.languages || [navigator.language || 'en']).map((l) => l.slice(0, 2).toLowerCase());
+    const langue = voulues.find((l) => textes[l]) || 'en';
+    const t = textes[langue];
+    document.documentElement.lang = langue;
+    document.title = t.titre;
+    for (const id of ['titre', 'texte', 'etapes', 'validite']) document.getElementById(id).textContent = t[id];
+    document.getElementById('installer').textContent = t.installer;
+    const copier = document.getElementById('copier');
+    copier.textContent = t.copier;
+    copier.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        document.getElementById('statut').textContent = t.copie;
+      } catch (_) {}
+    });
+  </script>
+</body>
+</html>
