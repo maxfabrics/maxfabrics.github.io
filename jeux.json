@@ -42,6 +42,13 @@
       "name": "Splatzle",
       "icon": "jeux/splatzle.png",
       "live": true
+    },
+    {
+      "id": "as_seen_in_ads",
+      "package": "com.maxfabrics.asseeninads",
+      "name": "As Seen In Ads",
+      "icon": "jeux/as_seen_in_ads.png",
+      "live": true
     }
   ]
 }
