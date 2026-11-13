@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>BookHunter</title>
+  <link rel="icon" href="../ombelle.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#3F5E50">
+  <link rel="stylesheet" href="../ombelle.css">
+</head>
+<body>
+  <!-- Page générée par apps/bibliotheque/outils/pages_ombelle/generer.mjs : ne pas modifier à la main. -->
+  <header>
+    <a href="../"><img src="../ombelle.svg" alt="" width="40" height="40"><span>Ombelle</span></a>
+  </header>
+  <main>
+    <h1 id="titre"></h1>
+    <p class="lead" id="texte"></p>
+    <div class="carte">
+      <p id="etapes"></p>
+      <p class="boutons">
+        <a class="bouton" id="installer" href="https://play.google.com/store/apps/details?id=com.maxfabrics.bookhunter"></a>
+        <button class="bouton second" id="copier" type="button"></button>
+      </p>
+      <p id="statut" class="statut" role="status" aria-live="polite"></p>
+    </div>
+    <p id="validite"></p>
+  </main>
+  <script>
+    const textes = {"fr":{"titre":"Une invitation BookHunter","texte":"Un ami t’invite sur BookHunter : vous voyez vos étagères, vous vous prêtez des livres et vous lisez ensemble.","etapes":"Installe BookHunter, puis touche à nouveau le lien reçu : l’appli s’ouvre sur l’invitation.","installer":"Installer BookHunter","copier":"Copier le lien","copie":"Lien copié","validite":"Le lien vaut 24 h, pour une seule personne. Il ne passe jamais par nos serveurs depuis cette page."},"en":{"titre":"A BookHunter invitation","texte":"A friend is inviting you to BookHunter: you see each other's shelves, lend each other books and read together.","etapes":"Install BookHunter, then tap the link you received again: the app opens on the invitation.","installer":"Install BookHunter","copier":"Copy the link","copie":"Link copied","validite":"The link is valid for 24 hours, for one person only. From this page, it never goes through our servers."},"de":{"titre":"Eine Einladung zu BookHunter","texte":"Ein Freund lädt dich zu BookHunter ein: Ihr seht eure Regale, leiht euch Bücher und lest zusammen.","etapes":"Installiere BookHunter und tippe dann erneut auf den erhaltenen Link: Die App öffnet sich bei der Einladung.","installer":"BookHunter installieren","copier":"Link kopieren","copie":"Link kopiert","validite":"Der Link gilt 24 Stunden und nur für eine Person. Von dieser Seite aus läuft er nie über unsere Server."},"es":{"titre":"Una invitación a BookHunter","texte":"Un amigo te invita a BookHunter: veis vuestras estanterías, os prestáis libros y leéis juntos.","etapes":"Instala BookHunter y vuelve a tocar el enlace que recibiste: la aplicación se abre en la invitación.","installer":"Instalar BookHunter","copier":"Copiar el enlace","copie":"Enlace copiado","validite":"El enlace vale 24 horas, para una sola persona. Desde esta página, nunca pasa por nuestros servidores."},"it":{"titre":"Un invito a BookHunter","texte":"Un amico ti invita su BookHunter: vedete i vostri scaffali, vi prestate libri e leggete insieme.","etapes":"Installa BookHunter, poi tocca di nuovo il link ricevuto: l’app si apre sull’invito.","installer":"Installa BookHunter","copier":"Copia il link","copie":"Link copiato","validite":"Il link vale 24 ore, per una sola persona. Da questa pagina, non passa mai dai nostri server."},"pt":{"titre":"Um convite para o BookHunter","texte":"Um amigo está convidando você para o BookHunter: vocês veem as estantes um do outro, emprestam livros e leem juntos.","etapes":"Instale o BookHunter e toque de novo no link recebido: o app abre no convite.","installer":"Instalar o BookHunter","copier":"Copiar o link","copie":"Link copiado","validite":"O link vale por 24 horas, para uma única pessoa. A partir desta página, ele nunca passa pelos nossos servidores."}};
+    const voulues = (navigator.languages || [navigator.language || 'en']).map((l) => l.slice(0, 2).toLowerCase());
+    const langue = voulues.find((l) => textes[l]) || 'en';
+    const t = textes[langue];
+    document.documentElement.lang = langue;
+    document.title = t.titre;
+    for (const id of ['titre', 'texte', 'etapes', 'validite']) document.getElementById(id).textContent = t[id];
+    document.getElementById('installer').textContent = t.installer;
+    const copier = document.getElementById('copier');
+    copier.textContent = t.copier;
+    copier.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        document.getElementById('statut').textContent = t.copie;
+      } catch (_) {}
+    });
+  </script>
+</body>
+</html>
