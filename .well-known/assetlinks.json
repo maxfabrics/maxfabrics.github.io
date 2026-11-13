@@ -11,5 +11,17 @@
         "AE:02:B3:3B:07:AB:3A:90:06:93:61:CC:FE:C1:C3:18:5A:77:D1:7B:39:F5:98:CC:C7:41:98:05:E8:35:54:82"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.maxfabrics.bookhunter",
+      "sha256_cert_fingerprints": [
+        "75:0F:16:B4:E0:3E:05:53:0C:4A:11:F0:44:6A:70:C1:8F:E6:DE:91:0F:D3:14:B3:B2:53:B2:34:EC:1E:01:F5"
+      ]
+    }
   }
 ]
