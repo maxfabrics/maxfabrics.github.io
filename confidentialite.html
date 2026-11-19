@@ -38,7 +38,7 @@
   <main id="contenu" class="lecture">
     <div class="feuille">
     <h1>Politique de confidentialité</h1>
-    <p class="lead">Dernière mise à jour : 26 octobre 2026</p>
+    <p class="lead">Dernière mise à jour : 19 novembre 2026</p>
 
     <p>Cette politique s'applique à tous les jeux mobiles publiés par MaxFabrics sur Google Play
       (« nos jeux »). Elle explique quelles données sont traitées, pourquoi, et quels sont vos droits.</p>
@@ -49,7 +49,8 @@
 
     <h2>Ce que nous ne collectons pas</h2>
     <p>Nos jeux ne vous demandent ni de créer un compte, ni nom, ni adresse e-mail, ni numéro de téléphone, ni
-      contacts, ni localisation précise. Votre progression, vos pièces et vos réglages sont enregistrés sur votre
+      contacts, ni localisation précise (Better Than 99% crée seulement un compte de jeu anonyme pour ses classements :
+      voir « Classements en ligne »). Votre progression, vos pièces et vos réglages sont enregistrés sur votre
       appareil et, si vous utilisez Google Play Jeux, dans votre profil Google Play Jeux (voir « Sauvegarde de la
       progression »).</p>
 
@@ -103,6 +104,23 @@
       effacer la sauvegarde depuis les réglages du jeu (« Effacer la sauvegarde cloud »), ou supprimer vos données de
       jeu depuis l'application Google Play Jeux ou votre compte Google.</p>
 
+    <h2 id="classements">Classements en ligne (Better Than 99%)</h2>
+    <p>Better Than 99% vérifie chaque tentative sur notre serveur : chaque score des classements est recalculé. Le jeu
+      crée pour cela un compte de jeu sans nom ni adresse e-mail : un identifiant technique Firebase Authentication
+      (anonyme, puis lié à votre profil Google Play Jeux pour que vous retrouviez vos scores sur un autre appareil) et
+      un pseudo tiré au hasard (« Joueur-7K2Q ») ; aucun texte libre n'est demandé ni affiché.</p>
+    <p>Le serveur reçoit et garde cet identifiant et ce pseudo ; pour chaque tentative, le défi joué, le score et son
+      « rejeu » (les gestes horodatés de la tentative, par exemple les instants des appuis ou les points d'un tracé),
+      qui sert à recalculer le score et à rejouer votre tentative comme « fantôme » dans une salle de défi ; les salles
+      que vous ouvrez et vos scores dans les salles des autres. Votre pseudo et vos scores apparaissent dans les
+      classements et les salles, visibles par les autres joueurs.</p>
+    <p>Ce serveur est hébergé par Cloudflare (Workers, et base de données D1 située dans l'Union européenne). Les
+      graines de tentative sont effacées au bout d'un jour, les tentatives et leurs rejeux au bout de 90 jours, sauf
+      votre meilleure tentative sur chaque défi et celles qui ont ouvert une salle, gardées tant que votre compte
+      existe. Vous pouvez supprimer ce compte et toutes ces données à tout moment depuis les réglages du jeu
+      (« Supprimer mon compte »), ou sans le jeu en suivant
+      <a href="better-than-99-supprimer-mon-compte.html">cette page</a>.</p>
+
     <h2>Provenance des installations, avis et partage</h2>
     <ul>
       <li><strong>Google Play Install Referrer</strong> : si vous avez installé le jeu depuis un lien de campagne ou
@@ -135,12 +153,13 @@
       personnalisées, la lutte contre la fraude, les réglages à distance, la présentation de nos autres jeux et les
       rapports de plantage en dehors de l'Europe reposent sur notre intérêt légitime à financer et à faire fonctionner
       des jeux gratuits à télécharger ; les achats reposent sur l'exécution du contrat de vente ; la sauvegarde de la
-      progression repose sur l'exécution du service de jeu que vous utilisez.</p>
+      progression et les classements en ligne de Better Than 99% reposent sur l'exécution du service de jeu que vous
+      utilisez.</p>
     <p>Les données de mesure sont conservées 2 mois et les rapports de plantage 90 jours dans notre projet Firebase ;
       la sauvegarde Google Play Jeux, dans votre compte Google jusqu'à ce que vous l'effaciez ; les données
-      publicitaires, selon les durées fixées par Google. Google peut traiter ces données hors de l'Union
-      européenne, notamment aux États-Unis, dans le cadre du Data Privacy Framework UE–États-Unis et de clauses
-      contractuelles types.</p>
+      publicitaires, selon les durées fixées par Google ; les classements en ligne, selon les durées de la section
+      « Classements en ligne ». Google et Cloudflare peuvent traiter ces données hors de l'Union européenne, notamment
+      aux États-Unis, dans le cadre du Data Privacy Framework UE–États-Unis et de clauses contractuelles types.</p>
 
     <h2>Enfants</h2>
     <p>Nos jeux ne sont pas destinés aux enfants : ils s'adressent à un public de 16 ans et plus. Nous ne collectons
