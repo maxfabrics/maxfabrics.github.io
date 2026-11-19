@@ -49,6 +49,13 @@
       "name": "As Seen In Ads",
       "icon": "jeux/as_seen_in_ads.png",
       "live": true
+    },
+    {
+      "id": "better_than_99",
+      "package": "com.maxfabrics.betterthan99",
+      "name": "Better Than 99%",
+      "icon": "jeux/better_than_99.png",
+      "live": true
     }
   ]
 }

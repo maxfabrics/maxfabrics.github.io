@@ -114,6 +114,11 @@
       qui sert à recalculer le score et à rejouer votre tentative comme « fantôme » dans une salle de défi ; les salles
       que vous ouvrez et vos scores dans les salles des autres. Votre pseudo et vos scores apparaissent dans les
       classements et les salles, visibles par les autres joueurs.</p>
+    <p>Si vous acceptez les notifications du jeu (rappels), Better Than 99% confie aussi au serveur le jeton Firebase
+      Cloud Messaging de votre téléphone et la langue du jeu, pour vous prévenir quand un joueur relève l'un de vos
+      défis ou vous prend la première place d'une salle (au plus 8 notifications par jour). Ce jeton est effacé dès que
+      vous coupez les notifications, quand vous supprimez votre compte, et au bout de 120 jours sans ouverture du jeu.
+      Les notifications sont acheminées par Google (Firebase Cloud Messaging).</p>
     <p>Ce serveur est hébergé par Cloudflare (Workers, et base de données D1 située dans l'Union européenne). Les
       graines de tentative sont effacées au bout d'un jour, les tentatives et leurs rejeux au bout de 90 jours, sauf
       votre meilleure tentative sur chaque défi et celles qui ont ouvert une salle, gardées tant que votre compte
