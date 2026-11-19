@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>LeafHunter</title>
+  <link rel="icon" href="../ombelle.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#3F5E50">
+  <link rel="stylesheet" href="../ombelle.css">
+</head>
+<body>
+  <!-- Page générée par apps/plantes/outils/pages_ombelle/generer.mjs : ne pas modifier à la main. -->
+  <header>
+    <a href="../"><img src="../ombelle.svg" alt="" width="40" height="40"><span>Ombelle</span></a>
+  </header>
+  <main>
+    <h1 id="titre"></h1>
+    <p class="lead" id="texte"></p>
+    <div class="carte">
+      <p id="etapes"></p>
+      <p class="boutons">
+        <a class="bouton" id="installer" href="https://play.google.com/store/apps/details?id=com.maxfabrics.leafhunter"></a>
+        <button class="bouton second" id="copier" type="button"></button>
+      </p>
+      <p id="statut" class="statut" role="status" aria-live="polite"></p>
+    </div>
+    <p id="validite"></p>
+  </main>
+  <script>
+    const textes = {"fr":{"titre":"Une invitation LeafHunter","texte":"Un ami t’invite sur LeafHunter : vous voyez les plantes que chacun montre, vous vous les confiez quand l’un part, et vous échangez des boutures.","etapes":"Installe LeafHunter, crée ton compte, puis touche à nouveau le lien reçu : l’appli s’ouvre sur l’invitation.","installer":"Installer LeafHunter","copier":"Copier le lien","copie":"Lien copié","validite":"Le lien vaut 24 h, pour une seule personne. Il ne passe jamais par nos serveurs depuis cette page."},"en":{"titre":"A LeafHunter invitation","texte":"A friend invites you to LeafHunter: you see the plants each of you shows, you entrust them to each other when one of you goes away, and you swap cuttings.","etapes":"Install LeafHunter, create your account, then tap the link you received again: the app opens on the invitation.","installer":"Install LeafHunter","copier":"Copy the link","copie":"Link copied","validite":"The link is valid for 24 hours, for one person only. From this page, it never goes through our servers."},"de":{"titre":"Eine Einladung zu LeafHunter","texte":"Ein Freund lädt dich zu LeafHunter ein: Ihr seht die Pflanzen, die jeder zeigt, ihr betreut euch gegenseitig die Pflanzen, wenn einer verreist, und ihr tauscht Stecklinge.","etapes":"Installiere LeafHunter, erstelle dein Konto und tippe dann erneut auf den erhaltenen Link: Die App öffnet sich bei der Einladung.","installer":"LeafHunter installieren","copier":"Link kopieren","copie":"Link kopiert","validite":"Der Link gilt 24 Stunden und nur für eine Person. Von dieser Seite aus läuft er nie über unsere Server."},"es":{"titre":"Una invitación a LeafHunter","texte":"Un amigo te invita a LeafHunter: veis las plantas que cada uno muestra, os las confiáis cuando uno se marcha, e intercambiáis esquejes.","etapes":"Instala LeafHunter, crea tu cuenta y vuelve a tocar el enlace que recibiste: la aplicación se abre en la invitación.","installer":"Instalar LeafHunter","copier":"Copiar el enlace","copie":"Enlace copiado","validite":"El enlace vale 24 horas, para una sola persona. Desde esta página, nunca pasa por nuestros servidores."},"it":{"titre":"Un invito a LeafHunter","texte":"Un amico ti invita su LeafHunter: vedete le piante che ognuno mostra, vi affidate le piante quando uno dei due parte e vi scambiate talee.","etapes":"Installa LeafHunter, crea il tuo account, poi tocca di nuovo il link ricevuto: l’app si apre sull’invito.","installer":"Installa LeafHunter","copier":"Copia il link","copie":"Link copiato","validite":"Il link vale 24 ore, per una sola persona. Da questa pagina non passa mai dai nostri server."},"pt":{"titre":"Um convite para o LeafHunter","texte":"Um amigo está convidando você para o LeafHunter: vocês veem as plantas que cada um mostra, cuidam das plantas uns dos outros quando um deles viaja e trocam mudas.","etapes":"Instale o LeafHunter, crie sua conta e depois toque de novo no link recebido: o app abre no convite.","installer":"Instalar o LeafHunter","copier":"Copiar o link","copie":"Link copiado","validite":"O link vale por 24 horas, para uma única pessoa. A partir desta página, ele nunca passa pelos nossos servidores."}};
+    const voulues = (navigator.languages || [navigator.language || 'en']).map((l) => l.slice(0, 2).toLowerCase());
+    const langue = voulues.find((l) => textes[l]) || 'en';
+    const t = textes[langue];
+    document.documentElement.lang = langue;
+    document.title = t.titre;
+    for (const id of ['titre', 'texte', 'etapes', 'validite']) document.getElementById(id).textContent = t[id];
+    document.getElementById('installer').textContent = t.installer;
+    const copier = document.getElementById('copier');
+    copier.textContent = t.copier;
+    copier.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        document.getElementById('statut').textContent = t.copie;
+      } catch (_) {}
+    });
+  </script>
+</body>
+</html>

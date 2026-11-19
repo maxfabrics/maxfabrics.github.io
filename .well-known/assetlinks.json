@@ -23,5 +23,17 @@
         "75:0F:16:B4:E0:3E:05:53:0C:4A:11:F0:44:6A:70:C1:8F:E6:DE:91:0F:D3:14:B3:B2:53:B2:34:EC:1E:01:F5"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.maxfabrics.leafhunter",
+      "sha256_cert_fingerprints": [
+        "61:55:AA:73:CC:E9:45:E7:33:B3:26:A8:D2:EB:D7:13:39:7C:1F:C3:D5:89:5E:85:94:BA:00:17:68:F5:4E:C4"
+      ]
+    }
   }
 ]
