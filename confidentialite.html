@@ -114,8 +114,8 @@
       choisi, et la date à laquelle vous avez accepté les
       <a href="better-than-99-regles.html">règles de la communauté</a>. Ils sont visibles des autres joueurs dans les
       classements, les salles, les duels et votre profil public. Avant publication, le pseudo et la bio passent un filtre
-      de mots, puis un classifieur automatique (Llama Guard, exécuté par Cloudflare Workers AI, qui ne garde pas le
-      texte) ; un texte refusé n'est pas publié, sans autre conséquence. <strong>Votre photo de profil ne quitte jamais
+      de mots, puis un classifieur automatique (Llama Guard, exécuté pour notre compte par Cloudflare Workers AI,
+      notre sous-traitant) ; un texte refusé n'est pas publié, sans autre conséquence. <strong>Votre photo de profil ne quitte jamais
       votre téléphone</strong> : elle n'est ni envoyée à notre serveur ni enregistrée dans la sauvegarde Google Play
       Jeux, et n'apparaît que sur votre propre écran et sur les images que vous choisissez de partager.</p>
     <p>Signalements et blocages : quand vous signalez un pseudo ou une bio, le serveur garde votre identifiant,
@@ -131,7 +131,10 @@
     <p>Le serveur reçoit et garde cet identifiant et ce pseudo ; pour chaque tentative, le défi joué, le score et son
       « rejeu » (les gestes horodatés de la tentative, par exemple les instants des appuis ou les points d'un tracé),
       qui sert à recalculer le score et à rejouer votre tentative comme « fantôme » dans une salle de défi ; les salles
-      que vous ouvrez et vos scores dans les salles des autres. Votre pseudo et vos scores apparaissent dans les
+      que vous ouvrez et vos scores dans les salles des autres. Si vous êtes premier du classement mondial d'un défi,
+      votre meilleure tentative sert aussi de fantôme à tout joueur qui choisit « Affronter le n°1 » : il voit votre
+      pseudo, votre avatar et la progression de votre score ; le rejeu ne contient que des gestes horodatés (pour les
+      défis Corps, des angles du corps), jamais d'image. Votre pseudo et vos scores apparaissent dans les
       classements et les salles, visibles par les autres joueurs.</p>
     <p>Si vous acceptez les notifications du jeu (rappels), Better Than 99% confie aussi au serveur le jeton Firebase
       Cloud Messaging de votre téléphone et la langue du jeu, pour vous prévenir quand un joueur relève l'un de vos
