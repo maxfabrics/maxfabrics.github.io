@@ -38,7 +38,7 @@
   <main id="contenu" class="lecture">
     <div class="feuille">
     <h1>Politique de confidentialité</h1>
-    <p class="lead">Dernière mise à jour : 19 novembre 2026</p>
+    <p class="lead">Dernière mise à jour : 20 novembre 2026</p>
 
     <p>Cette politique s'applique à tous les jeux mobiles publiés par MaxFabrics sur Google Play
       (« nos jeux »). Elle explique quelles données sont traitées, pourquoi, et quels sont vos droits.</p>
@@ -108,7 +108,26 @@
     <p>Better Than 99% vérifie chaque tentative sur notre serveur : chaque score des classements est recalculé. Le jeu
       crée pour cela un compte de jeu sans nom ni adresse e-mail : un identifiant technique Firebase Authentication
       (anonyme, puis lié à votre profil Google Play Jeux pour que vous retrouviez vos scores sur un autre appareil) et
-      un pseudo tiré au hasard (« Joueur-7K2Q ») ; aucun texte libre n'est demandé ni affiché.</p>
+      un pseudo tiré au hasard (« Joueur-7K2Q »).</p>
+    <p id="profil">Profil public (facultatif) : si vous le personnalisez, le serveur garde le pseudo que vous choisissez,
+      une bio de 80 caractères au plus, votre avatar dessiné (forme, motif, couleurs et symbole, en code court), le cadre
+      choisi, et la date à laquelle vous avez accepté les
+      <a href="better-than-99-regles.html">règles de la communauté</a>. Ils sont visibles des autres joueurs dans les
+      classements, les salles, les duels et votre profil public. Avant publication, le pseudo et la bio passent un filtre
+      de mots, puis un classifieur automatique (Llama Guard, exécuté par Cloudflare Workers AI, qui ne garde pas le
+      texte) ; un texte refusé n'est pas publié, sans autre conséquence. <strong>Votre photo de profil ne quitte jamais
+      votre téléphone</strong> : elle n'est ni envoyée à notre serveur ni enregistrée dans la sauvegarde Google Play
+      Jeux, et n'apparaît que sur votre propre écran et sur les images que vous choisissez de partager.</p>
+    <p>Signalements et blocages : quand vous signalez un pseudo ou une bio, le serveur garde votre identifiant,
+      l'élément visé et le motif choisi, 90 jours au plus ; un élément signalé par trois joueurs différents est retiré
+      et noté dans un journal des retraits (élément, ancien texte, date), gardé un an pour traiter les contestations
+      et les récidives, base légale : intérêt légitime à protéger les joueurs. Les joueurs que vous bloquez sont gardés
+      tant que vous ne les débloquez pas ; leur pseudo, leur avatar et leur bio vous sont masqués.</p>
+    <p id="camera">Caméra (défis Pompes, Squats et Gainage) : si vous l'autorisez, la caméra frontale repère la position
+      de votre corps <strong>sur le téléphone</strong> (ML Kit de Google, sans connexion) ; aucune image ni vidéo n'est
+      enregistrée ni envoyée. Seuls des angles (par exemple celui du coude, en dixièmes de degré) et leurs instants
+      forment le rejeu envoyé au serveur pour recompter votre score. Votre suivi personnel (objectif du jour, série,
+      historique, programme) reste sur le téléphone et dans votre sauvegarde Google Play Jeux.</p>
     <p>Le serveur reçoit et garde cet identifiant et ce pseudo ; pour chaque tentative, le défi joué, le score et son
       « rejeu » (les gestes horodatés de la tentative, par exemple les instants des appuis ou les points d'un tracé),
       qui sert à recalculer le score et à rejouer votre tentative comme « fantôme » dans une salle de défi ; les salles
@@ -119,7 +138,8 @@
       défis ou vous prend la première place d'une salle (au plus 8 notifications par jour). Ce jeton est effacé dès que
       vous coupez les notifications, quand vous supprimez votre compte, et au bout de 120 jours sans ouverture du jeu.
       Les notifications sont acheminées par Google (Firebase Cloud Messaging).</p>
-    <p>Ce serveur est hébergé par Cloudflare (Workers, et base de données D1 située dans l'Union européenne). Les
+    <p>Ce serveur est hébergé par Cloudflare (Workers, Workers AI pour le classifieur, et base de données D1 située dans
+      l'Union européenne). Les
       graines de tentative sont effacées au bout d'un jour, les tentatives et leurs rejeux au bout de 90 jours, sauf
       votre meilleure tentative sur chaque défi et celles qui ont ouvert une salle, gardées tant que votre compte
       existe. Vous pouvez supprimer ce compte et toutes ces données à tout moment depuis les réglages du jeu
