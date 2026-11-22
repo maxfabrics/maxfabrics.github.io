@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>BookHunter · Kit de marque</title>
+  <meta name="description" content="Couleurs, polices, logo et fonds prêts à l’emploi pour créer des stories et des posts aux couleurs de BookHunter.">
+  <meta name="theme-color" content="#1A4A26">
+  <link rel="icon" href="visuels/logo-porte.png" type="image/png">
+  <style>
+    /* Kit de marque de BookHunter (appli Ombelle) : la DA de l'appli elle-même (lib/utils/app_colors.dart,
+       Playfair Display et Lato), pour faire stories et posts dans Canva. Polices auto-hébergées (OFL) :
+       rien n'est chargé depuis un autre serveur. */
+    @font-face { font-family: "Playfair Display"; src: url("polices/PlayfairDisplay-700-normal.ttf"); font-weight: 700; font-display: swap; }
+    @font-face { font-family: "Playfair Display"; src: url("polices/PlayfairDisplay-800-normal.ttf"); font-weight: 800; font-display: swap; }
+    @font-face { font-family: "Playfair Display"; src: url("polices/PlayfairDisplay-400-italic.ttf"); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: "Lato"; src: url("polices/Lato-400-normal.ttf"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Lato"; src: url("polices/Lato-700-normal.ttf"); font-weight: 700; font-display: swap; }
+
+    :root {
+      --creme: #F5E6D3; --page: #FAF3E0; --encre: #3E2514; --encre-2: #734E31;
+      --vert: #2D7A3E; --vert-fonce: #1A4A26; --brique: #B85030; --laiton: #D4A85A;
+      --bord: #C89F6B; --carte: #FBEFD9; --ombre: 0 10px 28px rgba(62, 37, 20, 0.12);
+      --rayon: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    body {
+      margin: 0; background: var(--page); color: var(--encre);
+      font: 400 17px/1.55 "Lato", system-ui, sans-serif;
+    }
+    a { color: var(--vert); }
+    h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; color: var(--vert-fonce); line-height: 1.12; margin: 0; }
+    h2 { font-size: clamp(28px, 6vw, 38px); font-weight: 800; letter-spacing: -0.5px; }
+    h3 { font-size: 21px; font-weight: 700; }
+    .etiquette { font: 700 12.5px/1.2 "Lato", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: var(--encre-2); }
+    .conteneur { max-width: 1060px; margin: 0 auto; padding: 0 16px; }
+
+    header.hero {
+      background:
+        radial-gradient(ellipse 70% 60% at 30% 35%, var(--page) 0%, rgba(250, 243, 224, 0) 70%),
+        linear-gradient(150deg, var(--creme) 0%, #EBD5BA 100%);
+      padding: 28px 0 0; position: relative; overflow: hidden;
+    }
+    .hero img.lockup { width: min(420px, 82vw); height: auto; display: block; }
+    .hero h1 { font-size: clamp(36px, 9vw, 60px); font-weight: 800; letter-spacing: -1px; margin-top: 18px; }
+    .hero p.intro { max-width: 640px; font-size: 18px; color: var(--encre-2); margin: 12px 0 20px; }
+    .hero .etagere { height: 54px; display: flex; align-items: flex-end; gap: 6px; padding: 0 16px; margin-top: 8px; }
+    .hero .etagere i { display: block; border-radius: 5px 5px 0 0; opacity: .9; }
+    .hero .planche { height: 10px; background: #8B5E3C; }
+
+    nav.sommaire { position: sticky; top: 0; z-index: 5; background: rgba(250, 243, 224, 0.92);
+      backdrop-filter: blur(10px) saturate(160%); -webkit-backdrop-filter: blur(10px) saturate(160%);
+      border-bottom: 1px solid rgba(200, 159, 107, 0.45); }
+    nav.sommaire ul { list-style: none; margin: 0 auto; padding: 10px 16px; display: flex; gap: 8px; overflow-x: auto; max-width: 1060px; scrollbar-width: none; }
+    nav.sommaire a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px;
+      border: 1.5px solid var(--bord); color: var(--encre); text-decoration: none; font-weight: 700; font-size: 15px; white-space: nowrap; background: var(--page); }
+    nav.sommaire a:focus-visible, button:focus-visible, a.bouton:focus-visible { outline: 3px solid var(--vert); outline-offset: 2px; }
+
+    section { padding: 40px 0 8px; scroll-margin-top: 70px; }
+    section > .conteneur > p.chapo { color: var(--encre-2); max-width: 720px; margin: 10px 0 18px; }
+
+    /* Couleurs */
+    .groupe { margin: 22px 0 8px; }
+    .nuancier { display: grid; grid-template-columns: repeat(auto-fill, minmax(156px, 1fr)); gap: 12px; margin-top: 10px; }
+    button.teinte { all: unset; cursor: pointer; display: flex; flex-direction: column; border-radius: var(--rayon); overflow: hidden;
+      background: var(--carte); box-shadow: var(--ombre); border: 1px solid rgba(200, 159, 107, 0.4); transition: transform .12s ease-out; }
+    button.teinte:active { transform: scale(0.97); }
+    button.teinte:focus-visible { outline: 3px solid var(--vert); outline-offset: 2px; }
+    .teinte .pastille { height: 92px; }
+    .teinte .infos { padding: 10px 12px 12px; display: grid; gap: 2px; }
+    .teinte .nom { font-weight: 700; font-size: 15.5px; }
+    .teinte .role { font-size: 13px; color: var(--encre-2); line-height: 1.35; }
+    .teinte .hex { font: 700 15px/1.3 ui-monospace, "Cascadia Mono", Consolas, monospace; margin-top: 6px; display: flex; justify-content: space-between; align-items: center; }
+    .teinte .hex span.copier { font: 700 12px "Lato", sans-serif; color: var(--vert); letter-spacing: .04em; text-transform: uppercase; }
+    .teinte .rvb { font-size: 12.5px; color: var(--encre-2); }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 4px; }
+    a.bouton, button.bouton { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 20px;
+      border-radius: 999px; font: 700 15px "Lato", sans-serif; text-decoration: none; cursor: pointer; border: 0;
+      background: var(--vert); color: var(--page); }
+    a.bouton.second, button.bouton.second { background: transparent; color: var(--vert-fonce); border: 1.5px solid var(--vert); }
+
+    /* Associations */
+    .associations { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-top: 12px; }
+    .asso { border-radius: var(--rayon); padding: 18px 16px; box-shadow: var(--ombre); }
+    .asso .t { font: 800 26px/1.1 "Playfair Display", serif; }
+    .asso .x { font-size: 15px; margin-top: 6px; }
+    .asso .filet { width: 70px; height: 5px; border-radius: 3px; margin-top: 12px; }
+    .asso code { font: 600 12.5px ui-monospace, Consolas, monospace; display: block; margin-top: 10px; opacity: .9; }
+
+    /* Polices */
+    .polices { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 12px; }
+    .carte { background: var(--carte); border-radius: var(--rayon); padding: 20px 18px; box-shadow: var(--ombre); border: 1px solid rgba(200, 159, 107, 0.4); }
+    .specimen-titre { font: 800 44px/1.05 "Playfair Display", serif; color: var(--vert-fonce); margin: 10px 0 4px; }
+    .specimen-italique { font: italic 400 22px/1.3 "Playfair Display", serif; color: var(--encre-2); }
+    .specimen-texte { font: 400 19px/1.5 "Lato", sans-serif; margin: 10px 0 4px; }
+    .specimen-gras { font: 700 14px "Lato", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--encre-2); }
+    table.tailles { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 15px; }
+    table.tailles th, table.tailles td { text-align: left; padding: 9px 6px; border-bottom: 1px solid rgba(200, 159, 107, 0.45); vertical-align: top; }
+    table.tailles th { font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--encre-2); }
+
+    /* Logo et visuels */
+    .logos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 12px; }
+    .logo-carte { border-radius: var(--rayon); overflow: hidden; box-shadow: var(--ombre); background: var(--carte); border: 1px solid rgba(200, 159, 107, 0.4); }
+    .logo-carte .apercu { height: 170px; display: grid; place-items: center; padding: 18px; }
+    .logo-carte .apercu img { max-width: 100%; max-height: 100%; }
+    .logo-carte .bas { padding: 12px 14px 14px; display: grid; gap: 8px; }
+    .logo-carte .bas p { margin: 0; font-size: 14.5px; color: var(--encre-2); }
+    .fonds { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 12px; }
+    .fond { display: grid; gap: 8px; }
+    .fond img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 14px; box-shadow: var(--ombre); }
+    .fond .liens { display: flex; gap: 6px; flex-wrap: wrap; }
+    .fond .liens a { flex: 1 1 auto; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px;
+      border: 1.5px solid var(--vert); color: var(--vert-fonce); font-weight: 700; font-size: 14px; text-decoration: none; padding: 0 10px; }
+    .fond .nom { font-weight: 700; font-size: 15px; }
+
+    /* Formats */
+    .formats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 12px; align-items: start; }
+    .story-zones { position: relative; width: 150px; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; margin: 8px auto 0;
+      background: url("visuels/story-creme.png") center / cover; box-shadow: var(--ombre); }
+    .story-zones .haut, .story-zones .bas { position: absolute; left: 0; right: 0; background: repeating-linear-gradient(135deg, rgba(184, 80, 48, 0.35) 0 6px, rgba(184, 80, 48, 0.12) 6px 12px); }
+    .story-zones .haut { top: 0; height: 13%; }
+    .story-zones .bas { bottom: 0; height: 17.7%; }
+    .story-zones .milieu { position: absolute; left: 8%; right: 8%; top: 15%; bottom: 20%; border: 2px dashed var(--vert); border-radius: 8px;
+      display: grid; place-items: center; text-align: center; font: 700 12px "Lato", sans-serif; color: var(--vert-fonce); padding: 6px; }
+
+    ol.etapes { padding-left: 22px; margin: 10px 0 0; }
+    ol.etapes li { margin: 0 0 10px; }
+    ul.liste { padding-left: 20px; margin: 10px 0 0; }
+    ul.liste li { margin: 0 0 8px; }
+    .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 12px; }
+    .non h3 { color: #8F3A1F; }
+    .mots { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .mots span { background: var(--page); border: 1.5px solid var(--bord); border-radius: 999px; padding: 6px 12px; font-weight: 700; font-size: 14.5px; }
+
+    footer { margin-top: 48px; background: var(--vert-fonce); color: var(--creme); padding: 28px 0 36px; }
+    footer a { color: #F0CC78; }
+    footer p { margin: 6px 0; }
+
+    #annonce { position: fixed; left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); transform: translate(-50%, 20px); opacity: 0;
+      background: var(--vert-fonce); color: var(--page); padding: 12px 18px; border-radius: 999px; font-weight: 700; box-shadow: 0 10px 30px rgba(15, 37, 21, 0.35);
+      transition: opacity .18s ease-out, transform .18s ease-out; pointer-events: none; z-index: 20; max-width: calc(100% - 32px); text-align: center; }
+    #annonce.visible { opacity: 1; transform: translate(-50%, 0); }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="conteneur">
+      <img class="lockup" src="visuels/logo-nom-vert.png" alt="BookHunter" width="1526" height="500">
+      <h1>Kit de marque</h1>
+      <p class="intro">Tout pour créer des stories, des posts et des visuels aux couleurs de BookHunter, vite et juste : les couleurs à copier d’un toucher, les polices, le logo et des fonds prêts à importer dans Canva.</p>
+    </div>
+    <div class="etagere" id="etagere" aria-hidden="true"></div>
+    <div class="planche" aria-hidden="true"></div>
+  </header>
+
+  <nav class="sommaire" aria-label="Sommaire">
+    <ul>
+      <li><a href="#couleurs">Couleurs</a></li>
+      <li><a href="#polices">Polices</a></li>
+      <li><a href="#logo">Logo</a></li>
+      <li><a href="#fonds">Fonds prêts</a></li>
+      <li><a href="#formats">Formats</a></li>
+      <li><a href="#canva">Dans Canva</a></li>
+      <li><a href="#ton">Ton et mots</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="couleurs">
+      <div class="conteneur">
+        <h2>Couleurs</h2>
+        <p class="chapo">Ce sont les couleurs de l’appli elle-même. Touche une couleur pour copier son code, puis colle-le dans Canva (pastille de couleur, puis « + », puis le code).</p>
+        <div class="actions">
+          <button class="bouton" type="button" id="copier-tout">Copier toute la palette</button>
+        </div>
+        <div id="nuanciers"></div>
+
+        <h3 style="margin-top:30px">Les bonnes associations</h3>
+        <p class="chapo">Titre, texte et accent qui se lisent bien sur chaque fond.</p>
+        <div class="associations">
+          <div class="asso" style="background:#F5E6D3;color:#3E2514">
+            <div class="t" style="color:#1A4A26">Sur crème</div>
+            <div class="x">Titre vert forêt, texte encre brune, accent laiton ou brique.</div>
+            <div class="filet" style="background:#D4A85A"></div>
+            <code>#F5E6D3 · #1A4A26 · #3E2514 · #D4A85A</code>
+          </div>
+          <div class="asso" style="background:#2D7A3E;color:#F5E6D3">
+            <div class="t" style="color:#FAF3E0">Sur vert porte</div>
+            <div class="x">Titre crème clair, texte crème, accent laiton.</div>
+            <div class="filet" style="background:#D4A85A"></div>
+            <code>#2D7A3E · #FAF3E0 · #F5E6D3 · #D4A85A</code>
+          </div>
+          <div class="asso" style="background:#B85030;color:#FFF4DC">
+            <div class="t" style="color:#FAF3E0">Sur brique</div>
+            <div class="x">Titre crème clair, texte crème doré, accent vert forêt.</div>
+            <div class="filet" style="background:#1A4A26"></div>
+            <code>#B85030 · #FAF3E0 · #FFF4DC · #1A4A26</code>
+          </div>
+          <div class="asso" style="background:#1A130D;color:#C89F6B">
+            <div class="t" style="color:#FAF3E0">Sur nuit</div>
+            <div class="x">Titre crème clair, texte bois clair, accent or.</div>
+            <div class="filet" style="background:#F0CC78"></div>
+            <code>#1A130D · #FAF3E0 · #C89F6B · #F0CC78</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="polices">
+      <div class="conteneur">
+        <h2>Polices</h2>
+        <p class="chapo">Deux polices, comme dans l’appli. Les deux sont gratuites dans Canva : cherche simplement leur nom dans la liste des polices.</p>
+        <div class="polices">
+          <div class="carte">
+            <span class="etiquette">Titres et chiffres</span>
+            <div class="specimen-titre">Playfair Display</div>
+            <div class="specimen-italique">Pour les auteurs, en italique</div>
+            <p style="margin:12px 0 0;color:var(--encre-2);font-size:15px">Gras (Bold) ou très gras (ExtraBold) pour les titres, les grands chiffres (« 42 livres lus ») et les citations mises en avant.</p>
+          </div>
+          <div class="carte">
+            <span class="etiquette">Texte et petits titres</span>
+            <div class="specimen-texte">Lato, pour tout le reste : les phrases, les légendes, les boutons.</div>
+            <div class="specimen-gras">Petits titres en capitales espacées</div>
+            <p style="margin:12px 0 0;color:var(--encre-2);font-size:15px">Normal (Regular) pour le texte, gras (Bold) pour ce qui doit ressortir. Les petits titres en capitales avec un léger espacement des lettres.</p>
+          </div>
+        </div>
+        <table class="tailles">
+          <thead><tr><th>Sur une story (1080 × 1920)</th><th>Police</th><th>Taille</th></tr></thead>
+          <tbody>
+            <tr><td>Grand titre</td><td>Playfair Display, gras</td><td>96 à 130</td></tr>
+            <tr><td>Sous-titre, nom d’auteur</td><td>Playfair Display, italique</td><td>48 à 60</td></tr>
+            <tr><td>Texte</td><td>Lato, normal</td><td>36 à 44 (jamais moins de 32)</td></tr>
+            <tr><td>Petit titre en capitales</td><td>Lato, gras, espacement +10 %</td><td>28 à 32</td></tr>
+          </tbody>
+        </table>
+        <div class="actions">
+          <a class="bouton second" href="polices/PlayfairDisplay-700-normal.ttf" download>Playfair Display (gras)</a>
+          <a class="bouton second" href="polices/PlayfairDisplay-400-italic.ttf" download>Playfair Display (italique)</a>
+          <a class="bouton second" href="polices/Lato-400-normal.ttf" download>Lato (normal)</a>
+          <a class="bouton second" href="polices/Lato-700-normal.ttf" download>Lato (gras)</a>
+        </div>
+        <p style="font-size:13.5px;color:var(--encre-2);margin-top:6px">Polices sous licence libre SIL Open Font License (<a href="polices/PlayfairDisplay-OFL.txt">Playfair</a>, <a href="polices/Lato-OFL.txt">Lato</a>).</p>
+      </div>
+    </section>
+
+    <section id="logo">
+      <div class="conteneur">
+        <h2>Logo</h2>
+        <p class="chapo">La porte ronde et le livre ouvert. Fonds transparents, prêts à poser sur une story ou un post.</p>
+        <div class="logos">
+          <div class="logo-carte">
+            <div class="apercu" style="background:#F5E6D3"><img src="visuels/logo-porte.png" alt="Logo BookHunter : porte ronde et livre ouvert" width="1024" height="1024" style="height:140px;width:auto"></div>
+            <div class="bas"><h3>La porte seule</h3><p>Pour les coins, les avatars, les petits formats.</p><a class="bouton" href="visuels/logo-porte.png" download>Télécharger (PNG)</a></div>
+          </div>
+          <div class="logo-carte">
+            <div class="apercu" style="background:#F5E6D3"><img src="visuels/logo-nom-vert.png" alt="Logo BookHunter avec le nom, en vert" width="1526" height="500"></div>
+            <div class="bas"><h3>Logo et nom, vert</h3><p>Sur les fonds clairs (crème).</p><a class="bouton" href="visuels/logo-nom-vert.png" download>Télécharger (PNG)</a></div>
+          </div>
+          <div class="logo-carte">
+            <div class="apercu" style="background:#1A4A26"><img src="visuels/logo-nom-creme.png" alt="Logo BookHunter avec le nom, en crème" width="1526" height="500"></div>
+            <div class="bas"><h3>Logo et nom, crème</h3><p>Sur les fonds foncés (vert, brique, nuit).</p><a class="bouton" href="visuels/logo-nom-creme.png" download>Télécharger (PNG)</a></div>
+          </div>
+          <div class="logo-carte">
+            <div class="apercu" style="background:#EBD5BA"><img src="visuels/photo-de-profil.png" alt="Photo de profil BookHunter" width="1080" height="1080" style="height:140px;width:auto;border-radius:50%"></div>
+            <div class="bas"><h3>Photo de profil</h3><p>Carrée, recadrée en rond par Instagram et TikTok.</p><a class="bouton" href="visuels/photo-de-profil.png" download>Télécharger (PNG)</a></div>
+          </div>
+        </div>
+        <div class="deux">
+          <div class="carte">
+            <h3>À faire</h3>
+            <ul class="liste">
+              <li>Laisser de l’air autour du logo : au moins un quart de sa largeur.</li>
+              <li>Garder au moins 120 px de large pour la porte sur une story.</li>
+              <li>Le poser sur un fond calme (crème, vert, brique ou nuit).</li>
+            </ul>
+          </div>
+          <div class="carte non">
+            <h3>À ne pas faire</h3>
+            <ul class="liste">
+              <li>Le redessiner, le recolorer ou changer ses proportions.</li>
+              <li>L’étirer, le pencher ou lui ajouter une ombre forte.</li>
+              <li>Écrire le nom dans une autre police que Playfair Display.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fonds">
+      <div class="conteneur">
+        <h2>Fonds prêts</h2>
+        <p class="chapo">Quatre ambiances de l’appli, avec l’étagère de livres en bas. Chacune existe en story (1080 × 1920) et en post (1080 × 1350). Importe-les dans Canva et pose ton texte dessus.</p>
+        <div class="fonds">
+          <div class="fond"><img src="visuels/story-creme.png" alt="Fond crème avec étagère" loading="lazy" width="1080" height="1920"><span class="nom">Crème</span><div class="liens"><a href="visuels/story-creme.png" download>Story</a><a href="visuels/post-creme.png" download>Post</a></div></div>
+          <div class="fond"><img src="visuels/story-vert.png" alt="Fond vert porte avec étagère" loading="lazy" width="1080" height="1920"><span class="nom">Vert porte</span><div class="liens"><a href="visuels/story-vert.png" download>Story</a><a href="visuels/post-vert.png" download>Post</a></div></div>
+          <div class="fond"><img src="visuels/story-brique.png" alt="Fond brique et laiton avec étagère" loading="lazy" width="1080" height="1920"><span class="nom">Brique</span><div class="liens"><a href="visuels/story-brique.png" download>Story</a><a href="visuels/post-brique.png" download>Post</a></div></div>
+          <div class="fond"><img src="visuels/story-nuit.png" alt="Fond nuit avec étagère" loading="lazy" width="1080" height="1920"><span class="nom">Nuit</span><div class="liens"><a href="visuels/story-nuit.png" download>Story</a><a href="visuels/post-nuit.png" download>Post</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formats">
+      <div class="conteneur">
+        <h2>Formats</h2>
+        <div class="formats">
+          <div class="carte">
+            <h3>Story</h3>
+            <p style="margin:6px 0 0">1080 × 1920 px (9:16)</p>
+            <div class="story-zones" aria-hidden="true"><div class="haut"></div><div class="milieu">Texte et logo ici</div><div class="bas"></div></div>
+            <p style="font-size:14.5px;color:var(--encre-2);margin:10px 0 0">Rien d’important dans les 250 px du haut (nom du compte) ni les 340 px du bas (barre de réponse).</p>
+          </div>
+          <div class="carte"><h3>Post</h3><p style="margin:6px 0 0">1080 × 1350 px (4:5), le plus grand dans le fil Instagram.</p></div>
+          <div class="carte"><h3>Carré</h3><p style="margin:6px 0 0">1080 × 1080 px, pour les carrousels et la photo de profil.</p></div>
+          <div class="carte"><h3>Vidéo courte</h3><p style="margin:6px 0 0">1080 × 1920 px, comme la story (Reels, TikTok, Shorts). Sous-titres en Lato gras.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="canva">
+      <div class="conteneur">
+        <h2>Dans Canva, en cinq minutes</h2>
+        <div class="carte" style="margin-top:12px">
+          <ol class="etapes">
+            <li>Crée un design « Story Instagram » (ou « Publication Instagram » au format 4:5).</li>
+            <li>Importe un fond de cette page (Importations), puis clic droit, « Définir comme arrière-plan ».</li>
+            <li>Ajoute un titre en <strong>Playfair Display</strong> gras, de la couleur conseillée pour ce fond (voir « Les bonnes associations »).</li>
+            <li>Écris le texte en <strong>Lato</strong>, 36 à 44, puis pose le logo (porte seule ou logo et nom).</li>
+            <li>En story, ajoute un sticker « Lien » vers la fiche Google Play de BookHunter.</li>
+          </ol>
+          <div class="actions">
+            <button class="bouton second" type="button" data-copier="https://play.google.com/store/apps/details?id=com.maxfabrics.bookhunter">Copier le lien Google Play</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ton">
+      <div class="conteneur">
+        <h2>Ton et mots</h2>
+        <div class="deux">
+          <div class="carte">
+            <h3>La voix de BookHunter</h3>
+            <ul class="liste">
+              <li>Chaleureuse et simple, comme une amie qui parle de ses livres. On tutoie.</li>
+              <li>Des phrases courtes, un seul message par visuel.</li>
+              <li>Un ou deux émojis au plus (📚 ✨ 🕯️), jamais à la place des mots.</li>
+            </ul>
+            <span class="etiquette" style="display:block;margin-top:14px">Les mots de l’appli</span>
+            <div class="mots"><span>Pile à lire</span><span>Salon de lecture</span><span>Lecture commune</span><span>Prêter un livre</span><span>Mes envies</span><span>Duels de livres</span><span>Étagères</span></div>
+            <span class="etiquette" style="display:block;margin-top:14px">Hashtags</span>
+            <div class="mots"><span>#BookHunter</span><span>#bookstagram</span><span>#booktok</span><span>#pal</span><span>#lecture</span><span>#bibliotheque</span></div>
+          </div>
+          <div class="carte non">
+            <h3>À éviter</h3>
+            <ul class="liste">
+              <li>Le blanc pur et le noir pur : on reste dans les crèmes et les bruns.</li>
+              <li>Les couleurs fluo ou froides (bleu vif, violet, rose néon).</li>
+              <li>D’autres polices que Playfair Display et Lato.</li>
+              <li>Du texte dans le haut et le bas d’une story (zones hachurées ci-dessus).</li>
+              <li>Le logo MaxFabrics : BookHunter a sa propre identité.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="conteneur">
+      <p><a href="https://play.google.com/store/apps/details?id=com.maxfabrics.bookhunter">BookHunter sur Google Play</a></p>
+      <p style="opacity:.85">Ombelle, une marque MaxFabrics.</p>
+    </div>
+  </footer>
+
+  <div id="annonce" role="status" aria-live="polite"></div>
+
+  <script>
+    // Palette de l'appli (lib/utils/app_colors.dart et lib/utils/theme.dart), rangée par usage.
+    const GROUPES = [
+      { titre: 'Couleurs principales', couleurs: [
+        ['Vert porte', '#2D7A3E', 'La couleur de BookHunter : boutons, accents, la porte du logo.'],
+        ['Vert forêt', '#1A4A26', 'Titres et nom « BookHunter » sur fond clair.'],
+        ['Brique', '#B85030', 'Accent chaud : l’anneau de briques du logo.'],
+        ['Laiton doré', '#D4A85A', 'Filets, étoiles, détails précieux. Décoratif, pas pour du texte.'],
+        ['Crème', '#F5E6D3', 'Le fond principal de l’appli.'],
+        ['Crème clair', '#FAF3E0', 'Cartes, et le texte sur fond foncé.'],
+        ['Encre brune', '#3E2514', 'Le texte sur fond clair.'],
+        ['Brun doux', '#734E31', 'Texte secondaire, légendes.'],
+      ]},
+      { titre: 'Couleurs d’appoint', couleurs: [
+        ['Terracotta', '#C26040', 'Variante douce de la brique.'],
+        ['Terracotta lumineux', '#D67050', 'Accent vif, sur fond nuit.'],
+        ['Brique foncée', '#8F3A1F', 'Alertes, mises en garde.'],
+        ['Or clair', '#F0CC78', 'Accent sur fond nuit.'],
+        ['Vert clair', '#4A9856', 'Reflets, petites touches de vert.'],
+        ['Bois clair', '#C89F6B', 'Bordures, texte secondaire sur fond nuit.'],
+        ['Bois foncé', '#8B5E3C', 'Planches d’étagère, contours.'],
+        ['Cuir de livre', '#6B4423', 'Couvertures, reliures.'],
+      ]},
+      { titre: 'Mode nuit', couleurs: [
+        ['Nuit', '#1A130D', 'Fond sombre de l’appli.'],
+        ['Carte nuit', '#2A1F16', 'Cartes et blocs sur fond nuit.'],
+        ['Vert lumineux', '#5AA86D', 'Le vert sur fond nuit.'],
+      ]},
+      { titre: 'Statuts de lecture', couleurs: [
+        ['Lu', '#2D7A3E', 'Livre terminé.'],
+        ['En cours', '#D4A85A', 'Lecture en cours.'],
+        ['À lire', '#B85030', 'Dans la pile à lire.'],
+        ['À emprunter', '#D67050', 'Livre à obtenir auprès de quelqu’un.'],
+        ['Abandonné', '#D44010', 'Lecture arrêtée.'],
+      ]},
+    ];
+
+    const rvb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(', ');
+    const zone = document.getElementById('nuanciers');
+    for (const g of GROUPES) {
+      const bloc = document.createElement('div');
+      bloc.className = 'groupe';
+      bloc.innerHTML = `<span class="etiquette">${g.titre}</span>`;
+      const grille = document.createElement('div');
+      grille.className = 'nuancier';
+      for (const [nom, hex, role] of g.couleurs) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'teinte';
+        b.dataset.copier = hex;
+        b.setAttribute('aria-label', `${nom}, ${hex}. Copier le code`);
+        b.innerHTML = `<span class="pastille" style="background:${hex}"></span>
+          <span class="infos"><span class="nom">${nom}</span><span class="role">${role}</span>
+          <span class="hex">${hex}<span class="copier">Copier</span></span><span class="rvb">RVB ${rvb(hex)}</span></span>`;
+        grille.appendChild(b);
+      }
+      bloc.appendChild(grille);
+      zone.appendChild(bloc);
+    }
+
+    const annonce = document.getElementById('annonce');
+    let minuteur;
+    function annoncer(texte) {
+      annonce.textContent = texte;
+      annonce.classList.add('visible');
+      clearTimeout(minuteur);
+      minuteur = setTimeout(() => annonce.classList.remove('visible'), 1800);
+    }
+    async function copier(texte) {
+      try {
+        await navigator.clipboard.writeText(texte);
+      } catch (_) {
+        const zoneTexte = document.createElement('textarea');
+        zoneTexte.value = texte;
+        document.body.appendChild(zoneTexte);
+        zoneTexte.select();
+        document.execCommand('copy');
+        zoneTexte.remove();
+      }
+    }
+    document.addEventListener('click', async (e) => {
+      const cible = e.target.closest('[data-copier]');
+      if (!cible) return;
+      await copier(cible.dataset.copier);
+      annoncer(cible.dataset.copier.startsWith('http') ? 'Lien copié' : `${cible.dataset.copier} copié`);
+    });
+    document.getElementById('copier-tout').addEventListener('click', async () => {
+      const lignes = GROUPES.flatMap((g) => [g.titre, ...g.couleurs.map(([nom, hex]) => `${nom} : ${hex}`), '']);
+      await copier(lignes.join('\n').trim());
+      annoncer('Palette copiée');
+    });
+
+    // Étagère du bandeau, comme sur la bannière de la fiche Play.
+    const couleurs = ['#2D7A3E', '#B85030', '#D4A85A', '#6B4423', '#C26040', '#1A4A26', '#C89F6B', '#8F3A1F'];
+    const etagere = document.getElementById('etagere');
+    for (let i = 0, x = 0; x < Math.min(window.innerWidth, 1200) - 30; i++) {
+      const largeur = 14 + ((i * 7) % 12);
+      const dos = document.createElement('i');
+      dos.style.width = largeur + 'px';
+      dos.style.height = (24 + ((i * 13) % 26)) + 'px';
+      dos.style.background = couleurs[(i * 3) % couleurs.length];
+      etagere.appendChild(dos);
+      x += largeur + 6;
+    }
+  </script>
+</body>
+</html>
