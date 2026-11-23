@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr" data-campagne="telecharger-jeux" data-titre-en="MaxFabrics games">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Les jeux MaxFabrics</title>
+  <meta name="description" content="Tous les jeux MaxFabrics, gratuits sur Google Play.">
+  <meta name="theme-color" content="#FFC93C">
+  <meta property="og:title" content="Les jeux MaxFabrics">
+  <meta property="og:image" content="https://maxfabrics.com/assets/partage-1200x630.png">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <style>
+    /* Page de tous les jeux pour le lien des bios MaxFabrics (générée par tools/pages_telecharger/generer.py).
+       DA MaxFabrics : crème, tomate, jaune, contours chocolat épais, Lilita One et Fredoka. */
+    @font-face { font-family: "Lilita One"; src: url("/assets/fonts/lilita-one-400.woff2") format("woff2"); font-display: swap; }
+    @font-face { font-family: "Fredoka"; src: url("/assets/fonts/fredoka-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Fredoka"; src: url("/assets/fonts/fredoka-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+    :root { --choco: #3B1612; --creme: #FFF4E4; --tomate: #FF4B3E; --jaune: #FFC93C; --muted: #7A4A3F; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { min-height: 100svh; background: var(--creme); color: var(--choco);
+      font: 500 17px/1.45 "Fredoka", system-ui, sans-serif; padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); }
+    header { background: var(--jaune); border-bottom: 5px solid var(--choco); text-align: center; padding: 26px 16px 22px; }
+    header img { width: min(280px, 76vw); height: auto; }
+    h1 { font: 400 clamp(30px, 9vw, 40px)/1.05 "Lilita One", system-ui, sans-serif; margin: 14px 0 0; color: var(--choco); }
+    .lead { margin: 6px auto 0; max-width: 30ch; color: var(--choco); }
+    main { max-width: 520px; margin: 0 auto; padding: 18px 16px 28px; display: grid; gap: 14px; }
+    .jeu { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 4px solid var(--choco);
+      border-radius: 22px; padding: 14px; box-shadow: 0 6px 0 var(--choco); }
+    .tuile { flex: none; width: 84px; height: 84px; border-radius: 20px; border: 3px solid var(--choco); background: var(--jeu); }
+    .jeu h2 { font: 400 23px/1.1 "Lilita One", system-ui, sans-serif; margin: 2px 0 4px; }
+    .jeu p { margin: 0; font-size: 15.5px; color: var(--muted); }
+    a.badge { display: inline-block; margin-top: 10px; line-height: 0; border-radius: 10px; transition: transform 120ms ease-out;
+      -webkit-tap-highlight-color: transparent; }
+    a.badge img { width: 170px; height: auto; display: block; }
+    a.badge:active { transform: scale(0.96); }
+    a:focus-visible { outline: 3px solid var(--tomate); outline-offset: 3px; }
+    footer { text-align: center; font-size: 14px; background: var(--choco); color: var(--creme); padding: 14px 16px; }
+    @media (prefers-reduced-motion: reduce) { a.badge { transition: none; } a.badge:active { transform: none; opacity: .85; } }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/assets/logo-complet.svg" alt="MaxFabrics" width="280" height="80">
+    <h1 data-en="All our games">Tous nos jeux</h1>
+    <p class="lead" data-en="Free on Google Play, playable offline.">Gratuits sur Google Play, jouables même sans wifi.</p>
+  </header>
+  <main>
+    <article class="jeu" style="--jeu: #8C70FB">
+      <img class="tuile" src="/jeux/critter_bus.png" alt="" width="84" height="84" loading="lazy">
+      <div>
+        <h2>Critter Bus</h2>
+        <p data-en="Bus jam puzzle: get every critter onto the bus of its colour.">Casse-tête bus jam : fais monter chaque animal dans le bus de sa couleur.</p>
+        <a class="badge" data-bouton data-paquet="com.maxfabrics.critterbus" href="https://play.google.com/store/apps/details?id=com.maxfabrics.critterbus"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+      </div>
+    </article>
+    <article class="jeu" style="--jeu: #FFBA48">
+      <img class="tuile" src="/jeux/boom_crates.png" alt="" width="84" height="84" loading="lazy">
+      <div>
+        <h2>Boom Crates</h2>
+        <p data-en="Cannon shooter: cut the chains and set off chain reactions.">Tir au canon : coupe les chaînes et déclenche des réactions en chaîne.</p>
+        <a class="badge" data-bouton data-paquet="com.maxfabrics.boomcrates" href="https://play.google.com/store/apps/details?id=com.maxfabrics.boomcrates"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+      </div>
+    </article>
+    <article class="jeu" style="--jeu: #57B2F6">
+      <img class="tuile" src="/jeux/mahjong_sundae.png" alt="" width="84" height="84" loading="lazy">
+      <div>
+        <h2>Mahjong Sundae</h2>
+        <p data-en="Sweet mahjong solitaire, no timer: match the treats in pairs.">Mahjong solitaire gourmand, sans chrono : associe les friandises par paires.</p>
+        <a class="badge" data-bouton data-paquet="com.maxfabrics.mahjongsundae" href="https://play.google.com/store/apps/details?id=com.maxfabrics.mahjongsundae"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+      </div>
+    </article>
+    <article class="jeu" style="--jeu: #FF8EBA">
+      <img class="tuile" src="/jeux/snugzle.png" alt="" width="84" height="84" loading="lazy">
+      <div>
+        <h2>Snugzle</h2>
+        <p data-en="Cosy logic: find every pet its snug spot.">Logique douillette : trouve à chaque animal sa place au chaud.</p>
+        <a class="badge" data-bouton data-paquet="com.maxfabrics.snugzle" href="https://play.google.com/store/apps/details?id=com.maxfabrics.snugzle"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+      </div>
+    </article>
+    <article class="jeu" style="--jeu: #7FC960">
+      <img class="tuile" src="/jeux/puffzle.png" alt="" width="84" height="84" loading="lazy">
+      <div>
+        <h2>Puffzle</h2>
+        <p data-en="Star Battle logic in the lagoon: one pufferfish per row, column and area.">Logique Star Battle dans le lagon : un poisson-globe par ligne, colonne et zone.</p>
+        <a class="badge" data-bouton data-paquet="com.maxfabrics.puffzle" href="https://play.google.com/store/apps/details?id=com.maxfabrics.puffzle"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+      </div>
+    </article>
+    <article class="jeu" style="--jeu: #D760EC">
+      <img class="tuile" src="/jeux/splatzle.png" alt="" width="84" height="84" loading="lazy">
+      <div>
+        <h2>Splatzle</h2>
+        <p data-en="Colour nonogram: paint the cells and reveal the hidden picture.">Nonogramme en couleur : peins les cases et révèle l&#x27;image cachée.</p>
+        <a class="badge" data-bouton data-paquet="com.maxfabrics.splatzle" href="https://play.google.com/store/apps/details?id=com.maxfabrics.splatzle"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+      </div>
+    </article>
+    <article class="jeu" style="--jeu: #2E9BFF">
+      <img class="tuile" src="/jeux/as_seen_in_ads.png" alt="" width="84" height="84" loading="lazy">
+      <div>
+        <h2>As Seen In Ads</h2>
+        <p data-en="The real game from the fake ads: grow your army and beat the boss.">Le vrai jeu des fausses pubs : grossis ton armée et abats le boss.</p>
+        <a class="badge" data-bouton data-paquet="com.maxfabrics.asseeninads" href="https://play.google.com/store/apps/details?id=com.maxfabrics.asseeninads"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+      </div>
+    </article>
+    <article class="jeu" style="--jeu: #38C9A8">
+      <img class="tuile" src="/jeux/ramalia.png" alt="" width="84" height="84" loading="lazy">
+      <div>
+        <h2>Ramalia</h2>
+        <p data-en="Grow the World Tree, one glowing branch at a time.">Fais pousser l&#x27;Arbre-monde, une branche lumineuse après l&#x27;autre.</p>
+        <a class="badge" data-bouton data-paquet="com.maxfabrics.ramalia" href="https://play.google.com/store/apps/details?id=com.maxfabrics.ramalia"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+      </div>
+    </article>
+    <article class="jeu" style="--jeu: #FF4B3E">
+      <img class="tuile" src="/jeux/better_than_99.png" alt="" width="84" height="84" loading="lazy">
+      <div>
+        <h2>Better Than 99%</h2>
+        <p data-en="Quick little challenges: are you better than 99% of players?">De petits défis rapides : fais-tu mieux que 99 % des joueurs ?</p>
+        <a class="badge" data-bouton data-paquet="com.maxfabrics.betterthan99" href="https://play.google.com/store/apps/details?id=com.maxfabrics.betterthan99"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+      </div>
+    </article>
+  </main>
+  <footer>MaxFabrics · maxfabrics.com</footer>
+  <script src="/assets/telecharger.js"></script>
+</body>
+</html>

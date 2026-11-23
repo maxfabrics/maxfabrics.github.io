@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr" data-campagne="telecharger-ombelle" data-titre-en="Ombelle apps">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Les applis Ombelle</title>
+  <meta name="description" content="Toutes les applis Ombelle, gratuites sur Google Play.">
+  <meta name="theme-color" content="#3F5E50">
+  <meta property="og:title" content="Les applis Ombelle">
+  <meta property="og:image" content="https://maxfabrics.com/ombelle/partage-1200x630.png">
+  <link rel="icon" href="/ombelle/ombelle.svg" type="image/svg+xml">
+  <style>
+    /* Page commune des applis Ombelle pour le lien des bios (générée par tools/pages_telecharger/generer.py). */
+    :root { --fond: #F4F1EA; --carte: #FFFFFF; --encre: #1E2A25; --encre2: #4D5C55; --sauge: #3F5E50; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { min-height: 100svh; background: var(--fond); color: var(--encre);
+      font: 400 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); }
+    header { text-align: center; padding: 36px 16px 8px; }
+    header img { width: 64px; height: 64px; }
+    h1 { font-weight: 800; font-size: clamp(30px, 9vw, 40px); line-height: 1.1; letter-spacing: -0.02em; color: var(--sauge); margin: 10px 0 0; }
+    .lead { color: var(--encre2); margin: 8px auto 0; max-width: 30ch; }
+    main { max-width: 480px; margin: 0 auto; padding: 18px 16px 28px; display: grid; gap: 14px; }
+    .carte { background: var(--carte); border-radius: 20px; padding: 16px; box-shadow: 0 6px 18px rgba(30,42,37,.08); }
+    .tete { display: flex; gap: 14px; align-items: center; color: inherit; text-decoration: none; min-height: 44px; }
+    .tete img { flex: none; width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+    .tete b { display: block; font-size: 20px; }
+    .pitch { display: block; font-size: 15px; color: var(--encre2); line-height: 1.4; margin-top: 2px; }
+    a.badge { display: inline-block; margin-top: 12px; line-height: 0; border-radius: 10px; transition: transform 120ms ease-out;
+      -webkit-tap-highlight-color: transparent; }
+    a.badge img { width: 190px; height: auto; display: block; }
+    a.badge:active { transform: scale(0.97); }
+    a:focus-visible { outline: 3px solid var(--sauge); outline-offset: 3px; }
+    footer { text-align: center; font-size: 13.5px; color: #F4F1EA; background: var(--sauge); padding: 14px 16px; }
+    @media (prefers-reduced-motion: reduce) { a.badge { transition: none; } a.badge:active { transform: none; opacity: .85; } }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/ombelle/ombelle.svg" alt="" width="64" height="64">
+    <h1 data-en="Ombelle apps">Les applis Ombelle</h1>
+    <p class="lead" data-en="Free on Google Play. Made by a solo developer who reads every review.">Gratuites sur Google Play. Faites par un développeur seul, qui lit chaque avis.</p>
+  </header>
+  <main>
+    <article class="carte">
+      <a class="tete" href="/ombelle/bookhunter/telecharger/"><img src="/ombelle/bookhunter/telecharger/icone.png" alt="" width="72" height="72" loading="lazy">
+        <span><b>BookHunter</b><span class="pitch" data-en="Your library, your reading log, and books lent between friends.">Ta bibliothèque, ton suivi de lecture et les livres prêtés entre amis.</span></span></a>
+      <a class="badge" data-bouton data-paquet="com.maxfabrics.bookhunter" href="https://play.google.com/store/apps/details?id=com.maxfabrics.bookhunter"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+    </article>
+    <article class="carte">
+      <a class="tete" href="/ombelle/leafhunter/telecharger/"><img src="/ombelle/leafhunter/telecharger/icone.png" alt="" width="72" height="72" loading="lazy">
+        <span><b>LeafHunter</b><span class="pitch" data-en="Your plant journal, with friends: watering reminders that fit each plant, photos and tips.">Le carnet de tes plantes, entre amis : rappels d&#x27;arrosage adaptés à chaque plante, photos et conseils.</span></span></a>
+      <a class="badge" data-bouton data-paquet="com.maxfabrics.leafhunter" href="https://play.google.com/store/apps/details?id=com.maxfabrics.leafhunter"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+    </article>
+    <article class="carte">
+      <a class="tete" href="/ombelle/copyglow/telecharger/"><img src="/ombelle/copyglow/telecharger/icone.png" alt="" width="72" height="72" loading="lazy">
+        <span><b>Copyglow</b><span class="pitch" data-en="Snap a printed code: Copyglow finds it and copies it, ready to paste. Wi-Fi, gift cards, IBANs…">Prends un code imprimé en photo : Copyglow le trouve et le copie, prêt à coller. Wi-Fi, cartes cadeaux, IBAN…</span></span></a>
+      <a class="badge" data-bouton data-paquet="com.maxfabrics.copyglow" href="https://play.google.com/store/apps/details?id=com.maxfabrics.copyglow"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+    </article>
+    <article class="carte">
+      <a class="tete" href="/ombelle/envelopio/telecharger/"><img src="/ombelle/envelopio/telecharger/icone.png" alt="" width="72" height="72" loading="lazy">
+        <span><b>Envelopio</b><span class="pitch" data-en="Your budget in envelopes: split your income, log your spending, always know what&#x27;s left.">Ton budget par enveloppes : tu répartis ton revenu, tu notes tes dépenses, tu sais toujours ce qu&#x27;il te reste.</span></span></a>
+      <a class="badge" data-bouton data-paquet="com.maxfabrics.envelopio" href="https://play.google.com/store/apps/details?id=com.maxfabrics.envelopio"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+    </article>
+    <article class="carte">
+      <a class="tete" href="/ombelle/rythmea/telecharger/"><img src="/ombelle/rythmea/telecharger/icone.png" alt="" width="72" height="72" loading="lazy">
+        <span><b>Rythmea</b><span class="pitch" data-en="Every morning, your recovery, sleep and strain, calculated on your phone from your watch.">Chaque matin, ta récupération, ton sommeil et ton effort, calculés sur ton téléphone à partir de ta montre.</span></span></a>
+      <a class="badge" data-bouton data-paquet="com.maxfabrics.rythmea" href="https://play.google.com/store/apps/details?id=com.maxfabrics.rythmea"><img data-badge="/assets/" src="/assets/google-play-fr.png" width="646" height="250" loading="lazy" alt="Disponible sur Google Play"></a>
+    </article>
+  </main>
+  <footer>Ombelle, une marque MaxFabrics</footer>
+  <script src="/assets/telecharger.js"></script>
+</body>
+</html>

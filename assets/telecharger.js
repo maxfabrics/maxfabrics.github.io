@@ -1,0 +1,32 @@
+// Boutons Google Play des pages « lien en bio » (Instagram, TikTok, YouTube). Le navigateur intégré d'Instagram et de
+// TikTok ouvre mal play.google.com : sur Android, le bouton passe par un lien « intent » qui ouvre directement l'appli
+// Google Play, avec repli sur la page web. La source (?source=tiktok, par défaut « bio ») part dans le referrer de
+// Google Play pour les statistiques d'acquisition. Français par défaut, anglais pour un téléphone dans une autre langue.
+(function () {
+  var params = new URLSearchParams(location.search);
+  var source = (params.get('source') || 'bio').replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'bio';
+  var campagne = document.documentElement.getAttribute('data-campagne') || 'telecharger';
+  var referrer = encodeURIComponent('utm_source=' + source + '&utm_medium=lien&utm_campaign=' + campagne);
+  var android = /android/i.test(navigator.userAgent);
+
+  document.querySelectorAll('[data-paquet]').forEach(function (a) {
+    var paquet = a.getAttribute('data-paquet');
+    var web = 'https://play.google.com/store/apps/details?id=' + paquet + '&referrer=' + referrer;
+    a.href = android && a.hasAttribute('data-bouton')
+      ? 'intent://details?id=' + paquet + '&referrer=' + referrer +
+        '#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=' + encodeURIComponent(web) + ';end'
+      : web;
+  });
+
+  var langue = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+  if (langue !== 'fr') {
+    document.documentElement.lang = 'en';
+    var titre = document.documentElement.getAttribute('data-titre-en');
+    if (titre) document.title = titre;
+    document.querySelectorAll('[data-en]').forEach(function (el) { el.textContent = el.getAttribute('data-en'); });
+    document.querySelectorAll('img[data-badge]').forEach(function (img) {
+      img.src = img.getAttribute('data-badge') + 'google-play-en.png';
+      img.alt = 'Get it on Google Play';
+    });
+  }
+})();
