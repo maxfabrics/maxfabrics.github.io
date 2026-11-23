@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Datenschutz von Envelopio, der Budget-App von Ombelle</title>
-  <meta name="description" content="Datenschutzerklärung von Envelopio, der Umschlag-Budget-App von Ombelle: was auf deinem Handy bleibt, was das Werbebanner der kostenlosen Version erhält und wie du alles löschst.">
+  <meta name="description" content="Datenschutzerklärung von Envelopio, der Umschlag-Budget-App von Ombelle: was auf deinem Handy bleibt, was das freiwillige Konto speichert, was das Werbebanner der kostenlosen Version erhält und wie du alles löschst.">
   <link rel="canonical" href="https://maxfabrics.com/ombelle/envelopio/de/confidentialite">
   <link rel="alternate" hreflang="fr" href="https://maxfabrics.com/ombelle/envelopio/confidentialite">
   <link rel="alternate" hreflang="en" href="https://maxfabrics.com/ombelle/envelopio/en/confidentialite">
@@ -32,16 +32,16 @@
   </header>
 
   <main>
-    <h1>Dein Budget bleibt auf deinem Handy</h1>
-    <p class="lead">Datenschutzerklärung von Envelopio, der Umschlag-Budget-App von Ombelle · Letzte Aktualisierung: 10. November 2026</p>
+    <h1>Dein Budget bleibt auf deinem Handy, und in deinem Konto, wenn du es so willst</h1>
+    <p class="lead">Datenschutzerklärung von Envelopio, der Umschlag-Budget-App von Ombelle · Letzte Aktualisierung: 23. November 2026</p>
 
-    <p>Mit Envelopio führst du dein Budget nach der Umschlagmethode. Deine Beträge, Umschläge und Notizen bleiben auf deinem Handy: Wir haben keinen Server, der sie empfängt, es gibt kein Konto und keinen Zugriff auf deine Bank. Die kostenlose Version zeigt ein Werbebanner von Google AdMob: Es erhält Daten deines Geräts, nie dein Budget. Die Plus-Version zeigt keine Werbung.</p>
+    <p>Mit Envelopio führst du dein Budget nach der Umschlagmethode. Ohne Konto bleiben deine Beträge, Umschläge und Notizen auf deinem Handy. Das Konto ist freiwillig: Wenn du eines erstellst, wird eine Kopie deines Budgets in deinem Konto bei Google Firebase (Server in Europa) gespeichert, um es zu sichern, auf einem anderen Handy wiederzufinden oder mit der Person zu teilen, die du einlädst. Wir haben keinen Zugriff auf deine Bank. Die kostenlose Version zeigt ein Werbebanner von Google AdMob: Es erhält Daten deines Geräts, nie dein Budget. Die Plus-Version zeigt keine Werbung.</p>
 
     <h2>Wer verantwortlich ist</h2>
     <p>Die App wird von Maxence Bonnet herausgegeben, Einzelunternehmer (MaxFabrics, SIREN 104406707), unter der Marke Ombelle. Für jede Frage zu deinen Daten: <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>.</p>
 
     <h2>Was du eingibst</h2>
-    <p>Alles, was du eingibst, wird nur auf diesem Handy gespeichert:</p>
+    <p>Ohne Konto wird alles, was du eingibst, nur auf diesem Handy gespeichert (mit einem Konto siehe weiter unten):</p>
     <ul>
       <li>deine Budgets: Einkommen, Umschläge, Ausgaben und ihre Daten, Notizen, Sparziele und Challenges;</li>
       <li>deine Einstellungen: Land und Währung, Zahltag, Erinnerungen, Farbe der App;</li>
@@ -50,6 +50,21 @@
 
     <h2>Wie es geschützt ist</h2>
     <p>Das Budget wird in einer verschlüsselten Datei (AES-256) im privaten Ordner der App gespeichert, mit einer ebenfalls verschlüsselten Sicherungskopie. Der Schlüssel liegt im sicheren Speicher von Android (Keystore), nicht in der Datei. Die automatischen Google-Sicherungen und die Übertragung auf ein neues Handy sind für diese App abgeschaltet: Dein Budget verlässt das Handy auf diesem Weg nicht. Eine Ausnahme: Wenn du das Widget mit den Salden (Plus-Version) auf den Startbildschirm legst, speichert die App, was sie zur Anzeige braucht (den Monat, „Zu verteilen“, die ersten vier Umschläge mit ihren Beträgen), in ihren privaten Einstellungen, ohne die Verschlüsselung des Budgets. Diese Zeilen erscheinen nur auf dem Startbildschirm, nie auf dem Sperrbildschirm; „Alles löschen“ entfernt sie, und die App entfernt sie beim nächsten Öffnen, sobald das Widget entfernt ist; bis dahin bleiben sie in ihren privaten Einstellungen.</p>
+
+    <h2>Freiwilliges Konto</h2>
+    <p>Du kannst ein Konto mit Google oder mit einer E-Mail-Adresse und einem Passwort erstellen. Es dient dazu, dein Budget zu sichern, auf einem anderen Handy wiederzufinden und zu teilen. Mit einem Konto verarbeiten wir:</p>
+    <ul>
+      <li>deine E-Mail-Adresse und die Kennung deines Kontos bei Google (Firebase Authentication); dein Passwort sehen weder die App noch wir, Google speichert es in geschützter Form;</li>
+      <li>den Vornamen oder Spitznamen und die Farbe, die du wählst, sowie die Version der Kontobedingungen, die du akzeptiert hast;</li>
+      <li>eine Kopie deiner Budgets (Einnahmen, Umschläge, Ausgaben, Notizen, Ziele, Challenges und Einstellungen) in Cloud Firestore von Google, Region Europa: von Google bei der Übertragung und auf seinen Servern verschlüsselt, aber nicht Ende-zu-Ende. Google hostet sie für uns und nutzt sie nicht für etwas anderes (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>);</li>
+      <li>in einem Budget zu zweit, wer jede Buchung erfasst hat.</li>
+    </ul>
+
+    <h2>Budget zu zweit</h2>
+    <p>Mit der Plus-Version kann der Besitzer eines Budgets eine Person per Link oder QR-Code einladen, gültig 24 Stunden und nur einmal; wir speichern nur einen Fingerabdruck des Links. Die Person, die beitritt, sieht das gesamte Budget (Umschläge, Beträge, Notizen, wer was erfasst hat), deinen Vornamen und deine Farbe und kann es ändern; du siehst ihre ebenso. Jeder kann das Budget verlassen, und der Besitzer kann die andere Person entfernen: Sie behält eine Kopie des Budgets auf ihrem Handy, ohne die folgenden Änderungen. Lade nur jemanden ein, mit dem du diese Informationen teilen willst.</p>
+
+    <h2>E-Mails des Kontos</h2>
+    <p>Die E-Mails zur Bestätigung der Adresse und zum vergessenen Passwort werden von Google (Firebase) gesendet. Für Adressen bei Free, Orange, SFR, La Poste und Bouygues, die diese Anbieter oft ablehnen, fordert die App sie bei unserem Relay (Cloudflare) an, das sie über Brevo verschickt, einen in Frankreich ansässigen Dienst für den E-Mail-Versand: Brevo erhält deine Adresse und den Inhalt der E-Mail und kann ihr Öffnen und den Klick auf den Link messen, nur um sie zuzustellen und die Zustellung zu verfolgen. Das Relay zählt die Sendungen pro Tag, um Missbrauch zu blockieren, in Form von Fingerabdrücken, ohne deine Adresse im Klartext zu speichern.</p>
 
     <h2>Was das Handy verlassen kann</h2>
     <p>Nur was du selbst startest, an den Ort, den du wählst (Downloads, Drive, Messenger …):</p>
@@ -84,10 +99,10 @@
     <p>Die Erinnerungen am Zahltag (9 Uhr) und am Monatsende (18 Uhr) sind aus, bis du sie einschaltest. Es sind auf deinem Handy geplante Benachrichtigungen, ohne Server, die keinen Betrag und keinen Umschlagnamen enthalten. Ab Android 13 fragt dich Android beim ersten Einschalten einer Erinnerung um die Erlaubnis, Benachrichtigungen zu zeigen. „Alles löschen“ entfernt sie.</p>
 
     <h2>Android-Berechtigungen</h2>
-    <p>Die App fragt weder nach deinem Standort noch nach deinen Kontakten, Fotos oder dem Mikrofon. Sie deklariert unter anderem den Internetzugriff (Banner, Einwilligungsformular, Google Play), die Werbe-ID (die das SDK von Google je nach deiner Auswahl in der kostenlosen Version liest), Benachrichtigungen (nur wenn du eine Erinnerung einschaltest) und den Start des Handys (um diese Erinnerungen neu zu planen). Sie deklariert außerdem den Netzwerkstatus und die Vibration (Erinnerungen, Rückmeldung beim Antippen). Eingebundene Komponenten (das Werbe-SDK, die Widgets) fügen das Wachhalten des Handys und einen Hintergrunddienst hinzu, und das Werbe-SDK den Zugriff auf die Werbeinformationen von Android (ID, Zuordnung, Interessen: die Privacy Sandbox von Android). Die Werbezugriffe werden nur in der kostenlosen Version und je nach deiner Auswahl genutzt. Sicherungs- und Exportdateien laufen über die Dokumentenauswahl und das Teilen-Menü von Android, ohne Speicherberechtigung.</p>
+    <p>Die App fragt weder nach deinem Standort noch nach deinen Kontakten, Fotos oder dem Mikrofon. Sie deklariert unter anderem den Internetzugriff (Banner, Einwilligungsformular, Google Play, Konto und Synchronisierung), die Werbe-ID (die das SDK von Google je nach deiner Auswahl in der kostenlosen Version liest), Benachrichtigungen (nur wenn du eine Erinnerung einschaltest) und den Start des Handys (um diese Erinnerungen neu zu planen). Sie deklariert außerdem den Netzwerkstatus und die Vibration (Erinnerungen, Rückmeldung beim Antippen). Eingebundene Komponenten (das Werbe-SDK, die Widgets) fügen das Wachhalten des Handys und einen Hintergrunddienst hinzu, und das Werbe-SDK den Zugriff auf die Werbeinformationen von Android (ID, Zuordnung, Interessen: die Privacy Sandbox von Android). Die Werbezugriffe werden nur in der kostenlosen Version und je nach deiner Auswahl genutzt. Sicherungs- und Exportdateien laufen über die Dokumentenauswahl und das Teilen-Menü von Android, ohne Speicherberechtigung.</p>
 
-    <h2>Kein Konto, keine Reichweitenmessung</h2>
-    <p>Es gibt kein Konto: Die App fragt weder nach deinem Namen noch nach deiner E-Mail-Adresse. Sie hat kein Tool zur Reichweitenmessung, kein Tool zur Absturzerfassung und keinen eigenen Server, der Daten empfängt.</p>
+    <h2>Keine Reichweitenmessung</h2>
+    <p>Die App hat kein Tool zur Reichweitenmessung und kein Tool zur Absturzerfassung. Ohne Konto empfängt kein Server von uns Daten; mit einem Konto empfangen nur die oben beschriebenen Dienste (Google Firebase, unser Relay und Brevo) welche, allein für diesen Zweck.</p>
 
     <h2>Statistiken von Google Play</h2>
     <p>Wenn du auf deinem Handy zugestimmt hast, Nutzungs- und Diagnosedaten mit Google zu teilen, kann uns Google Play Absturzstatistiken zeigen, anonym und zusammengefasst.</p>
@@ -99,16 +114,16 @@
     <p>Die App richtet sich an Personen ab 18 Jahren und zielt nicht auf Minderjährige.</p>
 
     <h2>Rechtsgrundlage</h2>
-    <p>Deine Einwilligung (DSGVO, Artikel 6) für die Werbung der kostenlosen Version, erteilt im Formular von Google, wo es erforderlich ist; der Vertrag für den Kauf; unsere gesetzlichen Pflichten für die Verkaufsaufstellungen. Wir verarbeiten dein Budget nicht: Es bleibt auf deinem Handy. Du kannst deine Einwilligung jederzeit widerrufen: dort, wo Google das Formular verlangt (Europa, Vereinigtes Königreich, Schweiz), unter Einstellungen › Einstellungen zur Werbung; anderswo in den Android-Einstellungen deines Handys (wo du auch deine Werbe-ID zurücksetzen kannst); oder indem du zur Plus-Version wechselst.</p>
+    <p>Der Vertrag (DSGVO, Artikel 6) für das Konto, das du selbst erstellst, und für seine Sicherung, das Budget zu zweit und die E-Mails des Kontos; deine Einwilligung für die Werbung der kostenlosen Version, erteilt im Formular von Google, wo es erforderlich ist; der Vertrag für den Kauf; unsere gesetzlichen Pflichten für die Verkaufsaufstellungen; unser berechtigtes Interesse, missbräuchlichen E-Mail-Versand zu verhindern. Ohne Konto verarbeiten wir dein Budget nicht: Es bleibt auf deinem Handy. Du kannst deine Einwilligung zur Werbung jederzeit widerrufen: dort, wo Google das Formular verlangt (Europa, Vereinigtes Königreich, Schweiz), unter Einstellungen › Einstellungen zur Werbung; anderswo in den Android-Einstellungen deines Handys (wo du auch deine Werbe-ID zurücksetzen kannst); oder indem du zur Plus-Version wechselst.</p>
 
     <h2>Wie lange</h2>
-    <p>Dein Budget bleibt auf deinem Handy, bis du es löschst: Die App sendet es nirgendwohin und löscht es nicht von selbst. Die über die Werbung empfangenen Daten bewahrt Google nach seiner eigenen Richtlinie auf (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
+    <p>Auf deinem Handy bleibt dein Budget, bis du es löschst. Mit einem Konto bleiben seine Kopie und dein Profil, solange dein Konto besteht: Das Löschen des Kontos entfernt sie. Ein Budget zu zweit bleibt, solange eines seiner Mitglieder darin ist. Die über die Werbung empfangenen Daten bewahrt Google nach seiner eigenen Richtlinie auf (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
 
     <h2>Deine Daten löschen</h2>
-    <p>Einstellungen › Alles löschen, dann bestätigen (die App schlägt zuerst vor, eine Sicherung zu machen): Das Budget, seine Sicherungskopie, sein Verschlüsselungsschlüssel, deine Erinnerungen, deine Farbe, die Salden des Widgets und die Kopien vom Teilen werden gelöscht, ohne Weg zurück. Auch das Deinstallieren der App löscht ihre Daten. Dateien, die du selbst gespeichert oder geteilt hast (Sicherung, Export, Bilanz), bleiben dort, wo du sie abgelegt hast: Lösche sie dort. Dein Kauf liegt bei Google Play: „Alles löschen“ berührt ihn nicht.</p>
+    <p>Für das Konto: Einstellungen › dein Konto › Mein Konto löschen, dann bestätigen. Dein Profil und die Kopie deiner Budgets werden aus der Cloud gelöscht, du verlässt die Budgets zu zweit, und deine Budgets bleiben ohne Konto auf diesem Handy. Ohne die App schreib an <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>, und zwar von der Adresse deines Kontos aus (maxfabrics.com/ombelle/envelopio/de/supprimer-mon-compte). Auf dem Handy: Einstellungen › Alles löschen, dann bestätigen (die App schlägt zuerst vor, eine Sicherung zu machen): Das Budget, seine Sicherungskopie, sein Verschlüsselungsschlüssel, deine Erinnerungen, deine Farbe, die Salden des Widgets und die Kopien vom Teilen werden gelöscht, ohne Weg zurück. Auch das Deinstallieren der App löscht ihre Daten vom Handy. Dateien, die du selbst gespeichert oder geteilt hast (Sicherung, Export, Bilanz), bleiben dort, wo du sie abgelegt hast: Lösche sie dort. Dein Kauf liegt bei Google Play: Nichts davon berührt ihn.</p>
 
     <h2>Deine Rechte</h2>
-    <p>Wir besitzen dein Budget nicht: Du siehst, korrigierst und exportierst es in der App. Die verschlüsselte Sicherung enthält eine vollständige Kopie, und mit der Plus-Version lässt sich der CSV-Export in einer Tabellenkalkulation lesen und der PDF-Export in einem PDF-Reader. Für deine Rechte an den wenigen Daten, die wir besitzen (Verkaufsaufstellungen, Nachrichten, die du uns schreibst), oder für jede andere Frage (Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung, Übertragbarkeit) schreib an <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>. Du kannst dich auch an die <a href="https://www.cnil.fr/">CNIL</a> (cnil.fr), die französische Datenschutzbehörde, oder an deine eigene wenden.</p>
+    <p>Ohne Konto besitzen wir dein Budget nicht: Du siehst, korrigierst und exportierst es in der App. Mit einem Konto siehst und korrigierst du es ebenso in der App und kannst eine Kopie anfordern. Die verschlüsselte Sicherung enthält eine vollständige Kopie, und mit der Plus-Version lässt sich der CSV-Export in einer Tabellenkalkulation lesen und der PDF-Export in einem PDF-Reader. Für deine Rechte an den Daten, die wir besitzen (Konto, Kopie deiner Budgets, Verkaufsaufstellungen, Nachrichten, die du uns schreibst), oder für jede andere Frage (Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung, Übertragbarkeit) schreib an <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>. Du kannst dich auch an die <a href="https://www.cnil.fr/">CNIL</a> (cnil.fr), die französische Datenschutzbehörde, oder an deine eigene wenden.</p>
 
     <h2>Was die App nicht tut</h2>
     <p>Die App verbindet sich mit keiner Bank, bewegt kein Geld und gibt keine Finanzberatung: Sie hilft dir, dein Budget im Blick zu behalten.</p>

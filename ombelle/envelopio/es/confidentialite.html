@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacidad de Envelopio, la app de presupuesto de Ombelle</title>
-  <meta name="description" content="Política de privacidad de Envelopio, la app de presupuesto por sobres de Ombelle: qué se queda en tu móvil, qué recibe el banner publicitario de la versión gratuita y cómo borrarlo todo.">
+  <meta name="description" content="Política de privacidad de Envelopio, la app de presupuesto por sobres de Ombelle: qué se queda en tu móvil, qué guarda la cuenta opcional, qué recibe el banner publicitario de la versión gratuita y cómo borrarlo todo.">
   <link rel="canonical" href="https://maxfabrics.com/ombelle/envelopio/es/confidentialite">
   <link rel="alternate" hreflang="fr" href="https://maxfabrics.com/ombelle/envelopio/confidentialite">
   <link rel="alternate" hreflang="en" href="https://maxfabrics.com/ombelle/envelopio/en/confidentialite">
@@ -32,16 +32,16 @@
   </header>
 
   <main>
-    <h1>Tu presupuesto se queda en tu móvil</h1>
-    <p class="lead">Política de privacidad de Envelopio, la app de presupuesto por sobres de Ombelle · Última actualización: 10 de noviembre de 2026</p>
+    <h1>Tu presupuesto se queda en tu móvil, y en tu cuenta si tú lo eliges</h1>
+    <p class="lead">Política de privacidad de Envelopio, la app de presupuesto por sobres de Ombelle · Última actualización: 23 de noviembre de 2026</p>
 
-    <p>Envelopio te permite llevar tu presupuesto con el método de los sobres. Tus importes, tus sobres y tus notas se quedan en tu móvil: no tenemos ningún servidor que los reciba, no hay que crear una cuenta y no accedemos a tu banco. La versión gratuita muestra un banner publicitario de Google AdMob: recibe datos de tu dispositivo, nunca tu presupuesto. La versión plus no muestra publicidad.</p>
+    <p>Envelopio te permite llevar tu presupuesto con el método de los sobres. Sin cuenta, tus importes, tus sobres y tus notas se quedan en tu móvil. La cuenta es opcional: si creas una, se guarda una copia de tu presupuesto en tu cuenta, en Google Firebase (servidores en Europa), para respaldarlo, recuperarlo en otro móvil o compartirlo con la persona a la que invites. No accedemos a tu banco. La versión gratuita muestra un banner publicitario de Google AdMob: recibe datos de tu dispositivo, nunca tu presupuesto. La versión plus no muestra publicidad.</p>
 
     <h2>Quién es el responsable</h2>
     <p>La app la publica Maxence Bonnet, empresario individual (MaxFabrics, SIREN 104406707), bajo la marca Ombelle. Para cualquier pregunta sobre tus datos: <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>.</p>
 
     <h2>Lo que introduces</h2>
-    <p>Todo lo que introduces se guarda solo en este móvil:</p>
+    <p>Sin cuenta, todo lo que introduces se guarda solo en este móvil (con una cuenta, ver más abajo):</p>
     <ul>
       <li>tus presupuestos: ingresos, sobres, gastos y sus fechas, notas, objetivos de ahorro y retos;</li>
       <li>tus ajustes: país y moneda, día de cobro, avisos, color de la app;</li>
@@ -50,6 +50,21 @@
 
     <h2>Cómo está protegido</h2>
     <p>El presupuesto se escribe en un archivo cifrado (AES-256) de la carpeta privada de la app, con una copia de seguridad también cifrada. La clave de cifrado se guarda en el almacén seguro de Android (Keystore), no en el archivo. Las copias de seguridad automáticas de Google y la transferencia a un móvil nuevo están desactivadas para esta app: tu presupuesto no sale del móvil por esa vía. Una excepción: si colocas el widget de saldos (versión plus) en la pantalla de inicio, la app guarda lo necesario para mostrarlo (el mes, «Por repartir», los cuatro primeros sobres con sus importes) en sus preferencias privadas, sin el cifrado del presupuesto. Esas líneas solo aparecen en la pantalla de inicio, nunca en la pantalla de bloqueo; «Borrar todo» las elimina, y la app las elimina en su próxima apertura una vez retirado el widget; hasta entonces, se quedan en sus preferencias privadas.</p>
+
+    <h2>Cuenta opcional</h2>
+    <p>Puedes crear una cuenta con Google, o con una dirección de correo electrónico y una contraseña. Sirve para respaldar tu presupuesto, recuperarlo en otro móvil y compartirlo. Con una cuenta, tratamos:</p>
+    <ul>
+      <li>tu dirección de correo electrónico y el identificador de tu cuenta, en Google (Firebase Authentication); ni la app ni nosotros vemos nunca tu contraseña, Google la guarda de forma protegida;</li>
+      <li>el nombre de pila o apodo y el color que eliges, y la versión de las condiciones de la cuenta que has aceptado;</li>
+      <li>una copia de tus presupuestos (ingresos, sobres, gastos, notas, objetivos, retos y ajustes) en Cloud Firestore de Google, región Europa: cifrada por Google durante la transmisión y en sus servidores, pero no de extremo a extremo. Google la aloja para nosotros y no la usa para nada más (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>);</li>
+      <li>en un presupuesto en pareja, quién ha anotado cada movimiento.</li>
+    </ul>
+
+    <h2>Presupuesto en pareja</h2>
+    <p>Con la versión plus, el propietario de un presupuesto puede invitar a una persona mediante un enlace o un código QR, válido durante 24 horas y de un solo uso; solo guardamos una huella del enlace. La persona que se une ve todo este presupuesto (sobres, importes, notas, quién ha anotado qué), tu nombre de pila y tu color, y puede modificarlo; tú ves los suyos de la misma forma. Cada uno puede salir del presupuesto y el propietario puede retirar a la otra persona: esta conserva una copia del presupuesto en su móvil, sin los cambios posteriores. Invita solo a alguien con quien quieras compartir esta información.</p>
+
+    <h2>Correos electrónicos de la cuenta</h2>
+    <p>Los correos de validación de la dirección y de contraseña olvidada los envía Google (Firebase). Para las direcciones de Free, Orange, SFR, La Poste y Bouygues, que esos proveedores suelen rechazar, la app los solicita a nuestro relay (Cloudflare), que los envía a través de Brevo, un servicio de envío de correos electrónicos establecido en Francia: Brevo recibe tu dirección y el contenido del correo, y puede medir su apertura y el clic en el enlace, solo para entregarlo y seguir su entrega. El relay cuenta los envíos por día para bloquear abusos, en forma de huellas, sin guardar tu dirección en claro.</p>
 
     <h2>Lo que puede salir del móvil</h2>
     <p>Solo lo que inicias tú, hacia el lugar que elijas (Descargas, Drive, mensajería…):</p>
@@ -84,10 +99,10 @@
     <p>Los avisos del día de cobro (9:00) y de fin de mes (18:00) están desactivados mientras no los actives. Son notificaciones programadas en tu móvil, sin servidor, que no contienen ningún importe ni nombre de sobre. En Android 13 y posteriores, Android te pide permiso para mostrar notificaciones la primera vez que activas uno. «Borrar todo» los elimina.</p>
 
     <h2>Permisos de Android</h2>
-    <p>La app no pide tu ubicación, ni tus contactos, ni tus fotos, ni tu micrófono. Declara, entre otros, el acceso a Internet (banner, formulario de consentimiento, Google Play), el identificador de publicidad (que el SDK de Google lee según tus elecciones, en la versión gratuita), las notificaciones (solo si activas un aviso) y el arranque del móvil (para reprogramar esos avisos). También declara el estado de la red y la vibración (avisos, respuesta táctil). Componentes integrados (el SDK de publicidad, los widgets) añaden mantener el móvil activo y un servicio en segundo plano, y el SDK de publicidad el acceso a la información publicitaria de Android (identificador, atribución, intereses: la Privacy Sandbox de Android). Estos accesos publicitarios solo se usan en la versión gratuita y según tus elecciones. Los archivos de copia de seguridad y de exportación pasan por el selector de documentos y el menú de compartir de Android, sin permiso de almacenamiento.</p>
+    <p>La app no pide tu ubicación, ni tus contactos, ni tus fotos, ni tu micrófono. Declara, entre otros, el acceso a Internet (banner, formulario de consentimiento, Google Play, cuenta y sincronización), el identificador de publicidad (que el SDK de Google lee según tus elecciones, en la versión gratuita), las notificaciones (solo si activas un aviso) y el arranque del móvil (para reprogramar esos avisos). También declara el estado de la red y la vibración (avisos, respuesta táctil). Componentes integrados (el SDK de publicidad, los widgets) añaden mantener el móvil activo y un servicio en segundo plano, y el SDK de publicidad el acceso a la información publicitaria de Android (identificador, atribución, intereses: la Privacy Sandbox de Android). Estos accesos publicitarios solo se usan en la versión gratuita y según tus elecciones. Los archivos de copia de seguridad y de exportación pasan por el selector de documentos y el menú de compartir de Android, sin permiso de almacenamiento.</p>
 
-    <h2>Sin cuenta, sin medición de audiencia</h2>
-    <p>No hay que crear una cuenta: la app no te pide ni tu nombre ni tu correo electrónico. No tiene ninguna herramienta de medición de audiencia, ninguna herramienta de seguimiento de fallos y ningún servidor nuestro que reciba datos.</p>
+    <h2>Sin medición de audiencia</h2>
+    <p>La app no tiene ninguna herramienta de medición de audiencia ni de seguimiento de fallos. Sin cuenta, ningún servidor nuestro recibe datos; con una cuenta, solo los servicios descritos más arriba (Google Firebase, nuestro relay y Brevo) los reciben, para ese único uso.</p>
 
     <h2>Estadísticas de Google Play</h2>
     <p>Si has aceptado compartir datos de uso y de diagnóstico con Google en tu móvil, Google Play puede mostrarnos estadísticas de fallos, anónimas y agregadas.</p>
@@ -99,16 +114,16 @@
     <p>La app está dirigida a personas de 18 años o más y no se dirige a menores.</p>
 
     <h2>En qué se basa</h2>
-    <p>Tu consentimiento (RGPD, artículo 6) para la publicidad de la versión gratuita, dado en el formulario de Google donde se exige; el contrato para la compra; nuestras obligaciones legales para los informes de ventas. No tratamos tu presupuesto: se queda en tu móvil. Puedes retirar tu consentimiento en cualquier momento: donde Google exige el formulario (Europa, Reino Unido, Suiza), en Ajustes › Opciones de publicidad; en otros lugares, en los ajustes de Android de tu móvil (donde también puedes restablecer tu identificador de publicidad); o pasando a la versión plus.</p>
+    <p>El contrato (RGPD, artículo 6) para la cuenta que decides crear y para su copia de seguridad, el presupuesto en pareja y los correos de la cuenta; tu consentimiento para la publicidad de la versión gratuita, dado en el formulario de Google donde se exige; el contrato para la compra; nuestras obligaciones legales para los informes de ventas; nuestro interés legítimo en impedir los envíos abusivos de correos electrónicos. Sin cuenta, no tratamos tu presupuesto: se queda en tu móvil. Puedes retirar tu consentimiento para la publicidad en cualquier momento: donde Google exige el formulario (Europa, Reino Unido, Suiza), en Ajustes › Opciones de publicidad; en otros lugares, en los ajustes de Android de tu móvil (donde también puedes restablecer tu identificador de publicidad); o pasando a la versión plus.</p>
 
     <h2>Cuánto tiempo</h2>
-    <p>Tu presupuesto se queda en tu móvil mientras no lo borres: la app no lo envía a ningún sitio y no lo borra por sí sola. Los datos recibidos a través de la publicidad los conserva Google según su propia política (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
+    <p>En tu móvil, tu presupuesto se queda mientras no lo borres. Con una cuenta, su copia y tu perfil se quedan mientras exista tu cuenta: la eliminación de la cuenta los borra. Un presupuesto en pareja se queda mientras uno de sus miembros siga en él. Los datos recibidos a través de la publicidad los conserva Google según su propia política (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
 
     <h2>Borrar tus datos</h2>
-    <p>Ajustes › Borrar todo, y luego confirmar (la app te propone antes hacer una copia de seguridad): el presupuesto, su copia de seguridad, su clave de cifrado, tus avisos, tu color, los saldos del widget y las copias de compartir se eliminan, sin vuelta atrás. Desinstalar la app también elimina sus datos. Los archivos que hayas guardado o compartido tú (copia de seguridad, exportación, resumen) se quedan donde los hayas puesto: bórralos allí. Tu compra está en Google Play: «Borrar todo» no la toca.</p>
+    <p>Para la cuenta: Ajustes › tu cuenta › Eliminar mi cuenta, y luego confirmar. Tu perfil y la copia de tus presupuestos se borran de la nube, sales de los presupuestos en pareja y tus presupuestos se quedan en este móvil, sin cuenta. Sin la app, escribe a <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a> desde la dirección de tu cuenta (maxfabrics.com/ombelle/envelopio/es/supprimer-mon-compte). En el móvil: Ajustes › Borrar todo, y luego confirmar (la app te propone antes hacer una copia de seguridad): el presupuesto, su copia de seguridad, su clave de cifrado, tus avisos, tu color, los saldos del widget y las copias de compartir se eliminan, sin vuelta atrás. Desinstalar la app también elimina sus datos del móvil. Los archivos que hayas guardado o compartido tú (copia de seguridad, exportación, resumen) se quedan donde los hayas puesto: bórralos allí. Tu compra está en Google Play: nada de esto la toca.</p>
 
     <h2>Tus derechos</h2>
-    <p>No tenemos tu presupuesto: lo consultas, lo corriges y lo exportas en la app. La copia de seguridad cifrada guarda una copia completa, y, con la versión plus, la exportación CSV se lee en una hoja de cálculo y la exportación PDF en un lector de PDF. Para tus derechos sobre los pocos datos que sí tenemos (informes de ventas, mensajes que nos escribes) o para cualquier otra pregunta (acceso, rectificación, supresión, oposición, limitación, portabilidad), escribe a <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>. También puedes reclamar ante la <a href="https://www.cnil.fr/">CNIL</a> (cnil.fr), la autoridad francesa de protección de datos, o ante la de tu país.</p>
+    <p>Sin cuenta, no tenemos tu presupuesto: lo consultas, lo corriges y lo exportas en la app. Con una cuenta, lo consultas y lo corriges igualmente en la app, y puedes pedir una copia. La copia de seguridad cifrada guarda una copia completa, y, con la versión plus, la exportación CSV se lee en una hoja de cálculo y la exportación PDF en un lector de PDF. Para tus derechos sobre los datos que sí tenemos (cuenta, copia de tus presupuestos, informes de ventas, mensajes que nos escribes) o para cualquier otra pregunta (acceso, rectificación, supresión, oposición, limitación, portabilidad), escribe a <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>. También puedes reclamar ante la <a href="https://www.cnil.fr/">CNIL</a> (cnil.fr), la autoridad francesa de protección de datos, o ante la de tu país.</p>
 
     <h2>Lo que la app no hace</h2>
     <p>La app no se conecta a ningún banco, no mueve dinero y no da asesoramiento financiero: te ayuda a seguir tu presupuesto.</p>

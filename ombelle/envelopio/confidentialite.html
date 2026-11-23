@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Confidentialité d'Envelopio, l'appli de budget d'Ombelle</title>
-  <meta name="description" content="Politique de confidentialité d'Envelopio, l'appli de budget par enveloppes d'Ombelle : ce qui reste sur ton téléphone, ce que reçoit la bannière publicitaire de la version gratuite et comment tout effacer.">
+  <meta name="description" content="Politique de confidentialité d'Envelopio, l'appli de budget par enveloppes d'Ombelle : ce qui reste sur ton téléphone, ce que garde le compte facultatif, ce que reçoit la bannière publicitaire de la version gratuite et comment tout effacer.">
   <link rel="canonical" href="https://maxfabrics.com/ombelle/envelopio/confidentialite">
   <link rel="alternate" hreflang="fr" href="https://maxfabrics.com/ombelle/envelopio/confidentialite">
   <link rel="alternate" hreflang="en" href="https://maxfabrics.com/ombelle/envelopio/en/confidentialite">
@@ -32,16 +32,16 @@
   </header>
 
   <main>
-    <h1>Ton budget reste sur ton téléphone</h1>
-    <p class="lead">Politique de confidentialité d'Envelopio, l'appli de budget par enveloppes d'Ombelle · Dernière mise à jour : 10 novembre 2026</p>
+    <h1>Ton budget reste sur ton téléphone, et dans ton compte si tu le choisis</h1>
+    <p class="lead">Politique de confidentialité d'Envelopio, l'appli de budget par enveloppes d'Ombelle · Dernière mise à jour : 23 novembre 2026</p>
 
-    <p>Envelopio te fait tenir ton budget par enveloppes. Tes montants, tes enveloppes et tes notes restent sur ton téléphone : nous n'avons aucun serveur qui les reçoive, pas de compte à créer et aucun accès à ta banque. La version gratuite affiche une bannière publicitaire de Google AdMob : elle reçoit des données de ton appareil, jamais ton budget. La version plus n'affiche aucune publicité.</p>
+    <p>Envelopio te fait tenir ton budget par enveloppes. Sans compte, tes montants, tes enveloppes et tes notes restent sur ton téléphone. Le compte est facultatif : si tu en crées un, une copie de ton budget est gardée dans ton compte, chez Google Firebase (serveurs en Europe), pour le sauvegarder, le retrouver sur un autre téléphone ou le partager avec la personne que tu invites. Nous n'avons aucun accès à ta banque. La version gratuite affiche une bannière publicitaire de Google AdMob : elle reçoit des données de ton appareil, jamais ton budget. La version plus n'affiche aucune publicité.</p>
 
     <h2>Qui est responsable</h2>
     <p>L'appli est éditée par Maxence Bonnet, entrepreneur individuel (MaxFabrics, SIREN 104406707), sous la marque Ombelle. Pour toute question sur tes données : <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>.</p>
 
     <h2>Ce que tu saisis</h2>
-    <p>Tout ce que tu saisis est gardé sur ce téléphone seulement :</p>
+    <p>Sans compte, tout ce que tu saisis est gardé sur ce téléphone seulement (avec un compte, voir plus bas) :</p>
     <ul>
       <li>tes budgets : revenus, enveloppes, dépenses et leurs dates, notes, objectifs d'épargne et défis ;</li>
       <li>tes réglages : pays et devise, jour de paie, rappels, couleur de l'appli ;</li>
@@ -50,6 +50,21 @@
 
     <h2>Comment c'est protégé</h2>
     <p>Le budget est écrit dans un fichier chiffré (AES-256) du dossier privé de l'appli, avec une copie de secours chiffrée elle aussi. La clé de chiffrement est gardée dans le coffre sécurisé d'Android (Keystore), pas dans le fichier. Les sauvegardes automatiques de Google et le transfert vers un nouveau téléphone sont coupés pour cette appli : ton budget ne quitte pas le téléphone de cette façon. Une exception : si tu poses le widget des soldes (version plus) sur l'écran d'accueil, l'appli garde de quoi l'afficher (le mois, « À répartir », les quatre premières enveloppes avec leurs montants) dans ses préférences privées, sans le chiffrement du budget. Ces lignes ne s'affichent que sur l'écran d'accueil, jamais sur l'écran verrouillé ; « Tout effacer » les retire, et l'appli les retire à sa prochaine ouverture une fois le widget retiré ; d'ici là, ils restent dans ses préférences privées.</p>
+
+    <h2>Compte facultatif</h2>
+    <p>Tu peux créer un compte avec Google, ou avec une adresse e-mail et un mot de passe. Il sert à sauvegarder ton budget, à le retrouver sur un autre téléphone et à le partager. Avec un compte, nous traitons :</p>
+    <ul>
+      <li>ton adresse e-mail et l'identifiant de ton compte, chez Google (Firebase Authentication) ; ton mot de passe n'est jamais vu par l'appli ni par nous, Google le garde sous forme protégée ;</li>
+      <li>le prénom ou surnom et la couleur que tu choisis, et la version des conditions du compte que tu as acceptée ;</li>
+      <li>une copie de tes budgets (revenus, enveloppes, dépenses, notes, objectifs, défis et réglages) dans Cloud Firestore de Google, région Europe : chiffrée par Google pendant le transport et sur ses serveurs, mais pas de bout en bout. Google l'héberge pour nous et ne s'en sert pas pour autre chose (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>) ;</li>
+      <li>dans un budget à deux, qui a noté chaque opération.</li>
+    </ul>
+
+    <h2>Budget à deux</h2>
+    <p>Avec la version plus, le propriétaire d'un budget peut inviter une personne par un lien ou un QR code, valable 24 heures et une seule fois ; nous ne gardons qu'une empreinte du lien. La personne qui rejoint voit tout ce budget (enveloppes, montants, notes, qui a noté quoi), ton prénom et ta couleur, et peut le modifier ; tu vois de même les siens. Chacun peut quitter le budget et le propriétaire peut retirer l'autre personne : elle garde une copie du budget sur son téléphone, sans les changements qui suivent. N'invite que quelqu'un avec qui tu veux partager ces informations.</p>
+
+    <h2>E-mails du compte</h2>
+    <p>Les e-mails de validation de l'adresse et de mot de passe oublié sont envoyés par Google (Firebase). Pour les adresses Free, Orange, SFR, La Poste et Bouygues, que ces fournisseurs refusent souvent, l'appli les demande à notre relais (Cloudflare), qui les fait partir par Brevo, un service d'envoi d'e-mails établi en France : Brevo reçoit ton adresse et le contenu de l'e-mail, et peut mesurer son ouverture et le clic sur le lien, seulement pour l'acheminer et en suivre la livraison. Le relais compte les envois par jour pour bloquer les abus, sous forme d'empreintes, sans garder ton adresse en clair.</p>
 
     <h2>Ce qui peut sortir du téléphone</h2>
     <p>Seulement ce que tu lances toi-même, vers l'endroit que tu choisis (Téléchargements, Drive, messagerie…) :</p>
@@ -84,10 +99,10 @@
     <p>Les rappels du jour de paie (9 h) et de la fin du mois (18 h) sont coupés tant que tu ne les allumes pas. Ce sont des notifications programmées sur ton téléphone, sans serveur, qui ne contiennent aucun montant ni nom d'enveloppe. Sur Android 13 et plus, Android te demande l'autorisation d'afficher des notifications la première fois que tu en allumes un. « Tout effacer » les retire.</p>
 
     <h2>Autorisations d'Android</h2>
-    <p>L'appli ne demande ni ta position, ni tes contacts, ni tes photos, ni ton micro. Elle déclare notamment l'accès à Internet (bannière, formulaire de consentement, Google Play), l'identifiant publicitaire (que le SDK de Google lit selon tes choix, en version gratuite), les notifications (seulement si tu allumes un rappel) et le démarrage du téléphone (pour reprogrammer ces rappels). Elle déclare aussi l'état du réseau et la vibration (rappels, retour au toucher). Des composants intégrés (le SDK de publicité, les widgets) y ajoutent le maintien en éveil et un service d'arrière-plan, et le SDK de publicité l'accès aux informations publicitaires d'Android (identifiant, attribution, centres d'intérêt : la Privacy Sandbox d'Android). Ces accès publicitaires ne servent qu'en version gratuite et selon tes choix. Les fichiers de sauvegarde et d'export passent par le sélecteur de documents et la feuille de partage d'Android, sans autorisation de stockage.</p>
+    <p>L'appli ne demande ni ta position, ni tes contacts, ni tes photos, ni ton micro. Elle déclare notamment l'accès à Internet (bannière, formulaire de consentement, Google Play, compte et synchro), l'identifiant publicitaire (que le SDK de Google lit selon tes choix, en version gratuite), les notifications (seulement si tu allumes un rappel) et le démarrage du téléphone (pour reprogrammer ces rappels). Elle déclare aussi l'état du réseau et la vibration (rappels, retour au toucher). Des composants intégrés (le SDK de publicité, les widgets) y ajoutent le maintien en éveil et un service d'arrière-plan, et le SDK de publicité l'accès aux informations publicitaires d'Android (identifiant, attribution, centres d'intérêt : la Privacy Sandbox d'Android). Ces accès publicitaires ne servent qu'en version gratuite et selon tes choix. Les fichiers de sauvegarde et d'export passent par le sélecteur de documents et la feuille de partage d'Android, sans autorisation de stockage.</p>
 
-    <h2>Aucun compte, aucune mesure d'audience</h2>
-    <p>Il n'y a pas de compte à créer : l'appli ne te demande ni nom, ni adresse e-mail. Elle n'a aucun outil de mesure d'audience, aucun outil de suivi des plantages et aucun serveur à nous qui reçoive des données.</p>
+    <h2>Aucune mesure d'audience</h2>
+    <p>L'appli n'a aucun outil de mesure d'audience ni de suivi des plantages. Sans compte, aucun serveur à nous ne reçoit de données ; avec un compte, seuls les services décrits plus haut (Google Firebase, notre relais et Brevo) en reçoivent, pour ce seul usage.</p>
 
     <h2>Statistiques de Google Play</h2>
     <p>Si tu as accepté de partager tes données d'utilisation et de diagnostic avec Google sur ton téléphone, Google Play peut nous montrer des statistiques de plantages, anonymes et agrégées.</p>
@@ -99,16 +114,16 @@
     <p>L'appli s'adresse aux personnes de 18 ans et plus et ne vise pas les mineurs.</p>
 
     <h2>Sur quoi cela repose</h2>
-    <p>Ton consentement (RGPD, article 6) pour la publicité de la version gratuite, donné dans le formulaire de Google là où il est requis ; le contrat pour l'achat ; nos obligations légales pour les relevés de ventes. Nous ne traitons pas ton budget : il reste sur ton téléphone. Tu peux retirer ton consentement à tout moment : là où Google demande le formulaire (Europe, Royaume-Uni, Suisse), dans Réglages › Choix pour la publicité ; ailleurs, dans les réglages Android de ton téléphone (où tu peux aussi réinitialiser ton identifiant publicitaire) ; ou en passant à la version plus.</p>
+    <p>Le contrat (RGPD, article 6) pour le compte, sa sauvegarde, le budget à deux et les e-mails du compte, que tu choisis de créer ; ton consentement pour la publicité de la version gratuite, donné dans le formulaire de Google là où il est requis ; le contrat pour l'achat ; nos obligations légales pour les relevés de ventes ; notre intérêt légitime à empêcher les envois abusifs d'e-mails. Sans compte, nous ne traitons pas ton budget : il reste sur ton téléphone. Tu peux retirer ton consentement à la publicité à tout moment : là où Google demande le formulaire (Europe, Royaume-Uni, Suisse), dans Réglages › Choix pour la publicité ; ailleurs, dans les réglages Android de ton téléphone (où tu peux aussi réinitialiser ton identifiant publicitaire) ; ou en passant à la version plus.</p>
 
     <h2>Combien de temps</h2>
-    <p>Ton budget reste sur ton téléphone tant que tu ne l'effaces pas : l'appli ne l'envoie nulle part et ne l'efface pas d'elle-même. Les données reçues par la publicité sont gardées par Google selon sa propre politique (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
+    <p>Sur ton téléphone, ton budget reste tant que tu ne l'effaces pas. Avec un compte, sa copie et ton profil restent tant que ton compte existe : la suppression du compte les efface. Un budget à deux reste tant qu'un de ses membres y est. Les données reçues par la publicité sont gardées par Google selon sa propre politique (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
 
     <h2>Effacer tes données</h2>
-    <p>Réglages › Tout effacer, puis la confirmation (l'appli te propose d'abord de faire une sauvegarde) : le budget, sa copie de secours, sa clé de chiffrement, tes rappels, ta couleur, les soldes du widget et les copies de partage sont supprimés, sans retour possible. Désinstaller l'appli supprime aussi ses données. Les fichiers que tu as toi-même enregistrés ou partagés (sauvegarde, export, bilan) restent là où tu les as rangés : supprime-les-y. Ton achat est chez Google Play : « Tout effacer » n'y touche pas.</p>
+    <p>Pour le compte : Réglages › ton compte › Supprimer mon compte, puis la confirmation. Ton profil et la copie de tes budgets sont effacés du nuage, tu quittes les budgets à deux, et tes budgets restent sur ce téléphone, sans compte. Sans l'appli, écris à <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a> depuis l'adresse de ton compte (maxfabrics.com/ombelle/envelopio/supprimer-mon-compte). Sur le téléphone : Réglages › Tout effacer, puis la confirmation (l'appli te propose d'abord de faire une sauvegarde) : le budget, sa copie de secours, sa clé de chiffrement, tes rappels, ta couleur, les soldes du widget et les copies de partage sont supprimés, sans retour possible. Désinstaller l'appli supprime aussi ses données du téléphone. Les fichiers que tu as toi-même enregistrés ou partagés (sauvegarde, export, bilan) restent là où tu les as rangés : supprime-les-y. Ton achat est chez Google Play : rien de tout cela n'y touche.</p>
 
     <h2>Tes droits</h2>
-    <p>Nous ne détenons pas ton budget : c'est dans l'appli que tu le consultes, le corriges et l'exportes. La sauvegarde chiffrée en garde une copie complète, et, avec la version plus, l'export CSV se lit dans un tableur et l'export PDF dans un lecteur de PDF. Pour tes droits sur les rares données que nous détenons (relevés de ventes, messages que tu nous écris) ou pour toute autre question (accès, rectification, effacement, opposition, limitation, portabilité), écris à <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>. Tu peux aussi saisir la <a href="https://www.cnil.fr/">CNIL</a> (cnil.fr), l'autorité française de protection des données, ou celle de ton pays.</p>
+    <p>Sans compte, nous ne détenons pas ton budget : c'est dans l'appli que tu le consultes, le corriges et l'exportes. Avec un compte, tu le consultes et le corriges de même dans l'appli, et tu peux en demander une copie. La sauvegarde chiffrée en garde une copie complète, et, avec la version plus, l'export CSV se lit dans un tableur et l'export PDF dans un lecteur de PDF. Pour tes droits sur les données que nous détenons (compte, copie de tes budgets, relevés de ventes, messages que tu nous écris) ou pour toute autre question (accès, rectification, effacement, opposition, limitation, portabilité), écris à <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>. Tu peux aussi saisir la <a href="https://www.cnil.fr/">CNIL</a> (cnil.fr), l'autorité française de protection des données, ou celle de ton pays.</p>
 
     <h2>Ce que l'appli ne fait pas</h2>
     <p>L'appli ne se connecte à aucune banque, ne déplace aucun argent et ne donne pas de conseil financier : elle t'aide à suivre ton budget.</p>

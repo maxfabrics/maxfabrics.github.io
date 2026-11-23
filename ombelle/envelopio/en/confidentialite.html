@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy of Envelopio, the Ombelle budget app</title>
-  <meta name="description" content="Privacy policy of Envelopio, the Ombelle envelope budgeting app: what stays on your phone, what the free version's advertising banner receives and how to erase everything.">
+  <meta name="description" content="Privacy policy of Envelopio, the Ombelle envelope budgeting app: what stays on your phone, what the optional account keeps, what the free version’s advertising banner receives and how to erase everything.">
   <link rel="canonical" href="https://maxfabrics.com/ombelle/envelopio/en/confidentialite">
   <link rel="alternate" hreflang="fr" href="https://maxfabrics.com/ombelle/envelopio/confidentialite">
   <link rel="alternate" hreflang="en" href="https://maxfabrics.com/ombelle/envelopio/en/confidentialite">
@@ -32,16 +32,16 @@
   </header>
 
   <main>
-    <h1>Your budget stays on your phone</h1>
-    <p class="lead">Privacy policy of Envelopio, the Ombelle envelope budgeting app · Last updated: 10 November 2026</p>
+    <h1>Your budget stays on your phone, and in your account if you choose</h1>
+    <p class="lead">Privacy policy of Envelopio, the Ombelle envelope budgeting app · Last updated: 23 November 2026</p>
 
-    <p>Envelopio lets you keep your budget with the envelope method. Your amounts, envelopes and notes stay on your phone: we have no server that receives them, there is no account to create and no access to your bank. The free version shows an advertising banner from Google AdMob: it receives data from your device, never your budget. The plus version shows no advertising.</p>
+    <p>Envelopio lets you keep your budget with the envelope method. Without an account, your amounts, envelopes and notes stay on your phone. The account is optional: if you create one, a copy of your budget is kept in your account, at Google Firebase (servers in Europe), to back it up, find it again on another phone or share it with the person you invite. We have no access to your bank. The free version shows an advertising banner from Google AdMob: it receives data from your device, never your budget. The plus version shows no advertising.</p>
 
     <h2>Who is responsible</h2>
     <p>The app is published by Maxence Bonnet, sole proprietor (MaxFabrics, SIREN 104406707), under the Ombelle brand. For any question about your data: <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>.</p>
 
     <h2>What you enter</h2>
-    <p>Everything you enter is kept on this phone only:</p>
+    <p>Without an account, everything you enter is kept on this phone only (with an account, see below):</p>
     <ul>
       <li>your budgets: income, envelopes, expenses and their dates, notes, savings goals and challenges;</li>
       <li>your settings: country and currency, payday, reminders, app color;</li>
@@ -49,13 +49,28 @@
     </ul>
 
     <h2>How it is protected</h2>
-    <p>The budget is written to an encrypted file (AES-256) in the app's private folder, with a backup copy that is encrypted too. The encryption key is kept in Android's secure storage (Keystore), not in the file. Google's automatic backups and the transfer to a new phone are switched off for this app: your budget does not leave the phone that way. One exception: if you place the balances widget (plus version) on the home screen, the app keeps what it needs to display it (the month, “To assign”, the first four envelopes with their amounts) in its private preferences, without the budget's encryption. Those lines appear only on the home screen, never on the lock screen; “Erase everything” removes them, and the app removes them the next time it opens once the widget is removed; until then, they stay in its private preferences.</p>
+    <p>The budget is written to an encrypted file (AES-256) in the app’s private folder, with a backup copy that is encrypted too. The encryption key is kept in Android’s secure storage (Keystore), not in the file. Google’s automatic backups and the transfer to a new phone are switched off for this app: your budget does not leave the phone that way. One exception: if you place the balances widget (plus version) on the home screen, the app keeps what it needs to display it (the month, “To assign”, the first four envelopes with their amounts) in its private preferences, without the budget’s encryption. Those lines appear only on the home screen, never on the lock screen; “Erase everything” removes them, and the app removes them the next time it opens once the widget is removed; until then, they stay in its private preferences.</p>
+
+    <h2>Optional account</h2>
+    <p>You can create an account with Google, or with an email address and a password. It is used to back up your budget, find it again on another phone and share it. With an account, we process:</p>
+    <ul>
+      <li>your email address and your account ID, at Google (Firebase Authentication); your password is never seen by the app or by us, Google keeps it in protected form;</li>
+      <li>the first name or nickname and the color you choose, and the version of the account terms you accepted;</li>
+      <li>a copy of your budgets (income, envelopes, expenses, notes, goals, challenges and settings) in Google’s Cloud Firestore, Europe region: encrypted by Google in transit and on its servers, but not end-to-end. Google hosts it for us and does not use it for anything else (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>);</li>
+      <li>in a budget for two, who recorded each entry.</li>
+    </ul>
+
+    <h2>Budget for two</h2>
+    <p>With the plus version, the owner of a budget can invite one person with a link or a QR code, valid for 24 hours and for a single use; we keep only a fingerprint of the link. The person who joins sees this whole budget (envelopes, amounts, notes, who recorded what), your first name and your color, and can edit it; you see theirs in the same way. Either of you can leave the budget and the owner can remove the other person: they keep a copy of the budget on their phone, without the changes that follow. Only invite someone you want to share this information with.</p>
+
+    <h2>Account emails</h2>
+    <p>The emails to confirm your address and for a forgotten password are sent by Google (Firebase). For Free, Orange, SFR, La Poste and Bouygues addresses, which these providers often refuse, the app requests them from our relay (Cloudflare), which sends them out through Brevo, an email-sending service based in France: Brevo receives your address and the content of the email, and may measure when it is opened and when the link is clicked, only to deliver it and track its delivery. The relay counts sends per day to block abuse, in the form of fingerprints, without keeping your address in clear text.</p>
 
     <h2>What can leave the phone</h2>
     <p>Only what you start yourself, to the place you choose (Downloads, Drive, a messaging app…):</p>
     <ul>
       <li>an encrypted backup: an .envx file protected by a password you choose (at least 8 characters). This password is stored nowhere: if you forget it, we cannot reopen the backup;</li>
-      <li>the month summary image, with or without the amounts, which you share through Android's share sheet;</li>
+      <li>the month summary image, with or without the amounts, which you share through Android’s share sheet;</li>
       <li>with the plus version, a CSV or PDF export of your budget, which is not encrypted.</li>
     </ul>
 
@@ -63,7 +78,7 @@
     <p>We have no access to these files. Once they are out, their protection depends on where you keep them and on the service that receives them, which has its own policy. During a share, the app leaves a temporary copy in its private cache: it is removed at the next launch once it is more than an hour old, and by “Erase everything”.</p>
 
     <h2>Advertising in the free version</h2>
-    <p>The free version shows a Google AdMob banner at the bottom of the main screen. It receives nothing from your budget: the ad request contains no amount, no envelope name and no note. For advertising, measurement and fraud prevention, Google's SDK does receive the following from your device, according to Google's documentation and under its policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>):</p>
+    <p>The free version shows a Google AdMob banner at the bottom of the main screen. It receives nothing from your budget: the ad request contains no amount, no envelope name and no note. For advertising, measurement and fraud prevention, Google’s SDK does receive the following from your device, according to Google’s documentation and under its policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>):</p>
     <ul>
       <li>your IP address, and therefore an approximate location;</li>
       <li>your interactions with ads;</li>
@@ -72,43 +87,43 @@
     </ul>
 
     <h2>Your choices about advertising</h2>
-    <p>In Europe, the United Kingdom and Switzerland, Google first shows a consent form: you can refuse personalization, and the app then requests only non-personalized ads. The advertising SDK starts only after the answer to this form, which you can reopen at any time in Settings › Ad choices. Elsewhere, no form is shown and ads may be personalized, unless you have turned personalization off in your phone's Android settings, where you can also reset or delete your advertising ID. Whatever you choose, the app works the same way.</p>
+    <p>In Europe, the United Kingdom and Switzerland, Google first shows a consent form: you can refuse personalization, and the app then requests only non-personalized ads. The advertising SDK starts only after the answer to this form, which you can reopen at any time in Settings › Ad choices. Elsewhere, no form is shown and ads may be personalized, unless you have turned personalization off in your phone’s Android settings, where you can also reset or delete your advertising ID. Whatever you choose, the app works the same way.</p>
 
     <h2>Plus version: no advertising</h2>
-    <p>With the plus version, the app shows no advertising, does not show the consent form and does not start the advertising SDK. One exception: on a new phone or after a reinstall, the app waits for Google Play's answer about your purchase, ten seconds at most, before launching advertising. If Google Play does not answer in time, the free version may start advertising, and show the consent form where it is required, before your purchase is found; the banner disappears as soon as Google Play returns it.</p>
+    <p>With the plus version, the app shows no advertising, does not show the consent form and does not start the advertising SDK. One exception: on a new phone or after a reinstall, the app waits for Google Play’s answer about your purchase, ten seconds at most, before launching advertising. If Google Play does not answer in time, the free version may start advertising, and show the consent form where it is required, before your purchase is found; the banner disappears as soon as Google Play returns it.</p>
 
     <h2>Buying the plus version</h2>
-    <p>The one-time purchase, with no subscription, goes through Google Play, which handles the payment under its own rules (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>). The app never sees your payment method. It asks Google Play for the product's price and whether you have already bought it (at each launch), and keeps on the phone only the fact that the plus version is active, to unlock it even offline. The Google Play component built into the app for purchases also sends Google technical data about its own operation, never your budget. As with any seller, Google Play gives us sales records (order number, product, amount, country), without your name or payment method; we keep them for as long as our accounting obligations require.</p>
+    <p>The one-time purchase, with no subscription, goes through Google Play, which handles the payment under its own rules (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>). The app never sees your payment method. It asks Google Play for the product’s price and whether you have already bought it (at each launch), and keeps on the phone only the fact that the plus version is active, to unlock it even offline. The Google Play component built into the app for purchases also sends Google technical data about its own operation, never your budget. As with any seller, Google Play gives us sales records (order number, product, amount, country), without your name or payment method; we keep them for as long as our accounting obligations require.</p>
 
     <h2>Reminders</h2>
     <p>The payday (9 am) and end-of-month (6 pm) reminders are off until you turn them on. They are notifications scheduled on your phone, with no server, and they contain no amount or envelope name. On Android 13 and later, Android asks your permission to show notifications the first time you turn one on. “Erase everything” removes them.</p>
 
     <h2>Android permissions</h2>
-    <p>The app does not ask for your location, contacts, photos or microphone. It notably declares access to the Internet (banner, consent form, Google Play), the advertising ID (which Google's SDK reads depending on your choices, in the free version), notifications (only if you turn on a reminder) and the phone's startup (to reschedule those reminders). It also declares the network state and vibration (reminders, touch feedback). Built-in components (the advertising SDK, the widgets) add keeping the phone awake and a background service, and the advertising SDK adds access to Android's advertising information (ID, attribution, interests: Android's Privacy Sandbox). These advertising accesses are used only in the free version and according to your choices. Backup and export files go through Android's document picker and share sheet, with no storage permission.</p>
+    <p>The app does not ask for your location, contacts, photos or microphone. It notably declares access to the Internet (banner, consent form, Google Play, account and sync), the advertising ID (which Google’s SDK reads depending on your choices, in the free version), notifications (only if you turn on a reminder) and the phone’s startup (to reschedule those reminders). It also declares the network state and vibration (reminders, touch feedback). Built-in components (the advertising SDK, the widgets) add keeping the phone awake and a background service, and the advertising SDK adds access to Android’s advertising information (ID, attribution, interests: Android’s Privacy Sandbox). These advertising accesses are used only in the free version and according to your choices. Backup and export files go through Android’s document picker and share sheet, with no storage permission.</p>
 
-    <h2>No account, no audience measurement</h2>
-    <p>There is no account to create: the app asks for neither your name nor your email address. It has no audience measurement tool, no crash reporting tool and no server of ours that receives data.</p>
+    <h2>No audience measurement</h2>
+    <p>The app has no audience measurement tool and no crash reporting tool. Without an account, none of our servers receives data; with an account, only the services described above (Google Firebase, our relay and Brevo) receive any, for that sole purpose.</p>
 
     <h2>Google Play statistics</h2>
     <p>If you have agreed to share usage and diagnostics data with Google on your phone, Google Play may show us crash statistics, anonymous and aggregated.</p>
 
     <h2>If you write to us</h2>
-    <p>Your message and your address are used only to reply to you. Please don't attach your budget or your amounts.</p>
+    <p>Your message and your address are used only to reply to you. Please don’t attach your budget or your amounts.</p>
 
     <h2>Age</h2>
     <p>The app is for people aged 18 and over and does not target minors.</p>
 
     <h2>Legal basis</h2>
-    <p>Your consent (GDPR, article 6) for the free version's advertising, given in Google's form where it is required; the contract for the purchase; our legal obligations for sales records. We do not process your budget: it stays on your phone. You can withdraw your consent at any time: where Google requires the form (Europe, the United Kingdom, Switzerland), in Settings › Ad choices; elsewhere, in your phone's Android settings (where you can also reset your advertising ID); or by switching to the plus version.</p>
+    <p>The contract (GDPR, article 6) for the account, its backup, the budget for two and the account emails, which you choose to create; your consent for the free version’s advertising, given in Google’s form where it is required; the contract for the purchase; our legal obligations for sales records; our legitimate interest in preventing abusive sending of emails. Without an account, we do not process your budget: it stays on your phone. You can withdraw your consent to advertising at any time: where Google requires the form (Europe, the United Kingdom, Switzerland), in Settings › Ad choices; elsewhere, in your phone’s Android settings (where you can also reset your advertising ID); or by switching to the plus version.</p>
 
     <h2>How long</h2>
-    <p>Your budget stays on your phone until you erase it: the app sends it nowhere and does not erase it by itself. The data received through advertising is kept by Google under its own policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
+    <p>On your phone, your budget stays until you erase it. With an account, its copy and your profile stay as long as your account exists: deleting the account erases them. A budget for two stays as long as one of its members is in it. The data received through advertising is kept by Google under its own policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</p>
 
     <h2>Erasing your data</h2>
-    <p>Settings › Erase everything, then confirm (the app first offers to make a backup): the budget, its backup copy, its encryption key, your reminders, your color, the widget balances and the share copies are deleted, with no way back. Uninstalling the app also deletes its data. Files you saved or shared yourself (backup, export, summary) stay where you put them: delete them there. Your purchase is with Google Play: “Erase everything” does not touch it.</p>
+    <p>For the account: Settings › your account › Delete my account, then confirm. Your profile and the copy of your budgets are erased from the cloud, you leave budgets for two, and your budgets stay on this phone, without an account. Without the app, write to <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a> from your account’s email address (maxfabrics.com/ombelle/envelopio/en/supprimer-mon-compte). On the phone: Settings › Erase everything, then confirm (the app first offers to make a backup): the budget, its backup copy, its encryption key, your reminders, your color, the widget balances and the share copies are deleted, with no way back. Uninstalling the app also deletes its data from the phone. Files you saved or shared yourself (backup, export, summary) stay where you put them: delete them there. Your purchase is with Google Play: none of this touches it.</p>
 
     <h2>Your rights</h2>
-    <p>We do not hold your budget: you view, correct and export it in the app. The encrypted backup keeps a complete copy, and, with the plus version, the CSV export opens in a spreadsheet and the PDF export in a PDF reader. For your rights over the few data we do hold (sales records, messages you write to us) or for any other question (access, rectification, erasure, objection, restriction, portability), write to <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>. You can also complain to the <a href="https://www.cnil.fr/">CNIL</a> (cnil.fr), the French data protection authority, or to your own.</p>
+    <p>Without an account, we do not hold your budget: you view, correct and export it in the app. With an account, you view and correct it in the same way in the app, and you can ask for a copy. The encrypted backup keeps a complete copy, and, with the plus version, the CSV export opens in a spreadsheet and the PDF export in a PDF reader. For your rights over the data we do hold (account, copy of your budgets, sales records, messages you write to us) or for any other question (access, rectification, erasure, objection, restriction, portability), write to <a href="mailto:ombelle@maxfabrics.com">ombelle@maxfabrics.com</a>. You can also complain to the <a href="https://www.cnil.fr/">CNIL</a> (cnil.fr), the French data protection authority, or to your own.</p>
 
     <h2>What the app does not do</h2>
     <p>The app connects to no bank, moves no money and gives no financial advice: it helps you keep track of your budget.</p>
