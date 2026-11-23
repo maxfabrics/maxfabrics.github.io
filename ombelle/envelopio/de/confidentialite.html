@@ -77,6 +77,9 @@
     <h2>Nach einem Teilen</h2>
     <p>Auf diese Dateien haben wir keinen Zugriff. Sobald sie draußen sind, hängt ihr Schutz davon ab, wo du sie aufbewahrst und welcher Dienst sie erhält, der eine eigene Richtlinie hat. Beim Teilen lässt die App eine vorübergehende Kopie in ihrem privaten Cache: Sie wird beim nächsten Start entfernt, sobald sie älter als eine Stunde ist, und durch „Alles löschen“.</p>
 
+    <h2>Import eines Kontoauszugs</h2>
+    <p>Wenn du einen Kontoauszug deiner Bank importierst (CSV, OFX, QIF oder PDF), wählst du ihn selbst über die Dokumentauswahl von Android aus. Er wird auf deinem Handy gelesen, nirgendwohin gesendet und nicht aufbewahrt: Nur die Buchungen, die du hinzufügst, kommen in dein Budget. Um künftige Ausgaben zuzuordnen, merkt sich die App verschlüsselt auf dem Handy den Namen jedes Händlers und den Umschlag, den du dafür gewählt hast.</p>
+
     <h2>Werbung in der kostenlosen Version</h2>
     <p>Die kostenlose Version zeigt unten auf dem Hauptbildschirm ein Banner von Google AdMob. Es erhält nichts aus deinem Budget: Die Anzeigenanfrage enthält weder Betrag noch Umschlagnamen noch Notizen. Für Werbung, Messung und Betrugsprävention erhält das SDK von Google dagegen von deinem Gerät, laut der Dokumentation von Google und nach seiner Richtlinie (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>):</p>
     <ul>
@@ -99,7 +102,7 @@
     <p>Die Erinnerungen am Zahltag (9 Uhr) und am Monatsende (18 Uhr) sind aus, bis du sie einschaltest. Es sind auf deinem Handy geplante Benachrichtigungen, ohne Server, die keinen Betrag und keinen Umschlagnamen enthalten. Ab Android 13 fragt dich Android beim ersten Einschalten einer Erinnerung um die Erlaubnis, Benachrichtigungen zu zeigen. „Alles löschen“ entfernt sie.</p>
 
     <h2>Android-Berechtigungen</h2>
-    <p>Die App fragt weder nach deinem Standort noch nach deinen Kontakten, Fotos oder dem Mikrofon. Sie deklariert unter anderem den Internetzugriff (Banner, Einwilligungsformular, Google Play, Konto und Synchronisierung), die Werbe-ID (die das SDK von Google je nach deiner Auswahl in der kostenlosen Version liest), Benachrichtigungen (nur wenn du eine Erinnerung einschaltest) und den Start des Handys (um diese Erinnerungen neu zu planen). Sie deklariert außerdem den Netzwerkstatus und die Vibration (Erinnerungen, Rückmeldung beim Antippen). Eingebundene Komponenten (das Werbe-SDK, die Widgets) fügen das Wachhalten des Handys und einen Hintergrunddienst hinzu, und das Werbe-SDK den Zugriff auf die Werbeinformationen von Android (ID, Zuordnung, Interessen: die Privacy Sandbox von Android). Die Werbezugriffe werden nur in der kostenlosen Version und je nach deiner Auswahl genutzt. Sicherungs- und Exportdateien laufen über die Dokumentenauswahl und das Teilen-Menü von Android, ohne Speicherberechtigung.</p>
+    <p>Die App fragt weder nach deinem Standort noch nach deinen Kontakten, Fotos oder dem Mikrofon. Sie deklariert unter anderem den Internetzugriff (Banner, Einwilligungsformular, Google Play, Konto und Synchronisierung), die Werbe-ID (die das SDK von Google je nach deiner Auswahl in der kostenlosen Version liest), Benachrichtigungen (nur wenn du eine Erinnerung einschaltest) und den Start des Handys (um diese Erinnerungen neu zu planen). Sie deklariert außerdem den Netzwerkstatus und die Vibration (Erinnerungen, Rückmeldung beim Antippen). Eingebundene Komponenten (das Werbe-SDK, die Widgets) fügen das Wachhalten des Handys und einen Hintergrunddienst hinzu, und das Werbe-SDK den Zugriff auf die Werbeinformationen von Android (ID, Zuordnung, Interessen: die Privacy Sandbox von Android). Die Werbezugriffe werden nur in der kostenlosen Version und je nach deiner Auswahl genutzt. Sicherungs- und Exportdateien laufen über die Dokumentenauswahl und das Teilen-Menü von Android, ohne Speicherberechtigung. Ein importierter Kontoauszug läuft ebenfalls über diese Auswahl.</p>
 
     <h2>Keine Reichweitenmessung</h2>
     <p>Die App hat kein Tool zur Reichweitenmessung und kein Tool zur Absturzerfassung. Ohne Konto empfängt kein Server von uns Daten; mit einem Konto empfangen nur die oben beschriebenen Dienste (Google Firebase, unser Relay und Brevo) welche, allein für diesen Zweck.</p>
@@ -108,7 +111,7 @@
     <p>Wenn du auf deinem Handy zugestimmt hast, Nutzungs- und Diagnosedaten mit Google zu teilen, kann uns Google Play Absturzstatistiken zeigen, anonym und zusammengefasst.</p>
 
     <h2>Wenn du uns schreibst</h2>
-    <p>Deine Nachricht und deine Adresse dienen nur dazu, dir zu antworten. Füge bitte weder dein Budget noch deine Beträge bei.</p>
+    <p>Per E-Mail dienen deine Nachricht und deine Adresse nur dazu, dir zu antworten. Aus der App („Eine Idee? Ein Problem?“) gehen nur deine Nachricht, die gewählte Kategorie, die App-Version und ihre Sprache an unseren Ideenkasten, gehostet bei Cloudflare, ohne deine Adresse, dein Konto oder eine Kennung deines Handys; ein Fingerabdruck deiner IP-Adresse, der sich täglich ändert, dient nur dazu, missbräuchliche Sendungen zu begrenzen, und wird nach einer Woche gelöscht. Die Nachrichten dienen dazu, Ideen zu lesen und zu ordnen, und werden spätestens zwei Jahre später gelöscht. Füge weder dein Budget noch deine Beträge bei.</p>
 
     <h2>Alter</h2>
     <p>Die App richtet sich an Personen ab 18 Jahren und zielt nicht auf Minderjährige.</p>

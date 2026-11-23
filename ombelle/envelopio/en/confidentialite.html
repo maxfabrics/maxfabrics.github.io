@@ -77,6 +77,9 @@
     <h2>After a share</h2>
     <p>We have no access to these files. Once they are out, their protection depends on where you keep them and on the service that receives them, which has its own policy. During a share, the app leaves a temporary copy in its private cache: it is removed at the next launch once it is more than an hour old, and by “Erase everything”.</p>
 
+    <h2>Importing a statement</h2>
+    <p>If you import a statement from your bank (CSV, OFX, QIF or PDF), you pick it yourself with Android’s document picker. It is read on your phone, sent nowhere and not kept: only the transactions you add go into your budget. To sort future expenses, the app remembers on the phone, encrypted, each merchant’s name and the envelope you chose for it.</p>
+
     <h2>Advertising in the free version</h2>
     <p>The free version shows a Google AdMob banner at the bottom of the main screen. It receives nothing from your budget: the ad request contains no amount, no envelope name and no note. For advertising, measurement and fraud prevention, Google’s SDK does receive the following from your device, according to Google’s documentation and under its policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>):</p>
     <ul>
@@ -99,7 +102,7 @@
     <p>The payday (9 am) and end-of-month (6 pm) reminders are off until you turn them on. They are notifications scheduled on your phone, with no server, and they contain no amount or envelope name. On Android 13 and later, Android asks your permission to show notifications the first time you turn one on. “Erase everything” removes them.</p>
 
     <h2>Android permissions</h2>
-    <p>The app does not ask for your location, contacts, photos or microphone. It notably declares access to the Internet (banner, consent form, Google Play, account and sync), the advertising ID (which Google’s SDK reads depending on your choices, in the free version), notifications (only if you turn on a reminder) and the phone’s startup (to reschedule those reminders). It also declares the network state and vibration (reminders, touch feedback). Built-in components (the advertising SDK, the widgets) add keeping the phone awake and a background service, and the advertising SDK adds access to Android’s advertising information (ID, attribution, interests: Android’s Privacy Sandbox). These advertising accesses are used only in the free version and according to your choices. Backup and export files go through Android’s document picker and share sheet, with no storage permission.</p>
+    <p>The app does not ask for your location, contacts, photos or microphone. It notably declares access to the Internet (banner, consent form, Google Play, account and sync), the advertising ID (which Google’s SDK reads depending on your choices, in the free version), notifications (only if you turn on a reminder) and the phone’s startup (to reschedule those reminders). It also declares the network state and vibration (reminders, touch feedback). Built-in components (the advertising SDK, the widgets) add keeping the phone awake and a background service, and the advertising SDK adds access to Android’s advertising information (ID, attribution, interests: Android’s Privacy Sandbox). These advertising accesses are used only in the free version and according to your choices. Backup and export files go through Android’s document picker and share sheet, with no storage permission. An imported statement also goes through this picker.</p>
 
     <h2>No audience measurement</h2>
     <p>The app has no audience measurement tool and no crash reporting tool. Without an account, none of our servers receives data; with an account, only the services described above (Google Firebase, our relay and Brevo) receive any, for that sole purpose.</p>
@@ -108,7 +111,7 @@
     <p>If you have agreed to share usage and diagnostics data with Google on your phone, Google Play may show us crash statistics, anonymous and aggregated.</p>
 
     <h2>If you write to us</h2>
-    <p>Your message and your address are used only to reply to you. Please don’t attach your budget or your amounts.</p>
+    <p>By email, your message and your address are only used to reply to you. From the app (“An idea? A problem?”), only your message, the chosen category, the app version and its language are sent to our suggestion box, hosted by Cloudflare, without your address, your account or any identifier of your phone; a fingerprint of your IP address, which changes every day, is only used to limit abusive sending and is erased after a week. Messages are used to read and sort ideas, and are erased at the latest two years later. Don’t include your budget or your amounts.</p>
 
     <h2>Age</h2>
     <p>The app is for people aged 18 and over and does not target minors.</p>

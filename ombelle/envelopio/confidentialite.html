@@ -77,6 +77,9 @@
     <h2>Après un partage</h2>
     <p>Nous n'avons aucun accès à ces fichiers. Une fois sortis, leur protection dépend de l'endroit où tu les gardes et du service qui les reçoit, qui a sa propre politique. Pendant un partage, l'appli en laisse une copie temporaire dans son cache privé : elle est retirée au lancement suivant quand elle a plus d'une heure, et par « Tout effacer ».</p>
 
+    <h2>Import d'un relevé</h2>
+    <p>Si tu importes un relevé de ta banque (CSV, OFX, QIF ou PDF), tu le choisis toi-même par le sélecteur de documents d’Android. Il est lu sur ton téléphone, n’est envoyé nulle part et n’est pas gardé : seules les opérations que tu ajoutes entrent dans ton budget. Pour ranger les prochaines dépenses, l’appli retient sur le téléphone, chiffré, le nom de chaque marchand et l’enveloppe que tu lui as choisie.</p>
+
     <h2>Publicité de la version gratuite</h2>
     <p>La version gratuite affiche une bannière Google AdMob en bas de l'écran principal. Elle ne reçoit rien de ton budget : la demande d'annonce ne contient ni montant, ni nom d'enveloppe, ni note. Pour la publicité, la mesure et la prévention de la fraude, le SDK de Google reçoit en revanche de ton appareil, d'après la documentation de Google et selon sa politique (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>) :</p>
     <ul>
@@ -99,7 +102,7 @@
     <p>Les rappels du jour de paie (9 h) et de la fin du mois (18 h) sont coupés tant que tu ne les allumes pas. Ce sont des notifications programmées sur ton téléphone, sans serveur, qui ne contiennent aucun montant ni nom d'enveloppe. Sur Android 13 et plus, Android te demande l'autorisation d'afficher des notifications la première fois que tu en allumes un. « Tout effacer » les retire.</p>
 
     <h2>Autorisations d'Android</h2>
-    <p>L'appli ne demande ni ta position, ni tes contacts, ni tes photos, ni ton micro. Elle déclare notamment l'accès à Internet (bannière, formulaire de consentement, Google Play, compte et synchro), l'identifiant publicitaire (que le SDK de Google lit selon tes choix, en version gratuite), les notifications (seulement si tu allumes un rappel) et le démarrage du téléphone (pour reprogrammer ces rappels). Elle déclare aussi l'état du réseau et la vibration (rappels, retour au toucher). Des composants intégrés (le SDK de publicité, les widgets) y ajoutent le maintien en éveil et un service d'arrière-plan, et le SDK de publicité l'accès aux informations publicitaires d'Android (identifiant, attribution, centres d'intérêt : la Privacy Sandbox d'Android). Ces accès publicitaires ne servent qu'en version gratuite et selon tes choix. Les fichiers de sauvegarde et d'export passent par le sélecteur de documents et la feuille de partage d'Android, sans autorisation de stockage.</p>
+    <p>L'appli ne demande ni ta position, ni tes contacts, ni tes photos, ni ton micro. Elle déclare notamment l'accès à Internet (bannière, formulaire de consentement, Google Play, compte et synchro), l'identifiant publicitaire (que le SDK de Google lit selon tes choix, en version gratuite), les notifications (seulement si tu allumes un rappel) et le démarrage du téléphone (pour reprogrammer ces rappels). Elle déclare aussi l'état du réseau et la vibration (rappels, retour au toucher). Des composants intégrés (le SDK de publicité, les widgets) y ajoutent le maintien en éveil et un service d'arrière-plan, et le SDK de publicité l'accès aux informations publicitaires d'Android (identifiant, attribution, centres d'intérêt : la Privacy Sandbox d'Android). Ces accès publicitaires ne servent qu'en version gratuite et selon tes choix. Les fichiers de sauvegarde et d'export passent par le sélecteur de documents et la feuille de partage d'Android, sans autorisation de stockage. Un relevé importé passe aussi par ce sélecteur.</p>
 
     <h2>Aucune mesure d'audience</h2>
     <p>L'appli n'a aucun outil de mesure d'audience ni de suivi des plantages. Sans compte, aucun serveur à nous ne reçoit de données ; avec un compte, seuls les services décrits plus haut (Google Firebase, notre relais et Brevo) en reçoivent, pour ce seul usage.</p>
@@ -108,7 +111,7 @@
     <p>Si tu as accepté de partager tes données d'utilisation et de diagnostic avec Google sur ton téléphone, Google Play peut nous montrer des statistiques de plantages, anonymes et agrégées.</p>
 
     <h2>Si tu nous écris</h2>
-    <p>Ton message et ton adresse servent uniquement à te répondre. N'y joins pas ton budget ni tes montants.</p>
+    <p>Par e-mail, ton message et ton adresse servent uniquement à te répondre. Depuis l’appli (« Une idée ? Un souci ? »), seuls ton message, la catégorie choisie, la version de l’appli et sa langue partent vers notre boîte à idées, hébergée par Cloudflare, sans ton adresse, ni ton compte, ni aucun identifiant de ton téléphone ; une empreinte de ton adresse IP, qui change chaque jour, sert seulement à limiter les envois abusifs et s’efface au bout d’une semaine. Les messages servent à lire et trier les idées, et sont effacés au plus tard deux ans après. N’y joins pas ton budget ni tes montants.</p>
 
     <h2>Âge</h2>
     <p>L'appli s'adresse aux personnes de 18 ans et plus et ne vise pas les mineurs.</p>
