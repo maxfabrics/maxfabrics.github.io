@@ -38,7 +38,7 @@
   <main id="contenu" class="lecture">
     <div class="feuille">
     <h1>Politique de confidentialité</h1>
-    <p class="lead">Dernière mise à jour : 20 novembre 2026</p>
+    <p class="lead">Dernière mise à jour : 23 novembre 2026</p>
 
     <p>Cette politique s'applique à tous les jeux mobiles publiés par MaxFabrics sur Google Play
       (« nos jeux »). Elle explique quelles données sont traitées, pourquoi, et quels sont vos droits.</p>
@@ -49,8 +49,8 @@
 
     <h2>Ce que nous ne collectons pas</h2>
     <p>Nos jeux ne vous demandent ni de créer un compte, ni nom, ni adresse e-mail, ni numéro de téléphone, ni
-      contacts, ni localisation précise (Better Than 99% crée seulement un compte de jeu anonyme pour ses classements :
-      voir « Classements en ligne »). Votre progression, vos pièces et vos réglages sont enregistrés sur votre
+      contacts, ni localisation précise (Better Than 99% crée seulement un compte de jeu anonyme pour ses classements,
+      que vous pouvez, si vous le souhaitez, relier à Google ou à une adresse e-mail : voir « Classements en ligne »). Votre progression, vos pièces et vos réglages sont enregistrés sur votre
       appareil et, si vous utilisez Google Play Jeux, dans votre profil Google Play Jeux (voir « Sauvegarde de la
       progression »).</p>
 
@@ -109,6 +109,16 @@
       crée pour cela un compte de jeu sans nom ni adresse e-mail : un identifiant technique Firebase Authentication
       (anonyme, puis lié à votre profil Google Play Jeux pour que vous retrouviez vos scores sur un autre appareil) et
       un pseudo tiré au hasard (« Joueur-7K2Q »).</p>
+    <p id="compte">Compte Google ou e-mail (facultatif, depuis le 23 novembre 2026) : pour retrouver votre progression
+      sur un nouveau téléphone, vous pouvez relier ce compte de jeu à votre compte Google ou à une adresse e-mail et un
+      mot de passe. Firebase Authentication (Google) garde alors votre adresse e-mail (et, pour Google, l'identifiant de
+      ce compte) ; votre mot de passe n'est jamais connu de nous. L'adresse ne sert qu'à vous connecter et à vous
+      envoyer les e-mails du compte (confirmation de l'adresse, mot de passe oublié) ; elle n'est ni affichée aux autres
+      joueurs, ni utilisée pour de la publicité ou des lettres d'information. Pour les adresses de certains
+      fournisseurs (Free, Orange, SFR, La Poste, Bouygues), ces e-mails partent par notre relais (Cloudflare Workers)
+      et Brevo (Sendinblue SAS, France, notre sous-traitant d'envoi) ; le relais garde seulement des compteurs du jour
+      (empreintes de l'adresse et du réseau, effacées au bout de 7 jours) pour limiter les abus. Base légale :
+      l'exécution du service que vous demandez. Vous pouvez vous déconnecter ou supprimer ce compte à tout moment.</p>
     <p id="profil">Profil public (facultatif) : si vous le personnalisez, le serveur garde le pseudo que vous choisissez,
       une bio de 80 caractères au plus, votre avatar dessiné (forme, motif, couleurs et symbole, en code court), le cadre
       choisi, et la date à laquelle vous avez accepté les
@@ -138,16 +148,23 @@
       classements et les salles, visibles par les autres joueurs.</p>
     <p>Si vous acceptez les notifications du jeu (rappels), Better Than 99% confie aussi au serveur le jeton Firebase
       Cloud Messaging de votre téléphone et la langue du jeu, pour vous prévenir quand un joueur relève l'un de vos
-      défis ou vous prend la première place d'une salle (au plus 8 notifications par jour). Ce jeton est effacé dès que
+      défis, vous prend la première place d'une salle ou bat votre record mondial sur un défi (au plus 8 notifications
+      par jour). Ce jeton est effacé dès que
       vous coupez les notifications, quand vous supprimez votre compte, et au bout de 120 jours sans ouverture du jeu.
       Les notifications sont acheminées par Google (Firebase Cloud Messaging).</p>
     <p>Ce serveur est hébergé par Cloudflare (Workers, Workers AI pour le classifieur, et base de données D1 située dans
       l'Union européenne). Les
       graines de tentative sont effacées au bout d'un jour, les tentatives et leurs rejeux au bout de 90 jours, sauf
       votre meilleure tentative sur chaque défi et celles qui ont ouvert une salle, gardées tant que votre compte
-      existe. Vous pouvez supprimer ce compte et toutes ces données à tout moment depuis les réglages du jeu
-      (« Supprimer mon compte »), ou sans le jeu en suivant
-      <a href="better-than-99-supprimer-mon-compte.html">cette page</a>.</p>
+      existe. Le serveur se sert aussi des jours où vous avez joué (tirés de vos tentatives des 90 derniers jours) pour
+      afficher votre série de jours. Vous pouvez supprimer ce compte et toutes ces données à tout moment depuis les
+      réglages du jeu (« Supprimer mon compte » : le compte Google ou e-mail relié est effacé lui aussi), ou sans le jeu
+      en suivant <a href="better-than-99-supprimer-mon-compte.html">cette page</a>.</p>
+    <p id="idees">Boîte à idées (Better Than 99%) : quand vous envoyez une idée, un bug ou un défi depuis les réglages
+      ou le bout de la Liste, notre serveur (Cloudflare Workers, base D1 dans l'Union européenne) reçoit seulement votre
+      message, sa catégorie, la version du jeu et sa langue, sans votre pseudo ni votre compte. Une empreinte de votre
+      adresse réseau, qui change chaque jour, limite les envois abusifs. Les messages sont lus par MaxFabrics et effacés
+      au bout de deux ans. N'y écrivez pas d'information personnelle.</p>
 
     <h2>Provenance des installations, avis et partage</h2>
     <ul>
