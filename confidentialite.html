@@ -125,14 +125,27 @@
       <a href="better-than-99-regles.html">règles de la communauté</a>. Ils sont visibles des autres joueurs dans les
       classements, les salles, les duels et votre profil public. Avant publication, le pseudo et la bio passent un filtre
       de mots, puis un classifieur automatique (Llama Guard, exécuté pour notre compte par Cloudflare Workers AI,
-      notre sous-traitant) ; un texte refusé n'est pas publié, sans autre conséquence. <strong>Votre photo de profil ne quitte jamais
-      votre téléphone</strong> : elle n'est ni envoyée à notre serveur ni enregistrée dans la sauvegarde Google Play
-      Jeux, et n'apparaît que sur votre propre écran et sur les images que vous choisissez de partager.</p>
-    <p>Signalements et blocages : quand vous signalez un pseudo ou une bio, le serveur garde votre identifiant,
+      notre sous-traitant) ; un texte refusé n'est pas publié, sans autre conséquence. Votre fond de vitrine (acheté en pièces) et vos
+      couronnes (n°1, top 10 ou top 1 % d'un défi, calculées d'après vos scores) y apparaissent aussi.</p>
+    <p id="photo">Photo de profil : elle reste sur votre téléphone (jamais dans la sauvegarde Google Play Jeux) tant que
+      vous ne choisissez pas « Montrer ma photo aux autres joueurs » (depuis le 23 novembre 2026). Si vous le choisissez,
+      une copie réduite (carré de 384 pixels, 48 Ko au plus) est envoyée à notre serveur, examinée automatiquement par
+      un modèle de vision (Mistral Small 3.1, exécuté pour notre compte par Cloudflare Workers AI, notre sous-traitant,
+      sans que l'image serve à entraîner un modèle) pour refuser les images contraires aux
+      <a href="better-than-99-regles.html">règles</a>, puis, si elle est acceptée, gardée dans notre base (Cloudflare D1,
+      Union européenne) et montrée aux autres joueurs à côté de votre pseudo. Une photo refusée n'est pas gardée ; le
+      serveur note seulement la date du refus et le nombre d'envois du jour (5 au plus). Vous pouvez la retirer à tout
+      moment (l'interrupteur, ou « Retirer » la photo du téléphone) ; elle est aussi effacée avec votre compte. Base
+      légale : votre consentement, retirable à tout moment.</p>
+    <p id="rivaux">Rivaux, ligues et classement du jour (depuis le 23 novembre 2026) : le serveur garde la liste des
+      joueurs que vous suivez comme rivaux (30 au plus ; ils n'en sont pas informés), votre ligue de la semaine (division,
+      groupe, points gagnés par vos tentatives, gardés 5 semaines) et votre division. Le classement du jour se calcule
+      à partir de vos tentatives du jour. Base légale : l'exécution du service que vous demandez.</p>
+    <p>Signalements et blocages : quand vous signalez un pseudo, une bio ou une photo, le serveur garde votre identifiant,
       l'élément visé et le motif choisi, 90 jours au plus ; un élément signalé par trois joueurs différents est retiré
-      et noté dans un journal des retraits (élément, ancien texte, date), gardé un an pour traiter les contestations
+      et noté dans un journal des retraits (élément, ancien texte ou mention d'une photo, jamais l'image, date), gardé un an pour traiter les contestations
       et les récidives, base légale : intérêt légitime à protéger les joueurs. Les joueurs que vous bloquez sont gardés
-      tant que vous ne les débloquez pas ; leur pseudo, leur avatar et leur bio vous sont masqués.</p>
+      tant que vous ne les débloquez pas ; leur pseudo, leur avatar, leur photo et leur bio vous sont masqués.</p>
     <p id="camera">Caméra (défis Pompes, Squats et Gainage) : si vous l'autorisez, la caméra frontale repère la position
       de votre corps <strong>sur le téléphone</strong> (ML Kit de Google, sans connexion) ; aucune image ni vidéo n'est
       enregistrée ni envoyée. Seuls des angles (par exemple celui du coude, en dixièmes de degré) et leurs instants
@@ -148,12 +161,12 @@
       classements et les salles, visibles par les autres joueurs.</p>
     <p>Si vous acceptez les notifications du jeu (rappels), Better Than 99% confie aussi au serveur le jeton Firebase
       Cloud Messaging de votre téléphone et la langue du jeu, pour vous prévenir quand un joueur relève l'un de vos
-      défis, vous prend la première place d'une salle ou bat votre record mondial sur un défi (au plus 8 notifications
-      par jour). Ce jeton est effacé dès que
+      défis, vous prend la première place d'une salle, bat votre record mondial sur un défi, vous dépasse alors que
+      vous le suivez comme rival, ou vous invite à un duel (au plus 8 notifications par jour). Ce jeton est effacé dès que
       vous coupez les notifications, quand vous supprimez votre compte, et au bout de 120 jours sans ouverture du jeu.
       Les notifications sont acheminées par Google (Firebase Cloud Messaging).</p>
-    <p>Ce serveur est hébergé par Cloudflare (Workers, Workers AI pour le classifieur, et base de données D1 située dans
-      l'Union européenne). Les
+    <p>Ce serveur est hébergé par Cloudflare (Workers, Workers AI pour le classifieur des textes et le contrôle des
+      photos, et base de données D1 située dans l'Union européenne). Les
       graines de tentative sont effacées au bout d'un jour, les tentatives et leurs rejeux au bout de 90 jours, sauf
       votre meilleure tentative sur chaque défi et celles qui ont ouvert une salle, gardées tant que votre compte
       existe. Le serveur se sert aussi des jours où vous avez joué (tirés de vos tentatives des 90 derniers jours) pour
