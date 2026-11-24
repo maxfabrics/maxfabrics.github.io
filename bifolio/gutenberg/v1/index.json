@@ -1,0 +1,187 @@
+{
+ "annee": 2026,
+ "regle": "France 70 ans (100 si mort pour la France) ; États-Unis par Project Gutenberg",
+ "source": "https://gutenberg.pglaf.org/cache/epub/feeds/pg_catalog.csv.gz",
+ "langues": [
+  {
+   "langue": "en",
+   "livres": 37176
+  },
+  {
+   "langue": "fr",
+   "livres": 3519
+  },
+  {
+   "langue": "fi",
+   "livres": 2842
+  },
+  {
+   "langue": "de",
+   "livres": 1834
+  },
+  {
+   "langue": "it",
+   "livres": 961
+  },
+  {
+   "langue": "nl",
+   "livres": 727
+  },
+  {
+   "langue": "es",
+   "livres": 637
+  },
+  {
+   "langue": "hu",
+   "livres": 610
+  },
+  {
+   "langue": "pt",
+   "livres": 517
+  },
+  {
+   "langue": "zh",
+   "livres": 225
+  },
+  {
+   "langue": "sv",
+   "livres": 208
+  },
+  {
+   "langue": "el",
+   "livres": 165
+  },
+  {
+   "langue": "ca",
+   "livres": 74
+  },
+  {
+   "langue": "la",
+   "livres": 73
+  },
+  {
+   "langue": "da",
+   "livres": 69
+  },
+  {
+   "langue": "eo",
+   "livres": 51
+  },
+  {
+   "langue": "pl",
+   "livres": 26
+  },
+  {
+   "langue": "tl",
+   "livres": 26
+  },
+  {
+   "langue": "fy",
+   "livres": 18
+  },
+  {
+   "langue": "no",
+   "livres": 14
+  },
+  {
+   "langue": "cy",
+   "livres": 10
+  },
+  {
+   "langue": "af",
+   "livres": 9
+  },
+  {
+   "langue": "bg",
+   "livres": 5
+  },
+  {
+   "langue": "is",
+   "livres": 5
+  },
+  {
+   "langue": "sl",
+   "livres": 5
+  },
+  {
+   "langue": "ga",
+   "livres": 5
+  },
+  {
+   "langue": "sr",
+   "livres": 4
+  },
+  {
+   "langue": "cs",
+   "livres": 4
+  },
+  {
+   "langue": "ro",
+   "livres": 4
+  },
+  {
+   "langue": "ja",
+   "livres": 3
+  },
+  {
+   "langue": "ru",
+   "livres": 3
+  },
+  {
+   "langue": "gl",
+   "livres": 3
+  },
+  {
+   "langue": "gla",
+   "livres": 2
+  },
+  {
+   "langue": "he",
+   "livres": 2
+  },
+  {
+   "langue": "myn",
+   "livres": 1
+  },
+  {
+   "langue": "oc",
+   "livres": 1
+  },
+  {
+   "langue": "nah",
+   "livres": 1
+  },
+  {
+   "langue": "mi",
+   "livres": 1
+  },
+  {
+   "langue": "enm",
+   "livres": 1
+  },
+  {
+   "langue": "arp",
+   "livres": 1
+  },
+  {
+   "langue": "rmq",
+   "livres": 1
+  },
+  {
+   "langue": "oji",
+   "livres": 1
+  },
+  {
+   "langue": "et",
+   "livres": 1
+  },
+  {
+   "langue": "sco",
+   "livres": 1
+  },
+  {
+   "langue": "bo",
+   "livres": 1
+  }
+ ]
+}
