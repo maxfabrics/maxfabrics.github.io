@@ -106,7 +106,7 @@
     .logos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 12px; }
     .logo-carte { border-radius: var(--rayon); overflow: hidden; box-shadow: var(--ombre); background: var(--carte); border: 1px solid rgba(200, 159, 107, 0.4); }
     .logo-carte .apercu { height: 170px; display: grid; place-items: center; padding: 18px; }
-    .logo-carte .apercu img { max-width: 100%; max-height: 100%; }
+    .logo-carte .apercu img { width: auto; height: auto; max-width: 100%; max-height: 134px; object-fit: contain; }
     .logo-carte .bas { padding: 12px 14px 14px; display: grid; gap: 8px; }
     .logo-carte .bas p { margin: 0; font-size: 14.5px; color: var(--encre-2); }
     .fonds { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 12px; }
@@ -267,6 +267,10 @@
           <div class="logo-carte">
             <div class="apercu" style="background:#EBD5BA"><img src="visuels/photo-de-profil.png" alt="Photo de profil BookHunter" width="1080" height="1080" style="height:140px;width:auto;border-radius:50%"></div>
             <div class="bas"><h3>Photo de profil</h3><p>Carrée, recadrée en rond par Instagram et TikTok.</p><a class="bouton" href="visuels/photo-de-profil.png" download>Télécharger (PNG)</a></div>
+          </div>
+          <div class="logo-carte">
+            <div class="apercu" style="background:#F5E6D3"><img src="visuels/qr-code.png" alt="QR code BookHunter à points verts, la porte ronde au centre" width="1800" height="1800"></div>
+            <div class="bas"><h3>QR code</h3><p>Ouvre la page de téléchargement : Google Play ou iPhone. Au moins 2 cm à l’impression.</p><a class="bouton" href="visuels/qr-code.png" download>Télécharger (PNG)</a> <a class="bouton second" href="visuels/qr-code-transparent.png" download>Fond transparent</a></div>
           </div>
         </div>
         <div class="deux">
