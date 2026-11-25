@@ -8,10 +8,11 @@
   var sourceParDefaut = document.documentElement.getAttribute('data-source') || 'bio';
   var source = (params.get('source') || sourceParDefaut).replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'bio';
   var campagne = document.documentElement.getAttribute('data-campagne') || 'telecharger';
-  // ?v=film52 (ou o14 pour Ombelle) : la vidéo précise qui a amené le visiteur, lue dans utm_content.
+  // ?v=film52 (ou o14 pour Ombelle) : la vidéo précise qui a amené le visiteur. Elle s'ajoute à la campagne, seule
+  // colonne que Google Play garde avec la source dans ses rapports (utm_content n'y figure pas).
   var video = (params.get('v') || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 40);
   var referrer = encodeURIComponent('utm_source=' + source + '&utm_medium=lien&utm_campaign=' + campagne +
-    (video ? '&utm_content=' + video : ''));
+    (video ? '-' + video : ''));
   var android = /android/i.test(navigator.userAgent);
 
   document.querySelectorAll('[data-paquet]').forEach(function (a) {
