@@ -22,6 +22,15 @@
       ? 'intent://details?id=' + paquet + '&referrer=' + referrer +
         '#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=' + encodeURIComponent(web) + ';end'
       : web;
+    // Un clic compté (appli, source, campagne, jour ; rien sur le visiteur) : visible tout de suite sur la page
+    // « Installations », là où Google Play range les petites sources en « Autre ». sendBeacon n'attend aucune réponse.
+    a.addEventListener('click', function () {
+      try {
+        var corps = JSON.stringify({ paquet: paquet, source: source.toLowerCase(),
+          campagne: (campagne + (video ? '-' + video : '')).toLowerCase() });
+        navigator.sendBeacon('https://retours.maxfabrics.com/v1/clic', new Blob([corps], { type: 'text/plain' }));
+      } catch (e) { /* le comptage ne doit jamais gêner l'ouverture de Google Play */ }
+    });
   });
 
   var langue = (navigator.language || 'fr').slice(0, 2).toLowerCase();
