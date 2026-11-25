@@ -4,9 +4,14 @@
 // Google Play pour les statistiques d'acquisition. Français par défaut, anglais pour un téléphone dans une autre langue.
 (function () {
   var params = new URLSearchParams(location.search);
-  var source = (params.get('source') || 'bio').replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'bio';
+  // Source par défaut : « bio », ou celle de la page (data-source="guide" sur les guides).
+  var sourceParDefaut = document.documentElement.getAttribute('data-source') || 'bio';
+  var source = (params.get('source') || sourceParDefaut).replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'bio';
   var campagne = document.documentElement.getAttribute('data-campagne') || 'telecharger';
-  var referrer = encodeURIComponent('utm_source=' + source + '&utm_medium=lien&utm_campaign=' + campagne);
+  // ?v=film52 (ou o14 pour Ombelle) : la vidéo précise qui a amené le visiteur, lue dans utm_content.
+  var video = (params.get('v') || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 40);
+  var referrer = encodeURIComponent('utm_source=' + source + '&utm_medium=lien&utm_campaign=' + campagne +
+    (video ? '&utm_content=' + video : ''));
   var android = /android/i.test(navigator.userAgent);
 
   document.querySelectorAll('[data-paquet]').forEach(function (a) {
@@ -19,7 +24,8 @@
   });
 
   var langue = (navigator.language || 'fr').slice(0, 2).toLowerCase();
-  if (langue !== 'fr') {
+  // Les guides existent dans chaque langue à leur propre adresse : on ne traduit pas leur texte (data-langue-fixe).
+  if (langue !== 'fr' && !document.documentElement.hasAttribute('data-langue-fixe')) {
     document.documentElement.lang = 'en';
     var titre = document.documentElement.getAttribute('data-titre-en');
     if (titre) document.title = titre;
